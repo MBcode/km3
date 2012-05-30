@@ -1,0 +1,23 @@
+(al 'aserve) ;needed for stella
+(defun LOAD-ASERVE () (al 'aserve)) 
+;(load "ut/util_mb.fasl")
+(load "c/km_2-4-5.fasl")
+(CL:setq cl-user::*load-cl-struct-stella?* CL:nil)
+;(load "load-powerloom.fasl") 
+(l3)
+;(load "plm/load-powerloom.lisp") 
+(load "load-powerloom.lisp") 
+(in-package "STELLA")
+ ;(defun ex (quit))
+;(load "plm/ea-28.plm")
+(load "ea-28.plm")
+;(load-file "plm/ea-28.plm")
+;(load "ea-c.plm")
+;(load "ea-r.plm") ;has err
+;(load "ea-i.plm")
+;(powerloom)
+(START-POWERLOOM-SERVER)
+
+;(defun ex (sb-ext:quit))
+;(defun bt (&optional (n 5)) (sb-debug:backtrace n)) 
+;(defun in () (in-package "STELLA"))

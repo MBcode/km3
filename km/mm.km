@@ -1,0 +1,97 @@
+;need to start using either this or something else, and get this all connected/better than prot did
+(parts has (superclasses (Slot)) (domain (Thing)) (range (Thing))) ;have subtypes so can taxonmy thru
+(phrHasWord has  (superclasses (Thing)))
+(mn has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(phr has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(le_of has (instance-of (Slot)) (domain (Thing)) (range (Thing)) ) ;phr n from to
+(word has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )  ;lexElts
+(phrase has (instance-of (Slot)) (domain (Thing)) (range (Thing)) ) ;_phrase s
+;(phrases has (instance-of (Slot)) (domain (Thing)) (range (Thing)) ) ;_phrase s ;5A.0 .1
+(phrases has (superclasses (parts)) (domain (Thing)) (range (Thing)) ) ;_phrase s ;5A.0 .1
+;-Phrase might also have:
+(mnp has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(subPhrases has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+;Phr should have a :set of words:
+;(words has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(words has (superclasses (parts)) (domain (Thing)) (range (Thing)) )
+(phrase-s has (instance-of (Slot)) (domain (Thing)) (range (Thing)) ) ;_phrase  in :args
+(word-s has (instance-of (Slot)) (domain (Thing)) (range (Thing)) ) ;try :args *word n from to
+(modnp has (instance-of (Slot)) (domain (Thing)) (range (Thing)) );mod1op-np
+(bestNP has (instance-of (Slot)) (domain (Thing)) (range (Thing)) );bestNP
+(preferred has (instance-of (Slot)) (domain (Thing)) (range (Thing)) );columbia preference rule
+;--new mmtx/metamap breakdown
+;atom -> m-phrases
+;m-phrase -> m-matches
+;m-match -> cuis
+;cui has id tui txt pref-txt(opt)  ;if txt has ' ', then longestWord &needs hypen before parsing  
+;--
+;note we start w/atom now, but it is really input-txt, so could of been full-txt
+;----
+;   (format t "~&(*~a has (instance-of ~a) (txt (\"~a\")) ~a)" cui cls wrd pf-slt)  
+;   (format t "~&(*~a~a has (instance-of (Match)) (mn (~a))  (cui (*~a)) (pn (~a)) (pn2 (~a)))"  
+;    (underscore wrd) *pn* ;mn 
+;    mn cui *pn* *pn2*)  
+;-
+;  (when longP ;if longP then also assert a phr ins w/that in the longestWords slot, so can be unified
+;    (format t "~&(*phr~a has (instance-of (Phrase)) (longestWords (\"~a\"))" *pn* wrd))
+;-
+;   (format t "~&(phr~a has (instance-of (Phrase)) (txt (\"~a\"))" 
+;    *pn* (trim-whitesp wrd))))
+;-
+;   (format t "~&(mphr~a has (instance-of (m-phrase)) (txt (~a)))" *pn2* wrd)))
+;----
+(:THING has (superclasses (Thing))) ;try
+;(Phrase has (superclasses (Word))) ;try
+(ParsedPhrase has (superclasses (Phrase))) ;try
+(m-phrase has (superclasses (Word))) ;try
+(Match has (superclasses (Word))) ;try
+(txt has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(mn has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(cui has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(pn has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(pn2 has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(longestWords has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+;
+(mm-mappings has (instance-of (Slot)) (domain (Thing)) (range (Thing)));finalMapping tuples&it's score
+(mm_mappings has (instance-of (Slot)) (domain (Thing)) (range (Thing)));~can of map, subset of can
+(mm_candidates has (instance-of (Slot)) (domain (Thing)) (range (Thing)));cui of interest;bitMoIn ner
+(min-delta has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(max-delta has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+;
+(ergo has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(pref-txt has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+;crit:
+(criteria has (superclasses (Thing))) ;try of word, like w/fullTxt
+(I has (superclasses (criteria))) ;try
+(E has (superclasses (criteria))) ;try
+(NCT has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(IE has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(SENT-TYPE has (instance-of (Slot)) (domain (Thing)) (range (Thing)) ) ;was IE now header/sent type
+(FULLTXT has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(PREPROC has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(CAT has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(REWRITE has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+;
+(from has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+(to has (instance-of (Slot)) (domain (Thing)) (range (Thing)) )
+;(LET ( (LW '(the longestWords of Self)) (TX '(the txt of Self))) (find+merge-hyphens LW TX))
+(parserInput has ;put
+        (instance-of (Slot)) 
+        (domain (Thing)) (range (Thing)) )
+;
+(atom- has (instance-of (Slot))  ;so clips/pprj not confused
+        (domain (Thing)) (range (Thing)) )
+(atom has (instance-of (Slot)) 
+        (domain (Thing)) (range (Thing)) )
+;
+;fullAtoms  has (instance-of (Slot))   ;make multi
+(fullAtoms  has (superclasses (parts))   (domain (Thing)) (range (Thing)) )
+(fullTxt has (superclasses (Word))) ;try or phrase ;make criteria instead
+(atom-phrase has (superclasses (Word))) ;try or phrase
+;
+(logical-connector has (superclasses (Word))) ;try or phrase
+(*AND has (instance-of (logical-connector)))
+(*DEFINED_BY has (instance-of (logical-connector)))
+(*EVIDENCED_BY has (instance-of (logical-connector)))
+(*IMPLIES has (instance-of (logical-connector)))
+(*OR has (instance-of (logical-connector)))

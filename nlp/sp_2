@@ -1,0 +1,1 @@
+echo $1|java -mx1800m -cp nlp/sp/stanford-parser.jar edu.stanford.nlp.parser.lexparser.LexicalizedParser -outputFormat "penn,typedDependencies" nlp/sp/englishPCFG.ser.gz - 

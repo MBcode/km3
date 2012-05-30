@@ -1,0 +1,15 @@
+;try to specialize the class more
+(*C0439091 has (instance-of (numericComparator)) (txt (">=" "greaterThanEqual")) (words (*>=)))
+(*C0439090 has (instance-of (numericComparator)) (txt ("<=" "lessThanEqual")) (words (*<=)))
+(*C0439089 has (instance-of (numericComparator)) (txt ("==" "equalSign")) (words (*==)))
+(*C0439089 has (instance-of (numericComparator)) (txt ("=" "equalSign")) (words (*=)))
+(*C0439093 has (instance-of (numericComparator)) (txt (">" "greaterThan")) (words (*>)))
+(*C0439092 has (instance-of (numericComparator)) (txt ("<" "lessThan")) (words (*<))) 
+(*>= has (instance-of (numericComparator)) (words (*> *=)))
+(*<= has (instance-of (numericComparator)) (words (*< *=)))
+(*> has (instance-of (numericComparator)) )
+(*< has (instance-of (numericComparator)) )
+;now taking all word comparisons out?/also in ner.lisp
+;(*after has (instance-of (numericComparator)))
+;(*prior_to has (instance-of (numericComparator)) (words (*prior *to)))
+;(*within has (instance-of (numericComparator)))

@@ -1,0 +1,1 @@
+echo $1|java -mx1900m -jar berk/berkeleyParser.jar -tokenize -gr berk/eng_sm5.gr.gz 

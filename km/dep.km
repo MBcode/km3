@@ -1,0 +1,201 @@
+;1st cut at a minimal KM onto to describe the StanfordParse dependancy output
+;consider openNLP types fit into class struct, so can easily sed it's output in
+;not loading these classes from componet-lib but maybe I should to get there other slots/etc
+;manual p96:
+(part-of-speech has (instance-of (Slot)) (ignore-inverses (t)))
+;(Language has (superclasses (Thing)))
+(Object has (superclasses (Thing))) ;try
+(HumanLanguage has (superclasses (Language)))
+(SelfConnectedObject has (superclasses (Object)))
+(CorpuscularObject has (superclasses (SelfConnectedObject)))
+(ContentBearingObject has (superclasses (CorpuscularObject))) 
+;new reminder that pos/phrase-ing and tui  cui/concepts end in lui words(groups) as well
+(lui has (superclasses (Thing)))
+(LinguisticExpression has (superclasses (lui)))
+(tui has (superclasses (lui)))
+(LinguisticExpression has (superclasses (ContentBearingObject)))
+(Language has (superclasses (ContentBearingObject)))
+(Base_Entity has (superclasses (Thing))) ;check
+(Physical has (superclasses (Entity)))
+(Process has (superclasses (Physical))) 
+(IntentionalProcess has (superclasses (Process)))
+(SocialInteraction has (superclasses (IntentionalProcess)))
+(Communication has (superclasses (SocialInteraction)))
+(Expressing has (superclasses (Communication))) 
+(ExpressingInLanguage has (superclasses (Expressing LinguisticCommunication)))
+(LinguisticCommunication has (superclasses (Communication))) ;
+(Language has (superclasses (LinguisticExpression))) 
+(Word has (superclasses (LinguisticExpression)))
+(Phrase has (superclasses (Word))) ;try
+(Parse has (superclasses (Word))) ;try
+;(ParsedPhrase has (superclasses (LinguisticExpression)))  ;try
+(ParsedPhrase has (superclasses (Phrase)))  ;try
+(fullPhrase has (superclasses (Phrase)))  ;try
+(atomPhrase has (superclasses (Phrase)))  ;try
+(subPhrase has (superclasses (Phrase)))  ;try
+(modifier has (superclasses (Word)))  ;try as faster way to label bestNPs
+;not in yet try:
+(VBG has (superclasses (modifier))) ;try
+(VB has (superclasses (modifier))) ;try
+(VBD has (superclasses (modifier))) ;try
+(RB has (superclasses (modifier))) ;try
+(NEG has (superclasses (modifier))) ;try
+(mod has (superclasses (modifier))) ;try/many more below
+(Noun has (superclasses (Word)))
+(noun has (superclasses (Noun))) ;new
+(Verb has (superclasses (Word)))
+(verb has (superclasses (Verb)))
+(vb has (superclasses (Verb)))
+(vbd has (superclasses (Verb)))
+(vbg has (superclasses (Verb)))
+(vbn has (superclasses (Verb)))
+(vbp has (superclasses (Verb)))
+(vbz has (superclasses (Verb)))
+(modal has (superclasses (Verb))) ;new
+(md has (superclasses (Verb))) ;new
+;(Adjective has (superclasses (Word)))
+(Adjective has (superclasses (modifier))) ;try
+(adj has (superclasses (Adjective)))
+(jj has (superclasses (Adjective)))
+(jjr has (superclasses (Adjective)))
+(jjs has (superclasses (Adjective)))
+(JJ has (superclasses (Adjective))) ;new/try
+(ADJP has (superclasses (Adjective))) ;new/try
+;(Adverb has (superclasses (Word)))
+(Adverb has (superclasses (modifier))) ;try
+(adv has (superclasses (Adverb)))
+(wrb has (superclasses (adv)))
+(rb has (superclasses (Adverb)))
+(rbr has (superclasses (Adverb)))
+(rbs has (superclasses (Adverb)))
+(rp has (superclasses (Adverb)))
+(ex has (superclasses (Adverb)))
+(Particle has (superclasses (Word)))
+(VerbPhrase has (superclasses (Phrase)))
+(NounPhrase has (superclasses (Phrase)))
+(NP has (superclasses (NounPhrase)))
+(NPL has (superclasses (NP)))
+(PrepositionalPhrase has (superclasses (Phrase)))
+(UNKNOWN_PHRASE has (superclasses (Phrase)))
+(cNN has (superclasses (NounPhrase))) ;columbia NP
+(NOUN_PHRASE has (superclasses (NounPhrase)))
+(Noun_PHRASE has (superclasses (NounPhrase))) ;might use for bestNPs
+(VERB_PHRASE has (superclasses (VerbPhrase)))
+(BE_VERB_PHRASE has (superclasses (VerbPhrase)))
+(BE_VERB has (superclasses (Verb)))
+(PREP_PHRASE has (superclasses (PrepositionalPhrase)))
+(OF_PREP_PHRASE has (superclasses (PREP_PHRASE)))
+(TO_PREP_PHRASE has (superclasses (PREP_PHRASE)))
+(BY_PREP_PHRASE has (superclasses (PREP_PHRASE)))
+(ADVERB_PHRASE has (superclasses (Adverb))) ;from phrase too?
+(ADJECTIVE_PHRASE has (superclasses (Adjective)))
+(CONJUNCTION_PHRASE has (superclasses (conj)))
+;new
+(Sentence has (superclasses (Phrase)))
+(ROOT has (superclasses (Sentence)))
+(S has (superclasses (Sentence)))
+(bs has (superclasses (Sentence))) ;I sed this in for berk parser
+(os has (superclasses (Sentence))) ;I sed this in for open parser
+(part-s has
+	(instance-of (Slot)) ;was Physobj
+	(domain (Thing)) (range (Thing)) 
+	(cardinality (1-to-N)) ; ie. an object can have many parts, but any part is 
+	(inverse (part-of)) ; part of at most one object 
+	;(subslots (mechanical-parts body-parts))
+);could make atoms,phrases,words subslots of parts
+(parse has
+	(instance-of (Slot)) 
+	(domain (ParsedPhrase)) (range (Parse)) 
+	(cardinality (1-to-N)) ; ie. an object can have many parts, but any part is 
+	(inverse (parse-of)) ; part of at most one object 
+      ;(subslots (apple-parse berk-parse stan-parse open-parse))
+)
+(every ParsedPhrase has  (parse ((a Parse))))
+;(every ParsedPhrase has  (apple-parse berk-parse stan-parse open-parse)) ;name phr#
+;(every ParsedPhrase has  ((apple-parse ((a Word)))
+;			  (berk-parse ((a Word)))
+;			  (stan-parse ((a Word)))
+;			  (open-parse ((a Word)))
+;			  )) ;name phr#
+;;(every Phrase has (composed-of ((Phrase)))) ;(every Phrase has (parts ((a Phrase)))) 
+(every Parse has (part-s ((a Word)))) 
+;dep0.cl has word etc
+(dep has (superclasses (Word)))
+;lets make some triples, but printing has superclasses would be great
+(aux has (superclasses (dep)))
+(auxpass has (superclasses (aux)))
+(cop has (superclasses (aux)))
+(arg has (superclasses (dep)))
+(agent has (superclasses (arg)))
+(comp has (superclasses (arg)))
+(acomp has (superclasses (comp)))
+(attr has (superclasses (comp)))
+(ccomp has (superclasses (comp)))
+(xcomp has (superclasses (comp)))
+(compl has (superclasses (comp)))
+(obj has (superclasses (comp)))
+(dobj has (superclasses (obj)))
+(iobj has (superclasses (obj)))
+(pobj has (superclasses (obj)))
+(mark has (superclasses (comp)))
+(rel has (superclasses (comp)))
+(subj has (superclasses (arg)))
+(nsubj has (superclasses (subj)))
+(nsubjpass has (superclasses (nsubj)))
+(csubj has (superclasses (subj)))
+(csubjpass has (superclasses (csubj)))
+(cc has (superclasses (subj)))
+(conj has (superclasses (subj)))
+(expl has (superclasses (subj)))
+(mod has (superclasses (subj)))
+(abbrev has (superclasses (mod)))
+(amod has (superclasses (mod)))
+(appos has (superclasses (mod)))
+(advcl has (superclasses (mod)))
+(purpcl has (superclasses (mod)))
+(det has (superclasses (mod)))
+(dt has (superclasses (det)))
+(wdt has (superclasses (det)))
+(pdt has (superclasses (mod)))
+(predet has (superclasses (mod)))
+(preconj has (superclasses (mod)))
+(infmod has (superclasses (mod)))
+(partmod has (superclasses (mod)))
+(advmod has (superclasses (mod )))
+(neg has (superclasses (advmod)))
+(rcmod has (superclasses (advmod)))
+(quantmod has (superclasses (advmod)))
+(tmod has (superclasses (advmod)))
+(measure has (superclasses (advmod)))
+;(nn has (superclasses (advmod))) check
+(nn has (superclasses (noun)))
+(nns has (superclasses (noun)))
+(nnp has (superclasses (noun)))
+(nnps has (superclasses (noun)))
+(num has (superclasses (advmod)))
+(number- has (superclasses (advmod )))
+(number has (superclasses (advmod )))
+(prep has (superclasses (advmod)))
+(to has (superclasses (prep)))
+(in has (superclasses (prep)))
+(poss has (superclasses (advmod)))
+(possessive has (superclasses (advmod)))
+(prt has (superclasses (advmod)))
+(prataxis has (superclasses (mod)))
+(punct has (superclasses (mod)))
+(punctuation has (superclasses (punct))) ;for taggerClient
+(numericComparator has (superclasses (Comparator)))
+(numericComparator has (superclasses (punctuation)))
+(greaterThan has (superclasses (numericComparator)))
+(lessThan has (superclasses (numericComparator)))
+(equalSign has (superclasses (numericComparator)))
+(period has (superclasses (punct))) ;for taggerClient
+(ref has (superclasses (mod)))
+(sdep has (superclasses (mod)))
+(xsubj has (superclasses (sdep)))
+(pron has (superclasses (dep))) ;was missing
+(prp has (superclasses (pron))) 
+(prp$ has (superclasses (pron))) 
+(wp has (superclasses (pron))) 
+(wp$ has (superclasses (pron))) 
+(unknown has (superclasses (Word))) ;for taggerClient

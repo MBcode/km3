@@ -1,0 +1,5 @@
+;--st's amia slides, p12, have these connectors: evidenced_by has_value has_realvalue has_unit 
+(evidenced_by  has (instance-of (SC-Slot-Group)) (domain (Thing)) (range (Thing)))
+(has_value  has (superclasses (SC-Slot-Group)) (domain (Thing)) (range (Thing)))
+(has_realvalue  has (instance-of (has_value)) (domain (Thing)) (range (Thing)))
+(has_unit  has (instance-of (SC-Slot-Group)) (domain (Thing)) (range (Thing)))
