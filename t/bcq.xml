@@ -1,0 +1,2138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MMOlist PUBLIC "-//NLM//DTD MetaMap Machine Output//EN" "http://ii-public.nlm.nih.gov/DTD/MMOtoXML_v3.dtd">
+<MMOlist>
+ <MMO>
+  <Args>
+   <Command>MetaMap -Z 09 --dynamic_negex --longest_lexicon_match -FITyQxa -% format</Command>
+   <Options Count="13">
+    <Option>
+     <OptName>mm_data_year</OptName>
+     <OptValue>09</OptValue>
+    </Option>
+    <Option>
+     <OptName>dynamic_negex</OptName>
+    </Option>
+    <Option>
+     <OptName>longest_lexicon_match</OptName>
+    </Option>
+    <Option>
+     <OptName>formal_tagger_output</OptName>
+    </Option>
+    <Option>
+     <OptName>show_cuis</OptName>
+    </Option>
+    <Option>
+     <OptName>tagger_output</OptName>
+    </Option>
+    <Option>
+     <OptName>word_sense_disambiguation</OptName>
+    </Option>
+    <Option>
+     <OptName>quick_composite_phrases</OptName>
+    </Option>
+    <Option>
+     <OptName>syntax</OptName>
+    </Option>
+    <Option>
+     <OptName>all_acros_abbrs</OptName>
+    </Option>
+    <Option>
+     <OptName>XML</OptName>
+     <OptValue>format</OptValue>
+    </Option>
+    <Option>
+     <OptName>infile</OptName>
+     <OptValue>user_input</OptValue>
+    </Option>
+    <Option>
+     <OptName>outfile</OptName>
+     <OptValue>user_output</OptValue>
+    </Option>
+   </Options>
+  </Args>
+  <AAs Count="0" />
+  <Negations Count="0" />
+  <Utterances Count="2">
+   <Utterance>
+    <PMID>00000000</PMID>
+    <Location>tx</Location>
+    <SeqNo>1</SeqNo>
+    <UText>Men or women at least 18 years old. </UText>
+    <UStartPos>0</UStartPos>
+    <USpanLen>36</USpanLen>
+    <Phrases Count="3">
+     <Phrase>
+      <PText>Men</PText>
+      <Tags Count="1">
+       <Tag>
+        <Type>head</Type>
+        <LexMatch>MEN</LexMatch>
+        <InputMatch>Men</InputMatch>
+        <POS>noun</POS>
+        <Tokens Count="1">
+         <Token>men</Token>
+        </Tokens>
+       </Tag>
+      </Tags>
+      <PStartPos>0</PStartPos>
+      <PSpanLen>3</PSpanLen>
+      <Candidates Count="1">
+       <Candidate>
+        <NegScore>-1000</NegScore>
+        <UMLSCUI>C0025266</UMLSCUI>
+        <UMLSConcept>Men</UMLSConcept>
+        <UMLSPreferred>Male population group</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>men</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>popg</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="8">
+         <Source>MTH</Source>
+         <Source>LCH</Source>
+         <Source>MEDLINEPLUS</Source>
+         <Source>MSH</Source>
+         <Source>PSY</Source>
+         <Source>AOD</Source>
+         <Source>NCI</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>0</StartPos>
+          <SpanLen>3</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+      </Candidates>
+      <Mappings Count="1">
+       <Mapping>
+        <MapNegScore>-1000</MapNegScore>
+        <Candidates Count="1">
+         <Candidate>
+          <NegScore>-1000</NegScore>
+          <UMLSCUI>C0025266</UMLSCUI>
+          <UMLSConcept>Men</UMLSConcept>
+          <UMLSPreferred>Male population group</UMLSPreferred>
+          <MatchedWords Count="1">
+           <MatchedWord>men</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>popg</ST>
+          </STs>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TWMatchPosS>1</TWMatchPosS>
+            <TWMatchPosE>1</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>yes</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="8">
+           <Source>MTH</Source>
+           <Source>LCH</Source>
+           <Source>MEDLINEPLUS</Source>
+           <Source>MSH</Source>
+           <Source>PSY</Source>
+           <Source>AOD</Source>
+           <Source>NCI</Source>
+           <Source>SNOMEDCT</Source>
+          </Sources>
+          <Spans Count="1">
+           <Span>
+            <StartPos>0</StartPos>
+            <SpanLen>3</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+        </Candidates>
+       </Mapping>
+      </Mappings>
+     </Phrase>
+     <Phrase>
+      <PText>or</PText>
+      <Tags Count="1">
+       <Tag>
+        <Type>conj</Type>
+        <LexMatch>or</LexMatch>
+        <InputMatch>or</InputMatch>
+        <POS>conj</POS>
+        <Tokens Count="1">
+         <Token>or</Token>
+        </Tokens>
+       </Tag>
+      </Tags>
+      <PStartPos>4</PStartPos>
+      <PSpanLen>2</PSpanLen>
+      <Candidates Count="0" />
+      <Mappings Count="0" />
+     </Phrase>
+     <Phrase>
+      <PText>women at least 18 years old.</PText>
+      <Tags Count="7">
+       <Tag>
+        <Type>head</Type>
+        <InputMatch>women</InputMatch>
+        <POS>noun</POS>
+        <Tokens Count="1">
+         <Token>women</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>prep</Type>
+        <LexMatch>at</LexMatch>
+        <InputMatch>at</InputMatch>
+        <POS>prep</POS>
+        <Tokens Count="1">
+         <Token>at</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>mod</Type>
+        <InputMatch>least</InputMatch>
+        <POS>noun</POS>
+        <Tokens Count="1">
+         <Token>least</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>shapes</Type>
+        <InputMatch>18</InputMatch>
+        <Tokens Count="1">
+         <Token>18</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>mod</Type>
+        <LexMatch>years</LexMatch>
+        <InputMatch>years</InputMatch>
+        <POS>noun</POS>
+        <Tokens Count="1">
+         <Token>years</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>mod</Type>
+        <LexMatch>old</LexMatch>
+        <InputMatch>old</InputMatch>
+        <POS>noun</POS>
+        <Tokens Count="1">
+         <Token>old</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>punc</Type>
+        <InputMatch>.</InputMatch>
+        <Tokens Count="0" />
+       </Tag>
+      </Tags>
+      <PStartPos>7</PStartPos>
+      <PSpanLen>28</PSpanLen>
+      <Candidates Count="4">
+       <Candidate>
+        <NegScore>-753</NegScore>
+        <UMLSCUI>C0043210</UMLSCUI>
+        <UMLSConcept>Women</UMLSConcept>
+        <UMLSPreferred>Woman</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>women</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>popg</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="13">
+         <Source>MSH</Source>
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>RCD</Source>
+         <Source>SNMI</Source>
+         <Source>SNM</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>CCPSS</Source>
+         <Source>DXP</Source>
+         <Source>AOD</Source>
+         <Source>LCH</Source>
+         <Source>MEDLINEPLUS</Source>
+         <Source>PSY</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>7</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-586</NegScore>
+        <UMLSCUI>C0439234</UMLSCUI>
+        <UMLSConcept>Years</UMLSConcept>
+        <UMLSPreferred>year</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>years</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>tmco</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>5</TWMatchPosS>
+          <TWMatchPosE>5</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="7">
+         <Source>HL7V3.0</Source>
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>RCD</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>CCPSS</Source>
+         <Source>ICNP</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>25</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-586</NegScore>
+        <UMLSCUI>C0580836</UMLSCUI>
+        <UMLSConcept>Old</UMLSConcept>
+        <UMLSPreferred>Old</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>old</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>tmco</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>6</TWMatchPosS>
+          <TWMatchPosE>6</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="5">
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>SNMI</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>CCPSS</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>31</StartPos>
+          <SpanLen>3</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-553</NegScore>
+        <UMLSCUI>C0439508</UMLSCUI>
+        <UMLSConcept>/year</UMLSConcept>
+        <UMLSPreferred>/year</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>year</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>tmco</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>5</TWMatchPosS>
+          <TWMatchPosE>5</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>1</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>RCD</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>25</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+      </Candidates>
+      <Mappings Count="1">
+       <Mapping>
+        <MapNegScore>-672</MapNegScore>
+        <Candidates Count="3">
+         <Candidate>
+          <NegScore>-753</NegScore>
+          <UMLSCUI>C0043210</UMLSCUI>
+          <UMLSConcept>Women</UMLSConcept>
+          <UMLSPreferred>Woman</UMLSPreferred>
+          <MatchedWords Count="1">
+           <MatchedWord>women</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>popg</ST>
+          </STs>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TWMatchPosS>1</TWMatchPosS>
+            <TWMatchPosE>1</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>yes</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="13">
+           <Source>MSH</Source>
+           <Source>MTH</Source>
+           <Source>NCI</Source>
+           <Source>RCD</Source>
+           <Source>SNMI</Source>
+           <Source>SNM</Source>
+           <Source>SNOMEDCT</Source>
+           <Source>CCPSS</Source>
+           <Source>DXP</Source>
+           <Source>AOD</Source>
+           <Source>LCH</Source>
+           <Source>MEDLINEPLUS</Source>
+           <Source>PSY</Source>
+          </Sources>
+          <Spans Count="1">
+           <Span>
+            <StartPos>7</StartPos>
+            <SpanLen>5</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+         <Candidate>
+          <NegScore>-586</NegScore>
+          <UMLSCUI>C0439234</UMLSCUI>
+          <UMLSConcept>Years</UMLSConcept>
+          <UMLSPreferred>year</UMLSPreferred>
+          <MatchedWords Count="1">
+           <MatchedWord>years</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>tmco</ST>
+          </STs>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TWMatchPosS>5</TWMatchPosS>
+            <TWMatchPosE>5</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>no</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="7">
+           <Source>HL7V3.0</Source>
+           <Source>MTH</Source>
+           <Source>NCI</Source>
+           <Source>RCD</Source>
+           <Source>SNOMEDCT</Source>
+           <Source>CCPSS</Source>
+           <Source>ICNP</Source>
+          </Sources>
+          <Spans Count="1">
+           <Span>
+            <StartPos>25</StartPos>
+            <SpanLen>5</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+         <Candidate>
+          <NegScore>-586</NegScore>
+          <UMLSCUI>C0580836</UMLSCUI>
+          <UMLSConcept>Old</UMLSConcept>
+          <UMLSPreferred>Old</UMLSPreferred>
+          <MatchedWords Count="1">
+           <MatchedWord>old</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>tmco</ST>
+          </STs>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TWMatchPosS>6</TWMatchPosS>
+            <TWMatchPosE>6</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>no</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="5">
+           <Source>MTH</Source>
+           <Source>NCI</Source>
+           <Source>SNMI</Source>
+           <Source>SNOMEDCT</Source>
+           <Source>CCPSS</Source>
+          </Sources>
+          <Spans Count="1">
+           <Span>
+            <StartPos>31</StartPos>
+            <SpanLen>3</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+        </Candidates>
+       </Mapping>
+      </Mappings>
+     </Phrase>
+    </Phrases>
+   </Utterance>
+   <Utterance>
+    <PMID>00000000</PMID>
+    <Location>tx</Location>
+    <SeqNo>2</SeqNo>
+    <UText>Women must be post-menopausal or using a highly effective method for avoidance of pregnancy.</UText>
+    <UStartPos>36</UStartPos>
+    <USpanLen>92</USpanLen>
+    <Phrases Count="7">
+     <Phrase>
+      <PText>Women</PText>
+      <Tags Count="1">
+       <Tag>
+        <Type>head</Type>
+        <InputMatch>Women</InputMatch>
+        <POS>noun</POS>
+        <Tokens Count="1">
+         <Token>women</Token>
+        </Tokens>
+       </Tag>
+      </Tags>
+      <PStartPos>36</PStartPos>
+      <PSpanLen>5</PSpanLen>
+      <Candidates Count="1">
+       <Candidate>
+        <NegScore>-1000</NegScore>
+        <UMLSCUI>C0043210</UMLSCUI>
+        <UMLSConcept>Women</UMLSConcept>
+        <UMLSPreferred>Woman</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>women</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>popg</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="13">
+         <Source>MSH</Source>
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>RCD</Source>
+         <Source>SNMI</Source>
+         <Source>SNM</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>CCPSS</Source>
+         <Source>DXP</Source>
+         <Source>AOD</Source>
+         <Source>LCH</Source>
+         <Source>MEDLINEPLUS</Source>
+         <Source>PSY</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>36</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+      </Candidates>
+      <Mappings Count="1">
+       <Mapping>
+        <MapNegScore>-1000</MapNegScore>
+        <Candidates Count="1">
+         <Candidate>
+          <NegScore>-1000</NegScore>
+          <UMLSCUI>C0043210</UMLSCUI>
+          <UMLSConcept>Women</UMLSConcept>
+          <UMLSPreferred>Woman</UMLSPreferred>
+          <MatchedWords Count="1">
+           <MatchedWord>women</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>popg</ST>
+          </STs>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TWMatchPosS>1</TWMatchPosS>
+            <TWMatchPosE>1</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>yes</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="13">
+           <Source>MSH</Source>
+           <Source>MTH</Source>
+           <Source>NCI</Source>
+           <Source>RCD</Source>
+           <Source>SNMI</Source>
+           <Source>SNM</Source>
+           <Source>SNOMEDCT</Source>
+           <Source>CCPSS</Source>
+           <Source>DXP</Source>
+           <Source>AOD</Source>
+           <Source>LCH</Source>
+           <Source>MEDLINEPLUS</Source>
+           <Source>PSY</Source>
+          </Sources>
+          <Spans Count="1">
+           <Span>
+            <StartPos>36</StartPos>
+            <SpanLen>5</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+        </Candidates>
+       </Mapping>
+      </Mappings>
+     </Phrase>
+     <Phrase>
+      <PText>must</PText>
+      <Tags Count="1">
+       <Tag>
+        <Type>modal</Type>
+        <LexMatch>must</LexMatch>
+        <InputMatch>must</InputMatch>
+        <POS>modal</POS>
+        <Tokens Count="1">
+         <Token>must</Token>
+        </Tokens>
+       </Tag>
+      </Tags>
+      <PStartPos>42</PStartPos>
+      <PSpanLen>4</PSpanLen>
+      <Candidates Count="0" />
+      <Mappings Count="0" />
+     </Phrase>
+     <Phrase>
+      <PText>be</PText>
+      <Tags Count="1">
+       <Tag>
+        <Type>aux</Type>
+        <LexMatch>be</LexMatch>
+        <InputMatch>be</InputMatch>
+        <POS>aux</POS>
+        <Tokens Count="1">
+         <Token>be</Token>
+        </Tokens>
+       </Tag>
+      </Tags>
+      <PStartPos>47</PStartPos>
+      <PSpanLen>2</PSpanLen>
+      <Candidates Count="0" />
+      <Mappings Count="0" />
+     </Phrase>
+     <Phrase>
+      <PText>post-menopausal</PText>
+      <Tags Count="1">
+       <Tag>
+        <Type>head</Type>
+        <LexMatch>post-menopausal</LexMatch>
+        <InputMatch>post - menopausal</InputMatch>
+        <POS>adj</POS>
+        <Tokens Count="2">
+         <Token>post</Token>
+         <Token>menopausal</Token>
+        </Tokens>
+       </Tag>
+      </Tags>
+      <PStartPos>50</PStartPos>
+      <PSpanLen>15</PSpanLen>
+      <Candidates Count="7">
+       <Candidate>
+        <NegScore>-964</NegScore>
+        <UMLSCUI>C0206159</UMLSCUI>
+        <UMLSConcept>Post-Menopause</UMLSConcept>
+        <UMLSPreferred>Postmenopause</UMLSPreferred>
+        <MatchedWords Count="2">
+         <MatchedWord>post</MatchedWord>
+         <MatchedWord>menopause</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>orgf</ST>
+        </STs>
+        <MatchMaps Count="2">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+         <MatchMap>
+          <TWMatchPosS>2</TWMatchPosS>
+          <TWMatchPosE>2</TWMatchPosE>
+          <CWMatchPosS>2</CWMatchPosS>
+          <CWMatchPosE>2</CWMatchPosE>
+          <Variation>3</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="6">
+         <Source>MDR</Source>
+         <Source>MSH</Source>
+         <Source>DXP</Source>
+         <Source>AOD</Source>
+         <Source>CSP</Source>
+         <Source>ICPC2P</Source>
+        </Sources>
+        <Spans Count="2">
+         <Span>
+          <StartPos>50</StartPos>
+          <SpanLen>4</SpanLen>
+         </Span>
+         <Span>
+          <StartPos>55</StartPos>
+          <SpanLen>10</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-861</NegScore>
+        <UMLSCUI>C0025320</UMLSCUI>
+        <UMLSConcept>Menopausal</UMLSConcept>
+        <UMLSPreferred>Menopause</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>menopausal</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>phsf</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>2</TWMatchPosS>
+          <TWMatchPosE>2</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="22">
+         <Source>ICNP</Source>
+         <Source>ICPC2P</Source>
+         <Source>LCH</Source>
+         <Source>MDR</Source>
+         <Source>MEDLINEPLUS</Source>
+         <Source>MSH</Source>
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>NDFRT</Source>
+         <Source>PSY</Source>
+         <Source>RCD</Source>
+         <Source>SNM</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>CCPSS</Source>
+         <Source>CST</Source>
+         <Source>AOD</Source>
+         <Source>BI</Source>
+         <Source>CSP</Source>
+         <Source>GO</Source>
+         <Source>MEDCIN</Source>
+         <Source>SNMI</Source>
+         <Source>ICPC2ICD10ENG</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>55</StartPos>
+          <SpanLen>10</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-861</NegScore>
+        <UMLSCUI>C0687676</UMLSCUI>
+        <UMLSConcept>Post</UMLSConcept>
+        <UMLSPreferred>Post</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>post</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>tmco</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="5">
+         <Source>LNC</Source>
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>RCD</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>50</StartPos>
+          <SpanLen>4</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-861</NegScore>
+        <UMLSCUI>C1704687</UMLSCUI>
+        <UMLSConcept>Post</UMLSConcept>
+        <UMLSPreferred>Post Device Component</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>post</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>mnob</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>50</StartPos>
+          <SpanLen>4</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-789</NegScore>
+        <UMLSCUI>C0376675</UMLSCUI>
+        <UMLSConcept>Posters</UMLSConcept>
+        <UMLSPreferred>Posters</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>posters</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>inpr</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>3</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MSH</Source>
+         <Source>AOD</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>50</StartPos>
+          <SpanLen>4</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-789</NegScore>
+        <UMLSCUI>C1514253</UMLSCUI>
+        <UMLSConcept>Postal</UMLSConcept>
+        <UMLSPreferred>Postal</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>postal</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>ftcn</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>3</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="1">
+         <Source>NCI</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>50</StartPos>
+          <SpanLen>4</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-761</NegScore>
+        <UMLSCUI>C1035855</UMLSCUI>
+        <UMLSConcept>Postia</UMLSConcept>
+        <UMLSPreferred>Postia</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>postia</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>fngs</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>6</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="1">
+         <Source>NCBI</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>50</StartPos>
+          <SpanLen>4</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+      </Candidates>
+      <Mappings Count="1">
+       <Mapping>
+        <MapNegScore>-964</MapNegScore>
+        <Candidates Count="1">
+         <Candidate>
+          <NegScore>-964</NegScore>
+          <UMLSCUI>C0206159</UMLSCUI>
+          <UMLSConcept>Post-Menopause</UMLSConcept>
+          <UMLSPreferred>Postmenopause</UMLSPreferred>
+          <MatchedWords Count="2">
+           <MatchedWord>post</MatchedWord>
+           <MatchedWord>menopause</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>orgf</ST>
+          </STs>
+          <MatchMaps Count="2">
+           <MatchMap>
+            <TWMatchPosS>1</TWMatchPosS>
+            <TWMatchPosE>1</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+           <MatchMap>
+            <TWMatchPosS>2</TWMatchPosS>
+            <TWMatchPosE>2</TWMatchPosE>
+            <CWMatchPosS>2</CWMatchPosS>
+            <CWMatchPosE>2</CWMatchPosE>
+            <Variation>3</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>yes</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="6">
+           <Source>MDR</Source>
+           <Source>MSH</Source>
+           <Source>DXP</Source>
+           <Source>AOD</Source>
+           <Source>CSP</Source>
+           <Source>ICPC2P</Source>
+          </Sources>
+          <Spans Count="2">
+           <Span>
+            <StartPos>50</StartPos>
+            <SpanLen>4</SpanLen>
+           </Span>
+           <Span>
+            <StartPos>55</StartPos>
+            <SpanLen>10</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+        </Candidates>
+       </Mapping>
+      </Mappings>
+     </Phrase>
+     <Phrase>
+      <PText>or</PText>
+      <Tags Count="1">
+       <Tag>
+        <Type>conj</Type>
+        <LexMatch>or</LexMatch>
+        <InputMatch>or</InputMatch>
+        <POS>conj</POS>
+        <Tokens Count="1">
+         <Token>or</Token>
+        </Tokens>
+       </Tag>
+      </Tags>
+      <PStartPos>66</PStartPos>
+      <PSpanLen>2</PSpanLen>
+      <Candidates Count="0" />
+      <Mappings Count="0" />
+     </Phrase>
+     <Phrase>
+      <PText>using</PText>
+      <Tags Count="1">
+       <Tag>
+        <Type>verb</Type>
+        <LexMatch>using</LexMatch>
+        <InputMatch>using</InputMatch>
+        <POS>verb</POS>
+        <Tokens Count="1">
+         <Token>using</Token>
+        </Tokens>
+       </Tag>
+      </Tags>
+      <PStartPos>69</PStartPos>
+      <PSpanLen>5</PSpanLen>
+      <Candidates Count="6">
+       <Candidate>
+        <NegScore>-1000</NegScore>
+        <UMLSCUI>C1524063</UMLSCUI>
+        <UMLSConcept>Using</UMLSConcept>
+        <UMLSPreferred>Using</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>using</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>ftcn</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="3">
+         <Source>MTH</Source>
+         <Source>RCD</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>69</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-966</NegScore>
+        <UMLSCUI>C0042153</UMLSCUI>
+        <UMLSConcept>use</UMLSConcept>
+        <UMLSPreferred>utilization qualifier</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>use</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>ftcn</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>1</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>MSH</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>69</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-966</NegScore>
+        <UMLSCUI>C0457083</UMLSCUI>
+        <UMLSConcept>Use</UMLSConcept>
+        <UMLSPreferred>Usage</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>use</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>ftcn</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>1</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="4">
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>RCD</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>69</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-966</NegScore>
+        <UMLSCUI>C1947944</UMLSCUI>
+        <UMLSConcept>Use</UMLSConcept>
+        <UMLSPreferred>Use</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>use</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>inpr</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>1</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>69</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-916</NegScore>
+        <UMLSCUI>C1548600</UMLSCUI>
+        <UMLSConcept>User</UMLSConcept>
+        <UMLSPreferred>user - Facility type</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>user</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>idcn</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>4</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>HL7V2.5</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>69</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-916</NegScore>
+        <UMLSCUI>C1706077</UMLSCUI>
+        <UMLSConcept>User</UMLSConcept>
+        <UMLSPreferred>user - individual</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>user</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>humn</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>1</TWMatchPosS>
+          <TWMatchPosE>1</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>4</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>69</StartPos>
+          <SpanLen>5</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+      </Candidates>
+      <Mappings Count="1">
+       <Mapping>
+        <MapNegScore>-1000</MapNegScore>
+        <Candidates Count="1">
+         <Candidate>
+          <NegScore>-1000</NegScore>
+          <UMLSCUI>C1524063</UMLSCUI>
+          <UMLSConcept>Using</UMLSConcept>
+          <UMLSPreferred>Using</UMLSPreferred>
+          <MatchedWords Count="1">
+           <MatchedWord>using</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>ftcn</ST>
+          </STs>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TWMatchPosS>1</TWMatchPosS>
+            <TWMatchPosE>1</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>yes</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="3">
+           <Source>MTH</Source>
+           <Source>RCD</Source>
+           <Source>SNOMEDCT</Source>
+          </Sources>
+          <Spans Count="1">
+           <Span>
+            <StartPos>69</StartPos>
+            <SpanLen>5</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+        </Candidates>
+       </Mapping>
+      </Mappings>
+     </Phrase>
+     <Phrase>
+      <PText>a highly effective method for avoidance of pregnancy.</PText>
+      <Tags Count="9">
+       <Tag>
+        <Type>det</Type>
+        <LexMatch>a</LexMatch>
+        <InputMatch>a</InputMatch>
+        <POS>det</POS>
+        <Tokens Count="1">
+         <Token>a</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>adv</Type>
+        <LexMatch>highly</LexMatch>
+        <InputMatch>highly</InputMatch>
+        <POS>adv</POS>
+        <Tokens Count="1">
+         <Token>highly</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>mod</Type>
+        <LexMatch>effective</LexMatch>
+        <InputMatch>effective</InputMatch>
+        <POS>adj</POS>
+        <Tokens Count="1">
+         <Token>effective</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>head</Type>
+        <LexMatch>method</LexMatch>
+        <InputMatch>method</InputMatch>
+        <POS>noun</POS>
+        <Tokens Count="1">
+         <Token>method</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>prep</Type>
+        <LexMatch>for</LexMatch>
+        <InputMatch>for</InputMatch>
+        <POS>prep</POS>
+        <Tokens Count="1">
+         <Token>for</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>mod</Type>
+        <LexMatch>avoidance</LexMatch>
+        <InputMatch>avoidance</InputMatch>
+        <POS>noun</POS>
+        <Tokens Count="1">
+         <Token>avoidance</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>prep</Type>
+        <LexMatch>of</LexMatch>
+        <InputMatch>of</InputMatch>
+        <POS>prep</POS>
+        <Tokens Count="1">
+         <Token>of</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>mod</Type>
+        <LexMatch>pregnancy</LexMatch>
+        <InputMatch>pregnancy</InputMatch>
+        <POS>noun</POS>
+        <Tokens Count="1">
+         <Token>pregnancy</Token>
+        </Tokens>
+       </Tag>
+       <Tag>
+        <Type>punc</Type>
+        <InputMatch>.</InputMatch>
+        <Tokens Count="0" />
+       </Tag>
+      </Tags>
+      <PStartPos>75</PStartPos>
+      <PSpanLen>53</PSpanLen>
+      <Candidates Count="15">
+       <Candidate>
+        <NegScore>-744</NegScore>
+        <UMLSCUI>C0025663</UMLSCUI>
+        <UMLSConcept>Method</UMLSConcept>
+        <UMLSPreferred>Methods</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>method</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>inpr</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>4</TWMatchPosS>
+          <TWMatchPosE>4</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="6">
+         <Source>MSH</Source>
+         <Source>MTH</Source>
+         <Source>LNC</Source>
+         <Source>NCI</Source>
+         <Source>RCD</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>94</StartPos>
+          <SpanLen>6</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-744</NegScore>
+        <UMLSCUI>C0025664</UMLSCUI>
+        <UMLSConcept>Method</UMLSConcept>
+        <UMLSPreferred>Methodology</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>method</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>inpr</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>4</TWMatchPosS>
+          <TWMatchPosE>4</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="5">
+         <Source>LCH</Source>
+         <Source>MTH</Source>
+         <Source>PSY</Source>
+         <Source>MSH</Source>
+         <Source>NCI</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>94</StartPos>
+          <SpanLen>6</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-744</NegScore>
+        <UMLSCUI>C0449851</UMLSCUI>
+        <UMLSConcept>Method</UMLSConcept>
+        <UMLSPreferred>Techniques</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>method</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>ftcn</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>4</TWMatchPosS>
+          <TWMatchPosE>4</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="5">
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>RCD</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>ICNP</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>94</StartPos>
+          <SpanLen>6</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-673</NegScore>
+        <UMLSCUI>C0337739</UMLSCUI>
+        <UMLSConcept>Methodism</UMLSConcept>
+        <UMLSPreferred>Methodist Church</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>methodism</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>idcn</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>4</TWMatchPosS>
+          <TWMatchPosE>4</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>3</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="6">
+         <Source>MSH</Source>
+         <Source>MTH</Source>
+         <Source>SNMI</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>RCD</Source>
+         <Source>HL7V2.5</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>94</StartPos>
+          <SpanLen>6</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-644</NegScore>
+        <UMLSCUI>C0425344</UMLSCUI>
+        <UMLSConcept>Methodist</UMLSConcept>
+        <UMLSPreferred>Methodists</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>methodist</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>popg</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>4</TWMatchPosS>
+          <TWMatchPosE>4</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>6</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="6">
+         <Source>MTH</Source>
+         <Source>PSY</Source>
+         <Source>AOD</Source>
+         <Source>HL7V3.0</Source>
+         <Source>RCD</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>94</StartPos>
+          <SpanLen>6</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-633</NegScore>
+        <UMLSCUI>C1821946</UMLSCUI>
+        <UMLSConcept>Avoidance of pregnancy</UMLSConcept>
+        <UMLSPreferred>Avoidance of pregnancy</UMLSPreferred>
+        <MatchedWords Count="3">
+         <MatchedWord>avoidance</MatchedWord>
+         <MatchedWord>of</MatchedWord>
+         <MatchedWord>pregnancy</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>fndg</ST>
+        </STs>
+        <MatchMaps Count="3">
+         <MatchMap>
+          <TWMatchPosS>6</TWMatchPosS>
+          <TWMatchPosE>6</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+         <MatchMap>
+          <TWMatchPosS>7</TWMatchPosS>
+          <TWMatchPosE>7</TWMatchPosE>
+          <CWMatchPosS>2</CWMatchPosS>
+          <CWMatchPosE>2</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+         <MatchMap>
+          <TWMatchPosS>8</TWMatchPosS>
+          <TWMatchPosE>8</TWMatchPosE>
+          <CWMatchPosS>3</CWMatchPosS>
+          <CWMatchPosE>3</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="1">
+         <Source>NOC</Source>
+        </Sources>
+        <Spans Count="3">
+         <Span>
+          <StartPos>105</StartPos>
+          <SpanLen>9</SpanLen>
+         </Span>
+         <Span>
+          <StartPos>115</StartPos>
+          <SpanLen>2</SpanLen>
+         </Span>
+         <Span>
+          <StartPos>118</StartPos>
+          <SpanLen>9</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-578</NegScore>
+        <UMLSCUI>C0032961</UMLSCUI>
+        <UMLSConcept>Pregnancy</UMLSConcept>
+        <UMLSPreferred>Pregnancy</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>pregnancy</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>orgf</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>8</TWMatchPosS>
+          <TWMatchPosE>8</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="26">
+         <Source>ICNP</Source>
+         <Source>ICPC2EENG</Source>
+         <Source>LCH</Source>
+         <Source>LNC</Source>
+         <Source>MDR</Source>
+         <Source>MEDLINEPLUS</Source>
+         <Source>MSH</Source>
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>NDFRT</Source>
+         <Source>OMS</Source>
+         <Source>PSY</Source>
+         <Source>RCD</Source>
+         <Source>SNM</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>CCPSS</Source>
+         <Source>COSTAR</Source>
+         <Source>DXP</Source>
+         <Source>SNMI</Source>
+         <Source>WHO</Source>
+         <Source>AOD</Source>
+         <Source>BI</Source>
+         <Source>CSP</Source>
+         <Source>ICPC2ICD10ENG</Source>
+         <Source>MEDCIN</Source>
+         <Source>GO</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>118</StartPos>
+          <SpanLen>9</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-578</NegScore>
+        <UMLSCUI>C0205250</UMLSCUI>
+        <UMLSConcept>Highly</UMLSConcept>
+        <UMLSPreferred>High</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>highly</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>qlco</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>2</TWMatchPosS>
+          <TWMatchPosE>2</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="6">
+         <Source>ICNP</Source>
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>RCD</Source>
+         <Source>SNMI</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>77</StartPos>
+          <SpanLen>6</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-578</NegScore>
+        <UMLSCUI>C0425965</UMLSCUI>
+        <UMLSConcept>? Pregnancy</UMLSConcept>
+        <UMLSPreferred>? Pregnancy</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>pregnancy</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>fndg</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>8</TWMatchPosS>
+          <TWMatchPosE>8</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="9">
+         <Source>MTH</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>ICPC2P</Source>
+         <Source>RCD</Source>
+         <Source>ICPC</Source>
+         <Source>ICPC2EENG</Source>
+         <Source>SNMI</Source>
+         <Source>CCPSS</Source>
+         <Source>MEDCIN</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>118</StartPos>
+          <SpanLen>9</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-578</NegScore>
+        <UMLSCUI>C0870186</UMLSCUI>
+        <UMLSConcept>Avoidance</UMLSConcept>
+        <UMLSPreferred>Avoidance</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>avoidance</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>menp</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>6</TWMatchPosS>
+          <TWMatchPosE>6</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>NCI</Source>
+         <Source>PSY</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>105</StartPos>
+          <SpanLen>9</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-578</NegScore>
+        <UMLSCUI>C1704419</UMLSCUI>
+        <UMLSConcept>Effective</UMLSConcept>
+        <UMLSPreferred>Effective</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>effective</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>qlco</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>3</TWMatchPosS>
+          <TWMatchPosE>3</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>0</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="3">
+         <Source>NCI</Source>
+         <Source>SNMI</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>84</StartPos>
+          <SpanLen>9</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-506</NegScore>
+        <UMLSCUI>C1280519</UMLSCUI>
+        <UMLSConcept>Effectiveness</UMLSConcept>
+        <UMLSPreferred>Effectiveness</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>effectiveness</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>qlco</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>3</TWMatchPosS>
+          <TWMatchPosE>3</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>3</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="4">
+         <Source>LCH</Source>
+         <Source>MTH</Source>
+         <Source>SNMI</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>84</StartPos>
+          <SpanLen>9</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-506</NegScore>
+        <UMLSCUI>C1299351</UMLSCUI>
+        <UMLSConcept>High</UMLSConcept>
+        <UMLSPreferred>Abnormally high</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>high</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>qlco</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>2</TWMatchPosS>
+          <TWMatchPosE>2</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>3</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="3">
+         <Source>MTH</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>HL7V3.0</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>77</StartPos>
+          <SpanLen>6</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-506</NegScore>
+        <UMLSCUI>C1522410</UMLSCUI>
+        <UMLSConcept>Highest</UMLSConcept>
+        <UMLSPreferred>Highest</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>highest</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>qlco</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>2</TWMatchPosS>
+          <TWMatchPosE>2</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>3</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>77</StartPos>
+          <SpanLen>6</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+       <Candidate>
+        <NegScore>-506</NegScore>
+        <UMLSCUI>C1999068</UMLSCUI>
+        <UMLSConcept>Avoiding</UMLSConcept>
+        <UMLSPreferred>Avoiding</UMLSPreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>avoiding</MatchedWord>
+        </MatchedWords>
+        <STs Count="1">
+         <ST>inbe</ST>
+        </STs>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TWMatchPosS>6</TWMatchPosS>
+          <TWMatchPosE>6</TWMatchPosE>
+          <CWMatchPosS>1</CWMatchPosS>
+          <CWMatchPosE>1</CWMatchPosE>
+          <Variation>3</Variation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>no</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="1">
+         <Source>ICNP</Source>
+        </Sources>
+        <Spans Count="1">
+         <Span>
+          <StartPos>105</StartPos>
+          <SpanLen>9</SpanLen>
+         </Span>
+        </Spans>
+       </Candidate>
+      </Candidates>
+      <Mappings Count="1">
+       <Mapping>
+        <MapNegScore>-730</MapNegScore>
+        <Candidates Count="4">
+         <Candidate>
+          <NegScore>-578</NegScore>
+          <UMLSCUI>C0205250</UMLSCUI>
+          <UMLSConcept>Highly</UMLSConcept>
+          <UMLSPreferred>High</UMLSPreferred>
+          <MatchedWords Count="1">
+           <MatchedWord>highly</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>qlco</ST>
+          </STs>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TWMatchPosS>2</TWMatchPosS>
+            <TWMatchPosE>2</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>no</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="6">
+           <Source>ICNP</Source>
+           <Source>MTH</Source>
+           <Source>NCI</Source>
+           <Source>RCD</Source>
+           <Source>SNMI</Source>
+           <Source>SNOMEDCT</Source>
+          </Sources>
+          <Spans Count="1">
+           <Span>
+            <StartPos>77</StartPos>
+            <SpanLen>6</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+         <Candidate>
+          <NegScore>-578</NegScore>
+          <UMLSCUI>C1704419</UMLSCUI>
+          <UMLSConcept>Effective</UMLSConcept>
+          <UMLSPreferred>Effective</UMLSPreferred>
+          <MatchedWords Count="1">
+           <MatchedWord>effective</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>qlco</ST>
+          </STs>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TWMatchPosS>3</TWMatchPosS>
+            <TWMatchPosE>3</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>no</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="3">
+           <Source>NCI</Source>
+           <Source>SNMI</Source>
+           <Source>SNOMEDCT</Source>
+          </Sources>
+          <Spans Count="1">
+           <Span>
+            <StartPos>84</StartPos>
+            <SpanLen>9</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+         <Candidate>
+          <NegScore>-744</NegScore>
+          <UMLSCUI>C0449851</UMLSCUI>
+          <UMLSConcept>Method</UMLSConcept>
+          <UMLSPreferred>Techniques</UMLSPreferred>
+          <MatchedWords Count="1">
+           <MatchedWord>method</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>ftcn</ST>
+          </STs>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TWMatchPosS>4</TWMatchPosS>
+            <TWMatchPosE>4</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>yes</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="5">
+           <Source>MTH</Source>
+           <Source>NCI</Source>
+           <Source>RCD</Source>
+           <Source>SNOMEDCT</Source>
+           <Source>ICNP</Source>
+          </Sources>
+          <Spans Count="1">
+           <Span>
+            <StartPos>94</StartPos>
+            <SpanLen>6</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+         <Candidate>
+          <NegScore>-633</NegScore>
+          <UMLSCUI>C1821946</UMLSCUI>
+          <UMLSConcept>Avoidance of pregnancy</UMLSConcept>
+          <UMLSPreferred>Avoidance of pregnancy</UMLSPreferred>
+          <MatchedWords Count="3">
+           <MatchedWord>avoidance</MatchedWord>
+           <MatchedWord>of</MatchedWord>
+           <MatchedWord>pregnancy</MatchedWord>
+          </MatchedWords>
+          <STs Count="1">
+           <ST>fndg</ST>
+          </STs>
+          <MatchMaps Count="3">
+           <MatchMap>
+            <TWMatchPosS>6</TWMatchPosS>
+            <TWMatchPosE>6</TWMatchPosE>
+            <CWMatchPosS>1</CWMatchPosS>
+            <CWMatchPosE>1</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+           <MatchMap>
+            <TWMatchPosS>7</TWMatchPosS>
+            <TWMatchPosE>7</TWMatchPosE>
+            <CWMatchPosS>2</CWMatchPosS>
+            <CWMatchPosE>2</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+           <MatchMap>
+            <TWMatchPosS>8</TWMatchPosS>
+            <TWMatchPosE>8</TWMatchPosE>
+            <CWMatchPosS>3</CWMatchPosS>
+            <CWMatchPosE>3</CWMatchPosE>
+            <Variation>0</Variation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>no</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="1">
+           <Source>NOC</Source>
+          </Sources>
+          <Spans Count="3">
+           <Span>
+            <StartPos>105</StartPos>
+            <SpanLen>9</SpanLen>
+           </Span>
+           <Span>
+            <StartPos>115</StartPos>
+            <SpanLen>2</SpanLen>
+           </Span>
+           <Span>
+            <StartPos>118</StartPos>
+            <SpanLen>9</SpanLen>
+           </Span>
+          </Spans>
+         </Candidate>
+        </Candidates>
+       </Mapping>
+      </Mappings>
+     </Phrase>
+    </Phrases>
+   </Utterance>
+  </Utterances>
+ </MMO>
+</MMOlist>

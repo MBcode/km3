@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MMOs PUBLIC "-//NLM//DTD MetaMap Machine Output//EN" "http://ii-public.nlm.nih.gov/DTD/MMOtoXML_v4.dtd">
+<MMOs>
+ <MMO>
+  <CmdLine>
+   <Command>MetaMap -Z 09 --negex --longest_lexicon_match -ITyQxa -% format</Command>
+   <Options Count="12">
+    <Option>
+     <OptName>mm_data_year</OptName>
+     <OptValue>09</OptValue>
+    </Option>
+    <Option>
+     <OptName>negex</OptName>
+    </Option>
+    <Option>
+     <OptName>longest_lexicon_match</OptName>
+    </Option>
+    <Option>
+     <OptName>show_cuis</OptName>
+    </Option>
+    <Option>
+     <OptName>tagger_output</OptName>
+    </Option>
+    <Option>
+     <OptName>word_sense_disambiguation</OptName>
+    </Option>
+    <Option>
+     <OptName>quick_composite_phrases</OptName>
+    </Option>
+    <Option>
+     <OptName>syntax</OptName>
+    </Option>
+    <Option>
+     <OptName>all_acros_abbrs</OptName>
+    </Option>
+    <Option>
+     <OptName>XML</OptName>
+     <OptValue>format</OptValue>
+    </Option>
+    <Option>
+     <OptName>infile</OptName>
+     <OptValue>user_input</OptValue>
+    </Option>
+    <Option>
+     <OptName>outfile</OptName>
+     <OptValue>user_output</OptValue>
+    </Option>
+   </Options>
+  </CmdLine>
+  <AAs Count="0" />
+  <Negations Count="0" />
+  <Utterances Count="1">
+   <Utterance>
+    <PMID>00000000</PMID>
+    <UttSection>tx</UttSection>
+    <UttNum>1</UttNum>
+    <UttText>heart attack</UttText>
+    <UttStartPos>0</UttStartPos>
+    <UttLength>12</UttLength>
+    <Phrases Count="1">
+     <Phrase>
+      <PhraseText>heart attack</PhraseText>
+      <SyntaxUnits Count="1">
+       <SyntaxUnit>
+        <SyntaxType>head</SyntaxType>
+        <LexMatch>heart attack</LexMatch>
+        <InputMatch>heart attack</InputMatch>
+        <LexCat>noun</LexCat>
+        <Tokens Count="2">
+         <Token>heart</Token>
+         <Token>attack</Token>
+        </Tokens>
+       </SyntaxUnit>
+      </SyntaxUnits>
+      <PhraseStartPos>0</PhraseStartPos>
+      <PhraseLength>12</PhraseLength>
+      <Candidates Count="10">
+       <Candidate>
+        <CandidateScore>-1000</CandidateScore>
+        <CandidateCUI>C0027051</CandidateCUI>
+        <CandidateMatched>Heart attack</CandidateMatched>
+        <CandidatePreferred>Myocardial Infarction</CandidatePreferred>
+        <MatchedWords Count="2">
+         <MatchedWord>heart</MatchedWord>
+         <MatchedWord>attack</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="1">
+         <SemType>dsyn</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>1</TextMatchStart>
+          <TextMatchEnd>2</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>2</ConcMatchEnd>
+          <LexVariation>0</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="24">
+         <Source>MEDLINEPLUS</Source>
+         <Source>MSH</Source>
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>NDFRT</Source>
+         <Source>ICPC2P</Source>
+         <Source>ICPC2ICD10ENG</Source>
+         <Source>CCPSS</Source>
+         <Source>COSTAR</Source>
+         <Source>CST</Source>
+         <Source>WHO</Source>
+         <Source>AIR</Source>
+         <Source>MDR</Source>
+         <Source>OMIM</Source>
+         <Source>RCD</Source>
+         <Source>SNM</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>AOD</Source>
+         <Source>BI</Source>
+         <Source>CSP</Source>
+         <Source>PSY</Source>
+         <Source>SNMI</Source>
+         <Source>MTHICD9</Source>
+         <Source>DXP</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>0</StartPos>
+          <Length>12</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+       <Candidate>
+        <CandidateScore>-861</CandidateScore>
+        <CandidateCUI>C0018787</CandidateCUI>
+        <CandidateMatched>Heart</CandidateMatched>
+        <CandidatePreferred>Heart</CandidatePreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>heart</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="1">
+         <SemType>bpoc</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>1</TextMatchStart>
+          <TextMatchEnd>1</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>1</ConcMatchEnd>
+          <LexVariation>0</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="23">
+         <Source>AIR</Source>
+         <Source>FMA</Source>
+         <Source>HL7V2.5</Source>
+         <Source>ICF-CY</Source>
+         <Source>ICF</Source>
+         <Source>ICNP</Source>
+         <Source>LCH</Source>
+         <Source>LNC</Source>
+         <Source>MSH</Source>
+         <Source>MTH</Source>
+         <Source>NCI</Source>
+         <Source>OMIM</Source>
+         <Source>PSY</Source>
+         <Source>RCD</Source>
+         <Source>SNM</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>UWDA</Source>
+         <Source>CCPSS</Source>
+         <Source>SNMI</Source>
+         <Source>AOD</Source>
+         <Source>CSP</Source>
+         <Source>BI</Source>
+         <Source>PNDS</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>0</StartPos>
+          <Length>5</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+       <Candidate>
+        <CandidateScore>-861</CandidateScore>
+        <CandidateCUI>C0277793</CandidateCUI>
+        <CandidateMatched>Attack, NOS</CandidateMatched>
+        <CandidatePreferred>Onset of illness</CandidatePreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>attack</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="1">
+         <SemType>fndg</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>2</TextMatchStart>
+          <TextMatchEnd>2</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>1</ConcMatchEnd>
+          <LexVariation>0</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="6">
+         <Source>MTH</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>SNMI</Source>
+         <Source>CSP</Source>
+         <Source>PSY</Source>
+         <Source>AOD</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>6</StartPos>
+          <Length>6</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+       <Candidate>
+        <CandidateScore>-861</CandidateScore>
+        <CandidateCUI>C0699795</CandidateCUI>
+        <CandidateMatched>Attack</CandidateMatched>
+        <CandidatePreferred>Attack device</CandidatePreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>attack</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="1">
+         <SemType>medd</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>2</TextMatchStart>
+          <TextMatchEnd>2</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>1</ConcMatchEnd>
+          <LexVariation>0</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>MMSL</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>6</StartPos>
+          <Length>6</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+       <Candidate>
+        <CandidateScore>-861</CandidateScore>
+        <CandidateCUI>C1261512</CandidateCUI>
+        <CandidateMatched>attack</CandidateMatched>
+        <CandidatePreferred>Attack behavior</CandidatePreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>attack</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="1">
+         <SemType>socb</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>2</TextMatchStart>
+          <TextMatchEnd>2</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>1</ConcMatchEnd>
+          <LexVariation>0</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="3">
+         <Source>MTH</Source>
+         <Source>PSY</Source>
+         <Source>AOD</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>6</StartPos>
+          <Length>6</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+       <Candidate>
+        <CandidateScore>-861</CandidateScore>
+        <CandidateCUI>C1281570</CandidateCUI>
+        <CandidateMatched>Heart</CandidateMatched>
+        <CandidatePreferred>Entire heart</CandidatePreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>heart</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="1">
+         <SemType>bpoc</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>1</TextMatchStart>
+          <TextMatchEnd>1</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>1</ConcMatchEnd>
+          <LexVariation>0</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>0</StartPos>
+          <Length>5</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+       <Candidate>
+        <CandidateScore>-861</CandidateScore>
+        <CandidateCUI>C1304680</CandidateCUI>
+        <CandidateMatched>Attack</CandidateMatched>
+        <CandidatePreferred>Observation of attack</CandidatePreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>attack</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="1">
+         <SemType>fndg</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>2</TextMatchStart>
+          <TextMatchEnd>2</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>1</ConcMatchEnd>
+          <LexVariation>0</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>SNOMEDCT</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>6</StartPos>
+          <Length>6</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+       <Candidate>
+        <CandidateScore>-827</CandidateScore>
+        <CandidateCUI>C0004063</CandidateCUI>
+        <CandidateMatched>Attacked</CandidateMatched>
+        <CandidatePreferred>Assault</CandidatePreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>attacked</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="1">
+         <SemType>inpo</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>2</TextMatchStart>
+          <TextMatchEnd>2</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>1</ConcMatchEnd>
+          <LexVariation>1</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="13">
+         <Source>ICD10AM</Source>
+         <Source>ICD10</Source>
+         <Source>MDR</Source>
+         <Source>MTH</Source>
+         <Source>RCDSY</Source>
+         <Source>RCD</Source>
+         <Source>SNMI</Source>
+         <Source>SNM</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>CST</Source>
+         <Source>CCPSS</Source>
+         <Source>ICD9CM</Source>
+         <Source>ICPC2P</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>6</StartPos>
+          <Length>6</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+       <Candidate>
+        <CandidateScore>-805</CandidateScore>
+        <CandidateCUI>C0036085</CandidateCUI>
+        <CandidateMatched>HTS</CandidateMatched>
+        <CandidatePreferred>Saline Solution, Hypertonic</CandidatePreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>hts</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="2">
+         <SemType>inch</SemType>
+         <SemType>phsu</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>1</TextMatchStart>
+          <TextMatchEnd>1</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>1</ConcMatchEnd>
+          <LexVariation>2</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="9">
+         <Source>MSH</Source>
+         <Source>MTH</Source>
+         <Source>RXNORM</Source>
+         <Source>NCI</Source>
+         <Source>SNMI</Source>
+         <Source>SNM</Source>
+         <Source>SNOMEDCT</Source>
+         <Source>PDQ</Source>
+         <Source>MMSL</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>0</StartPos>
+          <Length>5</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+       <Candidate>
+        <CandidateScore>-805</CandidateScore>
+        <CandidateCUI>C1854310</CandidateCUI>
+        <CandidateMatched>HTS</CandidateMatched>
+        <CandidatePreferred>HYPOTRICHOSIS SIMPLEX</CandidatePreferred>
+        <MatchedWords Count="1">
+         <MatchedWord>hts</MatchedWord>
+        </MatchedWords>
+        <SemTypes Count="1">
+         <SemType>dsyn</SemType>
+        </SemTypes>
+        <MatchMaps Count="1">
+         <MatchMap>
+          <TextMatchStart>1</TextMatchStart>
+          <TextMatchEnd>1</TextMatchEnd>
+          <ConcMatchStart>1</ConcMatchStart>
+          <ConcMatchEnd>1</ConcMatchEnd>
+          <LexVariation>2</LexVariation>
+         </MatchMap>
+        </MatchMaps>
+        <IsHead>yes</IsHead>
+        <IsOverMatch>no</IsOverMatch>
+        <Sources Count="2">
+         <Source>MTH</Source>
+         <Source>OMIM</Source>
+        </Sources>
+        <ConceptPIs Count="1">
+         <ConceptPI>
+          <StartPos>0</StartPos>
+          <Length>5</Length>
+         </ConceptPI>
+        </ConceptPIs>
+       </Candidate>
+      </Candidates>
+      <Mappings Count="1">
+       <Mapping>
+        <MappingScore>-1000</MappingScore>
+        <Candidates Count="1">
+         <Candidate>
+          <CandidateScore>-1000</CandidateScore>
+          <CandidateCUI>C0027051</CandidateCUI>
+          <CandidateMatched>Heart attack</CandidateMatched>
+          <CandidatePreferred>Myocardial Infarction</CandidatePreferred>
+          <MatchedWords Count="2">
+           <MatchedWord>heart</MatchedWord>
+           <MatchedWord>attack</MatchedWord>
+          </MatchedWords>
+          <SemTypes Count="1">
+           <SemType>dsyn</SemType>
+          </SemTypes>
+          <MatchMaps Count="1">
+           <MatchMap>
+            <TextMatchStart>1</TextMatchStart>
+            <TextMatchEnd>2</TextMatchEnd>
+            <ConcMatchStart>1</ConcMatchStart>
+            <ConcMatchEnd>2</ConcMatchEnd>
+            <LexVariation>0</LexVariation>
+           </MatchMap>
+          </MatchMaps>
+          <IsHead>yes</IsHead>
+          <IsOverMatch>no</IsOverMatch>
+          <Sources Count="24">
+           <Source>MEDLINEPLUS</Source>
+           <Source>MSH</Source>
+           <Source>MTH</Source>
+           <Source>NCI</Source>
+           <Source>NDFRT</Source>
+           <Source>ICPC2P</Source>
+           <Source>ICPC2ICD10ENG</Source>
+           <Source>CCPSS</Source>
+           <Source>COSTAR</Source>
+           <Source>CST</Source>
+           <Source>WHO</Source>
+           <Source>AIR</Source>
+           <Source>MDR</Source>
+           <Source>OMIM</Source>
+           <Source>RCD</Source>
+           <Source>SNM</Source>
+           <Source>SNOMEDCT</Source>
+           <Source>AOD</Source>
+           <Source>BI</Source>
+           <Source>CSP</Source>
+           <Source>PSY</Source>
+           <Source>SNMI</Source>
+           <Source>MTHICD9</Source>
+           <Source>DXP</Source>
+          </Sources>
+          <ConceptPIs Count="1">
+           <ConceptPI>
+            <StartPos>0</StartPos>
+            <Length>12</Length>
+           </ConceptPI>
+          </ConceptPIs>
+         </Candidate>
+        </Candidates>
+       </Mapping>
+      </Mappings>
+     </Phrase>
+    </Phrases>
+   </Utterance>
+  </Utterances>
+ </MMO>
+</MMOs>
+ 

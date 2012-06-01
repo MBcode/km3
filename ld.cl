@@ -1,20 +1,20 @@
 (defvar *rad* nil) ;not working on radiology right now
 (al 's-xml-rpc)
-(defvar *xa* (s-xml:parse-xml-file "adult.xml")) 
-(defvar *xb* (s-xml:parse-xml-file "bcq.xml")) 
-(defvar *xh* (s-xml:parse-xml-file "ha2.xml")) 
+(defvar *xa* (s-xml:parse-xml-file "t/adult.xml")) 
+(defvar *xb* (s-xml:parse-xml-file "t/bcq.xml")) 
+(defvar *xh* (s-xml:parse-xml-file "t/ha2.xml")) 
 ;(defvar *xh2* (s-xml:parse-xml-file "ha2.xml" :output-type :lxml)) 
-(defvar *xh3* (s-xml:parse-xml-file "ha2.xml" :output-type :xml-struct)) 
-(defvar *oh* (s-xml:parse-xml-file "ot2.xml")) 
+(defvar *xh3* (s-xml:parse-xml-file "t/ha2.xml" :output-type :xml-struct)) 
+(defvar *oh* (s-xml:parse-xml-file "t/ot2.xml")) 
 (defvar *nc* (s-xml:parse-xml-file "nct/0/NCT00930410.xml")) 
 (defvar *cnc* *nc*)
-(load "bcq.cl" :print t) ;cmp plm xml &s-xml:
-(load "bcq-s.cl" :print t)
+(load "t/bcq.cl" :print t) ;cmp plm xml &s-xml:
+(load "t/bcq-s.cl" :print t)
 (load "nct/1000.cl" :print t) ;then move to larger tests sets for: *try-nct-s* 
 ;(lt2) 
-(load "allm.cl" :print t)
+(load "t/allm.cl" :print t)
 (al 'km3) ;(al 'nlm) 
-(load "nlm2.cl" :print t) ;still uses cache
+(load "t/nlm2.cl" :print t) ;still uses cache
 ;(load "nlm3.cl" :print t) ;still uses cache
 ;(lt) has t.cl
 (defvar *canned-cNN* nil) ;columbia data is in one file, not from csv/inputs yet
