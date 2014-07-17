@@ -1,1 +1,7 @@
 Have to put a MMTx dir here, also should work with MetaMap
+
+-many options have opened up since this work, 
+ that incl-s some other lisp code:
+EPILOG@                    cl-earley-parser_0.9.2@    langutils@
+basic-english-grammar-1.0@ cl-inflector@              lassie@
+cl-ace@                    cl-nlp@                    prolog-talk@ 
