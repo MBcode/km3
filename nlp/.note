@@ -1,2 +1,15 @@
 dust some of this off or find other interesting bits see notes from past yrs
- 
+ used: berkeleyParser, opennlp(now part of:..nlp2rdf), stanford-parser.(CoreNLP), nyu?
+
+λ▶107 j2Lat43: /km3/nlp> tail ../.note
+λ▶92 j2Lat43: /ai2/km3> cp km3.asd nlp.asd  ;then edit just a bit
+λ▶108 j2Lat43: /km3/nlp> egrep -v "^;;" ../nlp.asd >nlp.asd
+λ▶115 j2Lat43: /km3/nlp> ln -s . nlp  ;so I can work in this subdir for now
+λ▶119 j2Lat43: /km3/nlp> cat ld.cl
+(lkm3)
+(defvar *fl2* (list-lines "../../vq.txt")) ;was from ../in before
+;(defun get-fl2 (n) (nth n *fl2*))
+(ql 'nlp)
+(defun berk-n (n) (berk (get-fl2 n)))
+;1-8133 returns sexp parse in a str 
+ ;will get2see where/if rest of processing still here

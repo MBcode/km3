@@ -135,10 +135,18 @@
 ;
 (defun nlp-3 (s)
   (list (op_prs s) (nlp-2 s)))
+
+(defun get-fl2 (n) 
+ ;(cdr (assoc n *fl2* :test #'equal))
+  (nth n *fl2*)
+  )
 ;-
 (defun id2nyu (id) nil) ;need nyu.cl  ;also fully cached version in nlp3.cl
 (defun id2nlp4 (id)
- (let ((s (cdr (assoc id *fl2* :test #'equal))))
+ (let ((s 
+         ;(cdr (assoc id *fl2* :test #'equal))
+         (get-fl2 id)
+         ))
   (list :nyu (id2nyu id) :op (op_prs s) :sb (nlp-2 s))))
 ;-
 (defun id2nlp4diff (id) (let ((n2s (id2nlp4 id))) (diff-sexp (second n2s) (sixth n2s))))
