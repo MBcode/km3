@@ -5,7 +5,8 @@
 ;(defun get-fl2 (n) (nth n *fl2*))
 (ql 'nlp)
 ;(defun get-fl2 (n) (first-lv (nth n *fl2*))) ;so will pull str from list w/more info in it
-(defun get-fl2 (n) (second-lv (nth n *fl2*))) 
+;(defun get-fl2 (n) (second-lv (nth n *fl2*))) 
+(defun get-fl2 (n) (aref (nth n *fl2*) 1)) 
 (defvar *q*)
 (defvar *a*)
 (defvar *w*)
@@ -35,3 +36,7 @@
   (let ((s (get-fl2 n)))
     (format t "~%~a~%" s)
     (berk2 s)))
+
+(defun tst (&optional (n 2))
+  (set-fl2 n)
+  (berk2 *q*))
