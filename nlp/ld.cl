@@ -30,6 +30,7 @@
     (setf *w* wa)
     al))
 
+;echo $1|java -mx1900m -jar nlp/berk/BerkeleyParser-1.7.jar -tokenize -gr nlp/berk/eng_sm6.gr
 (defun berk-n (n) (berk (get-fl2 n)))
 ;(defun berk2n (n) (berk2 (get-fl2 n)))
 (defun berk2n (n) 
@@ -40,3 +41,13 @@
 (defun tst (&optional (n 2))
   (set-fl2 n)
   (berk2 *q*))
+
+;will brush off stanford parser work in nlp.lisp too, but want to move to corenlp (server)
+; but will start w/calling it directly 1st:
+;echo $1|./scnl/corenlp.sh -annotators tokenize,ssplit,pos,lemma,ner -outputFormat xml -
+(ql 's-xml)
+(defun ner-x (s)
+  (let ((r (run-ext "nlp/ner-x.sh" (clean4echo s))))
+    (when (> (len r) 99)
+      (collect-if #'(lambda (x) (search "<" x)) (break2lines r)))))
+;clean up a bit more then use s-xml to parse to sexp
