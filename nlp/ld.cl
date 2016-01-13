@@ -60,6 +60,9 @@
     (when (> (len r) 99)
       (collect-jsonsp (break2lines r)))))
 ;moving to server should allow for drakma call with just a json(-rpc)|xml return 
-; if I don't get the client protocol down(as if via curl)then can run-ext2light client2start (w/hy?)
+; if I don't get the client protocol down(as if via curl)then can clpython|run-ext2light client2start;(w/hy?)
+(defun ner-p (s) ;https://github.com/dasmith/stanford-corenlp-python.git  client.py altered to send str2parse
+  (let ((r (run-ext "python" "cnlp/c3.py" (clean4echo s))))
+    (when (> (len r) 99) r)))
 ;make a generic nlp.lisp which just needs one link to each nlp lib
 ;still want to use cl-nlp
