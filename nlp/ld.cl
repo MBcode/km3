@@ -51,3 +51,15 @@
     (when (> (len r) 99)
       (collect-if #'(lambda (x) (search "<" x)) (break2lines r)))))
 ;clean up a bit more then use s-xml to parse to sexp
+
+(ql 'cl-json)
+(defun jsonsp (s) (prefixp "{" s))
+(defun collect-jsonsp (l) (mapcar_ #'json:decode-json-from-string (collect-if #'jsonsp l)))
+(defun ner-j (s)
+  (let ((r (run-ext "nlp/ner-j.sh" (clean4echo s))))
+    (when (> (len r) 99)
+      (collect-jsonsp (break2lines r)))))
+;moving to server should allow for drakma call with just a json(-rpc)|xml return 
+; if I don't get the client protocol down(as if via curl)then can run-ext2light client2start (w/hy?)
+;make a generic nlp.lisp which just needs one link to each nlp lib
+;still want to use cl-nlp
