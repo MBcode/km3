@@ -64,14 +64,21 @@
 (defun pyu-p (s) (search "u'" s))
 (defun parsetree-p (s) (search "parsetree" s))
 ;This is from the server, and not necc just ner, more corenlp client in general now:
-(defun ner-p (s) ;https://github.com/dasmith/stanford-corenlp-python.git  client.py altered to send str2parse
+;defun ner-p (s) 
+(defun cnlp (s) ;https://github.com/dasmith/stanford-corenlp-python.git  client.py altered to send str2parse
+  "corenlp py client call"
   (let ((r (run-ext "python" "cnlp/c3.py" (clean4echo s))))
     (when (> (len r) 99) 
       (let* ((l (break2lines r))
              (ul (collect-if #'pyu-p l)) 
              (pt (collect-if #'parsetree-p ul)))
         (format t "~%pt:~a~%" pt)
-        (reduce #'str-cat2 ul)
-      )))) ;still want {} so can use cl-json  ;also look at alt formats/py-printouts
+        ;(reduce #'str-cat2 ul)
+        (reduce #'(lambda (a b) (str-cat2 (str-trim a) (str-trim b))) ul)
+      )))) ;still want {}(but not always an issue),so can use cl-json  ;also look at alt formats/py-printouts
+  ;also look@ cl-nlp
 ;make a generic nlp.lisp which just needs one link to each nlp lib
 ;still want to use cl-nlp
+
+;Start using opennlp again, &look at it's NER abilities
+; starting2like: https://github.com/dakrone/clojure-opennlp so might call out to this ;will see the pro/cons already get some sexp/able-s
