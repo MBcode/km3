@@ -82,3 +82,13 @@
 
 ;Start using opennlp again, &look at it's NER abilities
 ; starting2like: https://github.com/dakrone/clojure-opennlp so might call out to this ;will see the pro/cons already get some sexp/able-s
+
+;also will try: http://www.opener-project.eu/getting-started/how-to/quick-start.html   ;wish 'fread' was available
+
+;getting tired of looking at pacakge(integration)that would still need to be trained/specialized, maybe skip2
+; indexing wn20-synset in km components, as a quick directed form on ner
+;  /components/science> wc wn20.km 861  2162 28661 wn20.km   w/142 only wn20-synset lines, w/on ave a handful off triples each
+;   they have pos info, but are attached to the concept of interest
+;NER: https://en.wikipedia.org/wiki/Named-entity_recognition though https://open.hpi.de/courses/semanticweb2015 shows difference
+; between named-entity recogition & resolution (to a particular concept)
+ 
