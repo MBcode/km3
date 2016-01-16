@@ -88,6 +88,11 @@
 ;getting tired of looking at pacakge(integration)that would still need to be trained/specialized, maybe skip2
 ; indexing wn20-synset in km components, as a quick directed form on ner
 ;  /components/science> wc wn20.km 861  2162 28661 wn20.km   w/142 only wn20-synset lines, w/on ave a handful off triples each
+(load-kb "wn20.km")  ;I could find more wordnet/dbpedia links for the other classes (and can actually just user their class names,to start)
+;I was going to just load the sci classes (superclass connections) to do this, but will load the full science classes to start:
+;(load "lsci.cl" :print t) ;has to continue through a handfull of errors, but did a save-kb: ;still has to /Atom/s//Atom-/g &com out:13630,quasiquote s
+(load-kb "j15s.kb")
+;running (taxonomy) gives:  wc j15tax 2545  3116 68795 j15tax 
 ;   they have pos info, but are attached to the concept of interest
 ;NER: https://en.wikipedia.org/wiki/Named-entity_recognition though https://open.hpi.de/courses/semanticweb2015 shows difference
 ; between named-entity recogition & resolution (to a particular concept)

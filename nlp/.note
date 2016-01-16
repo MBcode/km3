@@ -19,3 +19,5 @@ nlp.asd incl ../components http://www.cs.utexas.edu/users/mfkb/RKF/tree/
 ;will want to load the right&wrong answers as well
 will add ld.cl vs parts of it here, but not all daily output yet
 USER(5): consider opencyc if need be; http://localhost:3602/cgi-bin/cg?cb-start ~/Documents/www/www.opencyc.org/downloads/opencyc-owl
+λ▶135 j15Lat43: /km3/nlp> ls1 sci/*/*.km >lsci.cl
+ 
