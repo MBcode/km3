@@ -1,0 +1,2 @@
+Consider having cache of not just direct fnc calls, but from service calls(drakma),&just stand up tiny server for that cache like:
+ @climagic  Jan 28 python -m SimpleHTTPServer # Start a web service on port 8000 that uses the current directory as its document root. 
