@@ -23,3 +23,8 @@ USER(5): consider opencyc if need be; http://localhost:3602/cgi-bin/cg?cb-start 
  
 ;loaded sci kb, have more parsers, need ner map txt to concepts (that have relations)
 ; use kb wn slots&class names, get longest matches along this
+λ▶6 f3Lat43: /km3/nlp> cp ld.cl nl2.cl
+ 
+λ▶41 f3Lat43: /km3/nlp> mv nc.cl nc0.cl
+λ▶42 f3Lat43: /km3/nlp> cp /home/bobak/lsp/git/LispUtils/nc.cl .
+ 
