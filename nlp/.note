@@ -28,3 +28,4 @@ USER(5): consider opencyc if need be; http://localhost:3602/cgi-bin/cg?cb-start 
 λ▶41 f3Lat43: /km3/nlp> mv nc.cl nc0.cl
 λ▶42 f3Lat43: /km3/nlp> cp /home/bobak/lsp/git/LispUtils/nc.cl .
  
+test IBM blumix (Watson) NLP http://www.alchemyapi.com/api/combined/urls.html 
