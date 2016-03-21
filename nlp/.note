@@ -28,4 +28,8 @@ USER(5): consider opencyc if need be; http://localhost:3602/cgi-bin/cg?cb-start 
 λ▶41 f3Lat43: /km3/nlp> mv nc.cl nc0.cl
 λ▶42 f3Lat43: /km3/nlp> cp /home/bobak/lsp/git/LispUtils/nc.cl .
  
-test IBM blumix (Watson) NLP http://www.alchemyapi.com/api/combined/urls.html 
+test IBM blumix (Watson) NLP http://www.alchemyapi.com/api/combined/urls.html ./py/.note: 
+could make or alter a restful service that was not all alchemy 
+want not only caching of final but of intermediate as some things build 
+could get local km taxonomys re to the queries
+ 
