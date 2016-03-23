@@ -31,13 +31,14 @@
                          )) ;url-str
 (defun srvc-typ-url-str (typ) (assoc-v typ +srvc2us+))
 
-(trace in-typ-url-str srvc-typ-url-str)
-
 (defun get-url (in-type srvc-type &optional (base *base_url*))
   (str-cat base (in-typ-url-str in-type) (srvc-typ-url-str srvc-type) (key-str)))
 
+(defun prefixp (pre str)
+ (and (stringp pre) (stringp str) (> (length str) (length pre)) 
+         (string= pre str :end2 (length pre)))) 
 (defun httpify (u)
-    (if (prefix-p "http" u) u (str-cat "http://" u)))
+    (if (prefixp "http" u) u (str-cat "http://" u)))
 
 ;defun get-combined (in-typ url) ;url|text
 (defun get-combined (in-typ &optional path (url-base *mlb*)) ;url|text
@@ -46,9 +47,17 @@
            ;&optputMode=json&knowledgeGraph=1
            (str-cat "&url=" (httpify url))))
  )
+
 (ql 'drakma)
 (defun hr (u)
   "get the page as 1str"
   (drakma:http-request 
     (httpify u) ;(if (prefix-p "http" u) u (str-cat "http://" u))
     ))
+
+(trace in-typ-url-str srvc-typ-url-str get-combinded httpify)
+(defun t1 (&optional (file "test.txt"))
+  (get-combined 'url (str-cat "w/" file)))
+;For now, Instead of (hr (t1)) just pasted t1's str into browser&load output xml file:
+(ql 's-xml)
+(defvar *u1* (s-xml:parse-xml-file "URLGetCombinedData.txt"))
