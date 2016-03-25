@@ -58,9 +58,14 @@
 (defun t1 (&optional (file "test.txt"))
   (get-combined 'url (str-cat "w/" file)))
 (ql 'flexi-streams)
-(defun h1 (&optional (file "test.txt"))
-  (flexi-streams:octets-to-string (hr (t1 file)))) ;this also works
-;For now, Instead of (hr (t1)) just pasted t1's str into browser&load output xml file:
 (ql 's-xml)
+(defun h1 (&optional (file "test.txt"))
+ (s-xml:parse-xml-string
+  (flexi-streams:octets-to-string (hr (t1 file))) ;this also works
+  :output-type :sxml))
+;For now, Instead of (hr (t1)) just pasted t1's str into browser&load output xml file:
 (defvar *u1* (s-xml:parse-xml-file "URLGetCombinedData.txt"))
+;Switch to h1 soon, but also throw in funcall caching to save on repeat calls
+ (ql 'fare-memoization)  ;then call w/ memoized-funcall #'h1     ;other fnc/libs2look@too
+ (defun tc1 (&optional (fn "test.txt")) (memoized-funcall #'h1 fn))
 ;1st query only recognizes a few words, & I think missed a few sentences; Really underwhelming.
