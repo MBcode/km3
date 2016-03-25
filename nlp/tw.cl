@@ -43,7 +43,8 @@
 ;defun get-combined (in-typ url) ;url|text
 (defun get-combined (in-typ &optional path (url-base *mlb*)) ;url|text
  (let ((url (str-cat url-base path)))
-  (str-cat (get-url in-typ 'combined) "&extract=entity,keyword,taxonomy,concept,relation" ;page-image,image-kw,feed,title,author,pub-date,doc-sentement
+  (str-cat (get-url in-typ 'combined) "&extract=entity,keyword,taxonomy,concept,relation" 
+           ;page-image,image-kw,feed,title,author,pub-date,doc-sentement
            ;&optputMode=json&knowledgeGraph=1
            (str-cat "&url=" (httpify url))))
  )
@@ -51,13 +52,15 @@
 (ql 'drakma)
 (defun hr (u)
   "get the page as 1str"
-  (drakma:http-request 
-    (httpify u) ;(if (prefix-p "http" u) u (str-cat "http://" u))
-    ))
+  (drakma:http-request (httpify u) ))
 
 (trace in-typ-url-str srvc-typ-url-str get-combinded httpify)
 (defun t1 (&optional (file "test.txt"))
   (get-combined 'url (str-cat "w/" file)))
+(ql 'flexi-streams)
+(defun h1 (&optional (file "test.txt"))
+  (flexi-streams:octets-to-string (hr (t1 file)))) ;this also works
 ;For now, Instead of (hr (t1)) just pasted t1's str into browser&load output xml file:
 (ql 's-xml)
 (defvar *u1* (s-xml:parse-xml-file "URLGetCombinedData.txt"))
+;1st query only recognizes a few words, & I think missed a few sentences; Really underwhelming.
