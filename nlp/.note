@@ -37,3 +37,4 @@ could get local km taxonomys re to the queries
 Maarten van Gompel @proycon Released CLAM v2.1: Turn your #nlp command line tools into #restful webservices. Please upgrade! https://github.com/proycon/clam/releases/tag/v2.1.0 … 
  CLAM: Computational Linguistics Application Mediator 
  CLAM allows you to quickly and transparently transform your Natural Language Processing application into a RESTful webservice, with which both human end-users as well as automated clients can interact.  
+=want to generalize, wrap MITIE, and use w/the tup.cl code
