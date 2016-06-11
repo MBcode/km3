@@ -49,3 +49,6 @@ uw: https://github.com/knowitall/openie.git  also: http://nlp.stanford.edu/softw
 http://nlp.stanford.edu/software/relationExtractor.shtml http://nlp.stanford.edu/software/stanford-dependencies.shtml 
 
 https://gate.ac.uk/sale/talks/gate-course-may10/track-3/module-11-ml-adv/module-11-relations.pdf 
+
+=an update of this w/the nlp.lisp 'sp' call or similar: http://nlp.stanford.edu/software/lex-parser.shtml http://nlp.stanford.edu/software/stanford-dependencies.shtml 
+ piping not as standard&since I might want(a cleaner ver of)cachine in dir above, save a file w/in txt, run it, and have output added as the cached version
