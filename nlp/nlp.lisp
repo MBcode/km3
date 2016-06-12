@@ -15,7 +15,8 @@
       (apply #'str-cat p12)))
 ;make out of stnd-cachable&parse
 (defun sp_raw (s)
-  (break2lines (run-ext "nlp/sp_2" (clean4echo s))))
+  (run-sp s) ;(break2lines (run-ext "nlp/sp_2" (clean4echo s)))
+  )
 (defun sp1 (s)
     (let* ((prs (sp_raw s))
 	   (p1 (position-if #'rootp prs))

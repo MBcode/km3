@@ -54,3 +54,5 @@ https://gate.ac.uk/sale/talks/gate-course-may10/track-3/module-11-ml-adv/module-
  piping not as standard&since I might want(a cleaner ver of)cachine in dir above, save a file w/in txt, run it, and have output added as the cached version
  could start w/a /tmp/sp.txt file  ;also had the netcat like code around, so maybe set up a service, but unlikely/to be needed at 1st
 ;when loading nlp.asd noticed prefixp commented out in util_mb I'm using, so there are some diff w/the one on github /resync more sometime
+sp2 gives cons of tree but skips dependency info and other sentences ;if can get xml/json of this&more, it will be really easy ;look@~lemon encoding
+ 
