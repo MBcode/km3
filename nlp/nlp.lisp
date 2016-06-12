@@ -1,9 +1,14 @@
 ;from r*l but w/o tmp files now
 ;all of these take strings instead of filenames now:  stanford,berkeley&open-parsers work
 (defun rootp (s) (prefix_p "(ROOT" s))
+;(defun run-sp (s) (break2lines (run-ext "nlp/sp_2" (clean4echo s)))) ;w/old setup
+(defun run-sp (s) 
+  (run-ext "echo" (clean4echo s) ">" "/tmp/sp.txt") 
+  (break2lines (run-ext "sp/lp.sh" "/tmp/sp.txt"))) 
 (defun sp (s)
   "stanford parser"
-    (let* ((prs (break2lines (run-ext "nlp/sp_2" (clean4echo s))))
+    (let* ((prs (run-sp s) ;(break2lines (run-ext "nlp/sp_2" (clean4echo s)))
+             )
 	   (p1 (position-if #'rootp prs))
 	   (p2 (position-if-not #'full prs))
            (p12 (subseq prs p1 p2)))

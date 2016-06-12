@@ -52,3 +52,5 @@ https://gate.ac.uk/sale/talks/gate-course-may10/track-3/module-11-ml-adv/module-
 
 =an update of this w/the nlp.lisp 'sp' call or similar: http://nlp.stanford.edu/software/lex-parser.shtml http://nlp.stanford.edu/software/stanford-dependencies.shtml 
  piping not as standard&since I might want(a cleaner ver of)cachine in dir above, save a file w/in txt, run it, and have output added as the cached version
+ could start w/a /tmp/sp.txt file  ;also had the netcat like code around, so maybe set up a service, but unlikely/to be needed at 1st
+;when loading nlp.asd noticed prefixp commented out in util_mb I'm using, so there are some diff w/the one on github /resync more sometime
