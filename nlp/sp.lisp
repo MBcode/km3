@@ -1,8 +1,11 @@
+;stanford(&berk)parser parts of nlp.lisp
 ;from r*l but w/o tmp files now
 ;all of these take strings instead of filenames now:  stanford,berkeley&open-parsers work
 (defun rootp (s) (prefix_p "(ROOT" s))
-(defun parsingp (s) (prefix_p "Parsing" s)) ;unused
-(defun echo-sp (s) (run-ext "echo" (clean4echo s) ">" "/tmp/sp.txt"))
+;(defun parsingp (s) (prefix_p "Parsing" s)) ;unused
+;(defun echo-sp (s) (run-ext "echo" (clean4echo s) ">" "/tmp/sp.txt"))
+;(defun echo-sp (s) (run-sh "echo" (clean4echo s) ">" "/tmp/sp.txt")) ;same
+(defun echo-sp (s) (run-ext "2sp" (clean4echo s))) ;">" "/tmp/sp.txt" part done by 2sp
 ;(defun run-sp (s) (break2lines (run-ext "nlp/sp_2" (clean4echo s)))) ;w/old setup
 (defun run-sp (s) 
   (echo-sp s) ;(run-ext "echo" (clean4echo s) ">" "/tmp/sp.txt") 
@@ -143,76 +146,4 @@
 (defun flatNP (l)
   (collect-if #'(lambda (x) (when (fulll x) (equal (first x) 'np))) l))
 ;-
-(defun opprs- (s)  ;try not to use this anymore
-  "openNLP parser "
-    (rsc (format nil "echo \"~a\"|cat> text" s))
-    (run-ext (format nil "chnk.sh")))
-;now w/o tmp file: ;v3 make so can run from main dir
-(defun op_tk (s)
-  "open parser, tokenizer"
-    (run-ext "nlp/tk.sh" s))
- 
-(defun op_sd (s)
-  "open parser, SentenceDetector"
-    (run-ext "nlp/sd.sh" s))
- 
-(defun op_pt (s)
-  "open parser, PosTagger"
-    (run-ext "nlp/pt.sh" s))
- 
-(defun op_ch (s)  ;might want to focus on this
-  "open parser, TreebankChunker"
-    (run-ext "nlp/ch.sh" s))
- 
-(defun opprs (s)
-  "openNLP parser "
-  (op_ch (op_pt (op_tk (op_sd (clean4echo s))))))
-
-;could make this w/a list of fncs to compose
-; could even mk/compose ext fncs on fly /labels..
-(defun opprs-ch (s) ;try
-  (op_ch ;(op_pt (op_tk (op_sd 
-			 (clean4echo s)));)))
-;
-(defun op-prs (s &optional (ch nil))
-  (let* (;(prs (opprs s)) ;or opprs-ch
-         (prs (if ch (opprs-ch s) (opprs s))) ;or opprs-ch
-	 (needends (search "] [" prs))
-         (pprs  (rm-strs '("," ":")
-	   (simple-replace-string "/" "_" 
-	      (simple-replace-string "[" "(" 
-				      (simple-replace-string "]" ")" prs))))))
-    (if needends (strcat "(" pprs ")")
-      pprs)))
-(defun op_prs (s)
-  (eval-str2 (op-prs s)))
-;
-(defun nlp-3 (s)
-  (list (op_prs s) (nlp-2 s)))
-
-;have2fix or get rid of this like nyu stuff
-(defvar *fl2* '())
-(defun get-fl2 (n) 
- ;(cdr (assoc n *fl2* :test #'equal))
-  (nth n *fl2*)
-  )
-;-
-;(defun id2nyu (id) nil) ;need nyu.cl  ;also fully cached version in nlp3.cl
-(defun id2nyu (id) id) ;need real version again
-(defun id2nlp4 (id)
- (let ((s 
-         ;(cdr (assoc id *fl2* :test #'equal))
-         (get-fl2 id)
-         ))
-  (list :nyu (id2nyu id) :op (op_prs s) :sb (nlp-2 s))))
-;-
-(load "diff-sexp.lisp" :print t) ;http://tehran.lain.pl/stuff/diff-sexp.lisp
-(defun id2nlp4diff (id) (let ((n2s (id2nlp4 id))) (diff-sexp (second n2s) (sixth n2s))))
-;-
-;could make a nlp23 where it looks @w/&w/o med-vocab(hypens)&puts out all options/maybe even between
-;  when there is >1 hypenation option, that maybe shouldn't be fully merged ;focus on NP match though
-;skip below  ;try not to use this anymore
-(defun lex (fn) ;still needs2be broken dwn2words, think there is a tool for this
-  "might want to try combo's or oba longestWords, try grep/etc from oba?"
-    (run-ext (format nil "lexAccess -i:~a |cat> l.~a.tmp" fn fn)))
-;-eof
+;defun opprs- (s)  ;try not to use this anymore

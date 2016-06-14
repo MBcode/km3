@@ -29,8 +29,9 @@
 ;               ;(:file "mem") ;mtxt finishs this off now ;in ld2 now, but fix/dumped, in mmt now
 ;	(:file "cache") ;to replace above w/much less code
 ;               ) :serial t)
-    (:module nlp :components ( (:file "nlp") ;live
-               (:file "nlp3") ;canned
-               (:file "nyu") ;new canned
+    (:module nlp :components ((:file "sp") ;just stanford-parser(&berk) parts of nlp.lisp
+              ;skip canned stuff for now ;(:file "nlp") ;live
+              ;(:file "nlp3") ;canned
+              ;(:file "nyu") ;new canned
                ) :serial t)
 )) 

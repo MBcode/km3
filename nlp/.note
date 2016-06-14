@@ -55,4 +55,5 @@ https://gate.ac.uk/sale/talks/gate-course-may10/track-3/module-11-ml-adv/module-
  could start w/a /tmp/sp.txt file  ;also had the netcat like code around, so maybe set up a service, but unlikely/to be needed at 1st
 ;when loading nlp.asd noticed prefixp commented out in util_mb I'm using, so there are some diff w/the one on github /resync more sometime
 sp2 fnc gives cons tree but skips dependency info and other sentences ;if can get xml/json of this&more, it will be really easy ;look@~lemon encoding
- 
+sp_1 gives tree-parse of each sentence, &sp_2 adds the dependancy info for each(just as strings);want2break out into lemon like triples
+break out stanford(&berk)parser parts of nlp.lisp and put into sp.lisp
