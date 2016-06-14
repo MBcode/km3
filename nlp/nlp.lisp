@@ -30,14 +30,28 @@
       (apply #'str-cat p12)))
 (defun sp2 (s)
   (eval-str2 (clean-se (sp1 s))))
+(defun clean-seval (s)
+  (eval-str2 (clean-se s)))
 ;
 ;might write positions-if, oh postions already does this, no need for parsingp fnc
 ;need a fnc to take a list of elt, &a position-list, &go dwn it in pairs &create a lol of elts between them;have it subseqs
 (defun sp-1 (prs)
   (let* ((p1 (position-if #'rootp prs))
 	     (p2 (position-if-not #'full prs))
-           (p12 (subseq prs p1 p2)))
+         (p12 (subseq prs p1 p2))
+        ;(p2- (subseq prs p2))
+         )
       (apply #'str-cat p12)))
+(defun sp-2 (prs)
+  (let* ((p1 (position-if #'rootp prs))
+	     (p2 (position-if-not #'full prs))
+         (p12 (subseq prs p1 p2))
+         (p2- (subseq prs p2))
+         (rl (clean-seval 
+              (apply #'str-cat p12)))
+         )
+      (cons rl  p2-)
+      ))
 (defun sp_0 (s)
   "break sentence output 1st"
     (let* ((prs (sp_raw s))
@@ -50,6 +64,9 @@
 (defun sp_1 (s)
   (let ((sl (sp_0 s)))
     (mapcar #'sp-1 sl)))
+(defun sp_2 (s)
+  (let ((sl (sp_0 s)))
+    (mapcar #'sp-2 sl)))
 
 ;get a version that keeps the adjacency info, &transforms to a usable format (eg.set of triples)
 
