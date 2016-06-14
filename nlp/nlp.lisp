@@ -1,10 +1,14 @@
 ;from r*l but w/o tmp files now
 ;all of these take strings instead of filenames now:  stanford,berkeley&open-parsers work
 (defun rootp (s) (prefix_p "(ROOT" s))
+(defun parsingp (s) (prefix_p "Parsing" s))
 ;(defun run-sp (s) (break2lines (run-ext "nlp/sp_2" (clean4echo s)))) ;w/old setup
 (defun run-sp (s) 
   (run-ext "echo" (clean4echo s) ">" "/tmp/sp.txt") 
-  (break2lines (run-ext "sp/lp.sh" "/tmp/sp.txt"))) 
+  (break2lines 
+    (run-ext "sp/lp.sh" "/tmp/sp.txt")
+   ;(run-ext "sp/lp.sh" "/tmp/sp.txt" "|" "agrep"  "-d'^P'" "ROOT")
+    )) 
 (defun sp (s)
   "stanford parser"
     (let* ((prs (run-sp s) ;(break2lines (run-ext "nlp/sp_2" (clean4echo s)))
@@ -17,6 +21,7 @@
 (defun sp_raw (s)
   (run-sp s) ;(break2lines (run-ext "nlp/sp_2" (clean4echo s)))
   )
+;(trace run-sp)
 (defun sp1 (s)
     (let* ((prs (sp_raw s))
 	   (p1 (position-if #'rootp prs))
@@ -26,6 +31,25 @@
 (defun sp2 (s)
   (eval-str2 (clean-se (sp1 s))))
 ;
+;might write positions-if, oh postions already does this, no need for parsingp fnc
+;need a fnc to take a list of elt, &a position-list, &go dwn it in pairs &create a lol of elts between them;have it subseqs
+(defun sp-1 (prs)
+  (let* ((p1 (position-if #'rootp prs))
+	     (p2 (position-if-not #'full prs))
+           (p12 (subseq prs p1 p2)))
+      (apply #'str-cat p12)))
+(defun sp_0 (s)
+  "break sentence output 1st"
+    (let* ((prs (sp_raw s))
+	  ;(p1 (position-if #'parsingp prs))
+	  ;(ps (positions "Parsing" prs))
+	   (ps+ (positions "Pars" prs))
+       (ps (when (full ps+) (butlast (rest ps+))))
+           )
+      (when (full ps) (subseqs prs ps)))) ;ret lol   list-of-sentences which are lists of all output strlines relating2the sentence
+(defun sp_1 (s)
+  (let ((sl (sp_0 s)))
+    (mapcar #'sp-1 sl)))
 
 ;get a version that keeps the adjacency info, &transforms to a usable format (eg.set of triples)
 
