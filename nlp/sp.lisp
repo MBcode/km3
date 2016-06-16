@@ -70,11 +70,11 @@
            )
       (when (full ps) (subseqs prs ps)))) ;ret lol   list-of-sentences which are lists of all output strlines relating2the sentence
 (defun sp_1 (s)
-  "get the tree only/all sent"
+  "get the tree only/all sentences"
   (let ((sl (sp_0 s)))
     (mapcar #'sp-1 sl)))
 (defun sp_2 (s)
-  "prs tree+dependencies/all sent"
+  "prs tree+dependencies/all sentences"
   (let ((sl (sp_0 s)))
     (mapcar #'sp-2 sl)))
 

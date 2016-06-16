@@ -30,6 +30,7 @@
 ;	(:file "cache") ;to replace above w/much less code
 ;               ) :serial t)
     (:module nlp :components ((:file "sp") ;just stanford-parser(&berk) parts of nlp.lisp
+                              (:file "dep2rdf")
               ;skip canned stuff for now ;(:file "nlp") ;live
               ;(:file "nlp3") ;canned
               ;(:file "nyu") ;new canned
