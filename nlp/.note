@@ -63,4 +63,4 @@ ln -s components/core cc ls1;cc/*Slot*|sed -f l.sed> ls.cl;ls1 cc/text-*|sed -f 
 Have loaded KM slot-groups, and the core text-*.km files; also have stanford.ttl as a 1st cut hierarchy;not connected,nor the CoNLL(stanford)dependancy
  probably try for CoNLL to KM text-*.km part of it, &see how the stanford.ttl dependancy hierarchy fits in; start by hand &then try assited match
 Keep looking for ppl having done this(maybe the ppl doing the lemon work)but not found yet, also look at other re work, a few incl:
-also look@ https://github.com/yoavz/EDAN20-lab4 
+also look@ https://github.com/yoavz/EDAN20-lab4  ;other than stanford, installed malt&mst parsers which also have CoNLL output,so can go from any of them
