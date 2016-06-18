@@ -45,6 +45,8 @@ I really want relationships, want to look@ uw&(stanford's)openie too;as well as 
 ./relation_extraction_example MITIE-models/english/ner_model.dat MITIE-models/english/binary_relations/rel_classifier_location.location.contains.svm sample_text.txt
 
 uw: https://github.com/knowitall/openie.git  also: http://nlp.stanford.edu/software/openie.html
+https://github.com/allenai/openie-standalone &many more:
+@rdanielmeta Cool tool: Interactive Knowledge Extraction (IKE) — Allen Institute for Artificial Intelligence. #naacl2016 http://allenai.org/software/ike/
 
 http://nlp.stanford.edu/software/relationExtractor.shtml http://nlp.stanford.edu/software/stanford-dependencies.shtml 
 
