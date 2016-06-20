@@ -1,0 +1,2234 @@
+
+;;; Current state of the KB (6/19/2016 23:55.47, KM 2.5.45)
+
+(reset-kb)
+
+(disable-slot-checking)       ; (Temporarily disable while rebuilding KB state)
+                              ; (Will be restored to original value by final SETQ statements)
+
+(disable-classification)      ; (Temporarily disable while rebuilding KB state)
+                              ; (Will be restored to original value by final SETQ statements)
+
+(disable-installing-inverses) ; (Temporarily disable while rebuilding KB state)
+                              ; (Will be switched back on by (enable-installing-inverses) at the end)
+
+;;; ---------- TAXONOMY ----------
+
+(CLIB-Slot-Group has 
+  (superclasses (KM-Slot-Group)))
+
+(Interface-Slot has 
+  (superclasses (Slot)))
+
+(KM-Slot-Group has 
+  (superclasses (Slot)))
+
+(NL-Slot-Group has 
+  (superclasses (KM-Slot-Group)))
+
+(Shaken-Slot-Group has 
+  (superclasses (KM-Slot-Group)))
+
+(Slot has 
+  (superclasses (Thing)))
+
+(abbrev has 
+  (superclasses (AbbreviationModifier)))
+
+(AbbreviationModifier has 
+  (superclasses (Modifier)))
+
+(acomp has 
+  (superclasses (AdjectivalComplement=)))
+
+(AdjectivalComplement= has 
+  (superclasses (Complement=)))
+
+(AdjectivalModifier has 
+  (superclasses (Modifier)))
+
+(advcl has 
+  (superclasses (AdverbialClauseModifier)))
+
+(AdverbialClauseModifier has 
+  (superclasses (Modifier)))
+
+(AdverbialModifier has 
+  (superclasses (Modifier)))
+
+(advmod has 
+  (superclasses (AdverbialModifier)))
+
+(agent has 
+  (superclasses (Agent)))
+
+(Agent has 
+  (superclasses (Argument)))
+
+(amod has 
+  (superclasses (AdjectivalModifier)))
+
+(appos has 
+  (superclasses (AppositionalModifier)))
+
+(AppositionalModifier has 
+  (superclasses (Modifier)))
+
+(arg has 
+  (superclasses (Argument)))
+
+(Argument has 
+  (superclasses (Dependent)))
+
+(attr has 
+  (superclasses (Attributive)))
+
+(Attributive has 
+  (superclasses (Complement=)))
+
+(aux has 
+  (superclasses (Auxiliary)))
+
+(Auxiliary has 
+  (superclasses (Dependent)))
+
+(auxpass has 
+  (superclasses (PassiveAuxiliary)))
+
+(cc has 
+  (superclasses (Coordination)))
+
+(ccomp has 
+  (superclasses (ClausalComplement=WithInternalSubject)))
+
+(ClausalComplement=WithExternalSubject has 
+  (superclasses (Complement=)))
+
+(ClausalComplement=WithInternalSubject has 
+  (superclasses (Complement=)))
+
+(ClausalSubject has 
+  (superclasses (Subject)))
+
+(comp has 
+  (superclasses (Complement=)))
+
+(compl has 
+  (superclasses (Complement=izer)))
+
+(Complement= has 
+  (superclasses (Argument)))
+
+(Complement=izer has 
+  (superclasses (Complement=)))
+
+(complm has 
+  (superclasses (Complement=izer)))
+
+(CompountNumberElement has 
+  (superclasses (Modifier)))
+
+(conj has 
+  (superclasses (Conjunct)))
+
+(conj_ has 
+  (superclasses (Conjunct)))
+
+(Conjunct has 
+  (superclasses (Dependent)))
+
+(ControllingSubject has 
+  (superclasses (SemanticDependent)))
+
+(Coordination has 
+  (superclasses (Dependent)))
+
+(cop has 
+  (superclasses (Copula)))
+
+(Copula has 
+  (superclasses (Auxiliary)))
+
+(csubj has 
+  (superclasses (ClausalSubject)))
+
+(csubjpass has 
+  (superclasses (PassiveClausalSubject)))
+
+(dep has 
+  (superclasses (Dependent)))
+
+(det has 
+  (superclasses (Determiner)))
+
+(Determiner has 
+  (superclasses (Modifier)))
+
+(DirectObject has 
+  (superclasses (Object)))
+
+(dobj has 
+  (superclasses (DirectObject)))
+
+(expl has 
+  (superclasses (Expletive)))
+
+(Expletive has 
+  (superclasses (Dependent)))
+
+(IndirectObject has 
+  (superclasses (Object)))
+
+(InfinitivalModifier has 
+  (superclasses (Modifier)))
+
+(infmod has 
+  (superclasses (InfinitivalModifier)))
+
+(iobj has 
+  (superclasses (IndirectObject)))
+
+(mark has 
+  (superclasses (Marker)))
+
+(Marker has 
+  (superclasses (Complement=)))
+
+(measure has 
+  (superclasses (MeasurePhraseModifier)))
+
+(MeasurePhraseModifier has 
+  (superclasses (Modifier)))
+
+(mod= has 
+  (superclasses (Modifier)))
+
+(Modifier has 
+  (superclasses (Dependent)))
+
+(MultiWordExpression has 
+  (superclasses (Modifier)))
+
+(mwe has 
+  (superclasses (MultiWordExpression)))
+
+(neg has 
+  (superclasses (NegationModifier)))
+
+(NegationModifier has 
+  (superclasses (AdverbialModifier)))
+
+(nn has 
+  (superclasses (NounCompoundModifier)))
+
+(NominalSubject has 
+  (superclasses (Subject)))
+
+(NounCompoundModifier has 
+  (superclasses (Modifier)))
+
+(NounPhraseAsAdverbialModifier has 
+  (superclasses (Modifier)))
+
+(npadvmod has 
+  (superclasses (NounPhraseAsAdverbialModifier)))
+
+(nsubj has 
+  (superclasses (NominalSubject)))
+
+(nsubjpass has 
+  (superclasses (PassiveNominalSubject)))
+
+(num has 
+  (superclasses (NumericModifier)))
+
+;;; (Concept Number is a built-in class)
+
+(number= has 
+  (superclasses (CompountNumberElement)))
+
+(NumericModifier has 
+  (superclasses (Modifier)))
+
+(obj has 
+  (superclasses (Object)))
+
+(Object has 
+  (superclasses (Complement=)))
+
+(ObjectOfPreposition has 
+  (superclasses (Object)))
+
+(parataxis has 
+  (superclasses (Parataxis)))
+
+(Parataxis has 
+  (superclasses (Dependent)))
+
+(ParticipalModifier has 
+  (superclasses (Modifier)))
+
+(partmod has 
+  (superclasses (ParticipalModifier)))
+
+(PassiveAuxiliary has 
+  (superclasses (Auxiliary)))
+
+(PassiveClausalSubject has 
+  (superclasses (ClausalSubject)))
+
+(PassiveNominalSubject has 
+  (superclasses (NominalSubject)))
+
+(pcomp has 
+  (superclasses (PrepositionalComplement=)))
+
+(PhrasalVerbParticle has 
+  (superclasses (Modifier)))
+
+(pobj has 
+  (superclasses (ObjectOfPreposition)))
+
+(poss has 
+  (superclasses (PossessionModifier)))
+
+(PossessionModifier has 
+  (superclasses (Modifier)))
+
+(possessive has 
+  (superclasses (PossessiveModifier)))
+
+(PossessiveModifier has 
+  (superclasses (Modifier)))
+
+(preconj has 
+  (superclasses (Preconjunct)))
+
+(Preconjunct has 
+  (superclasses (Modifier)))
+
+(predet has 
+  (superclasses (Predeterminer)))
+
+(Predeterminer has 
+  (superclasses (Modifier)))
+
+(prep has 
+  (superclasses (PrepositionalModifier)))
+
+(prep_ has 
+  (superclasses (PrepositionalModifier)))
+
+(prepc has 
+  (superclasses (PrepositionalClausalModifier)))
+
+(prepc_ has 
+  (superclasses (PrepositionalClausalModifier)))
+
+(PrepositionalClausalModifier has 
+  (superclasses (PrepositionalModifier)))
+
+(PrepositionalComplement= has 
+  (superclasses (Complement=)))
+
+(PrepositionalModifier has 
+  (superclasses (Modifier)))
+
+(prt has 
+  (superclasses (PhrasalVerbParticle)))
+
+(punct has 
+  (superclasses (Punctuation)))
+
+(Punctuation has 
+  (superclasses (Dependent)))
+
+(purpcl has 
+  (superclasses (PurposeClauseModifier)))
+
+(PurposeClauseModifier has 
+  (superclasses (Modifier)))
+
+(QuantifierModifier has 
+  (superclasses (Modifier)))
+
+(quantmod has 
+  (superclasses (QuantifierModifier)))
+
+(rcmod has 
+  (superclasses (RelativeClauseModifier)))
+
+(ref has 
+  (superclasses (Referent)))
+
+(Referent has 
+  (superclasses (Dependent)))
+
+(rel has 
+  (superclasses (Relative)))
+
+(Relative has 
+  (superclasses (Complement=)))
+
+(RelativeClauseModifier has 
+  (superclasses (Modifier)))
+
+(root has 
+  (superclasses (Root)))
+
+(sdep has 
+  (superclasses (SemanticDependent)))
+
+(SemanticDependent has 
+  (superclasses (Dependent)))
+
+(Slot-Query-Viewpoint has 
+  (superclasses (Viewpoint)))
+
+(Slot-Value-Viewpoint has 
+  (superclasses (Viewpoint)))
+
+;;; (Concept String is a built-in class)
+
+(subj has 
+  (superclasses (Subject)))
+
+(Subject has 
+  (superclasses (Argument)))
+
+(TemporalModifier has 
+  (superclasses (NounPhraseAsAdverbialModifier)))
+
+;;; (Concept Thing is a built-in class)
+
+(tmod has 
+  (superclasses (TemporalModifier)))
+
+(xcomp has 
+  (superclasses (ClausalComplement=WithExternalSubject)))
+
+(xsubj has 
+  (superclasses (ControllingSubject)))
+
+
+;;; ---------- CONTENTS ----------
+
+(CLIB-Slot-Group has 
+  (superclasses (KM-Slot-Group)))
+
+;;; ----------
+
+(Interface-Slot has 
+  (superclasses (Slot)))
+
+;;; ----------
+
+(KM-Slot-Group has 
+  (subclasses (Shaken-Slot-Group
+               NL-Slot-Group
+               CLIB-Slot-Group))
+  (superclasses (Slot)))
+
+;;; ----------
+
+(NL-Slot-Group has 
+  (superclasses (KM-Slot-Group))
+  (instances (text-active-phrase
+              text-active-phrase-of
+              text-active-sentence
+              text-active-sentence-of
+              text-active-verbseq
+              text-active-verbseq-of
+              text-active-verbseq-pl
+              text-active-verbseq-pl-of
+              text-active-verbseq-sg
+              text-active-verbseq-sg-of
+              text-argslots
+              text-argslots-of
+              text-arguments
+              text-arguments-of
+              text-base-phrase
+              text-base-phrase-of
+              text-def-determiner
+              text-def-determiner-of
+              text-def-head
+              text-def-head-of
+              text-definition-sentence
+              text-definition-sentence-of
+              text-description
+              text-description-of
+              text-dobj
+              text-dobj-of
+              text-dobj-phrase
+              text-dobj-phrase-of
+              text-existential-there
+              text-existential-there-of
+              text-gen
+              text-gen-of
+              text-gloss
+              text-gloss-of
+              text-head
+              text-head-of
+              text-indef-determiner
+              text-indef-determiner-of
+              text-indef-head
+              text-indef-head-of
+              text-indef-phrase
+              text-indef-phrase-of
+              text-nominalization
+              text-nominalization-of
+              text-nom-sentence
+              text-nom-sentence-of
+              text-number
+              text-number-of
+              text-particle
+              text-particle-of
+              text-passive-phrase
+              text-passive-phrase-of
+              text-passive-sentence
+              text-passive-sentence-of
+              text-passive-verbseq
+              text-passive-verbseq-of
+              text-passive-verbseq-pl
+              text-passive-verbseq-pl-of
+              text-passive-verbseq-sg
+              text-passive-verbseq-sg-of
+              text-phrase
+              text-phrase-of
+              text-postmods
+              text-postmods-of
+              text-postmodslots
+              text-postmodslots-of
+              text-premods
+              text-premods-of
+              text-premodslots
+              text-premodslots-of
+              text-sentence
+              text-sentence-of
+              text-slot
+              text-slot-of
+              text-subj
+              text-subj-of
+              text-subj-phrase
+              text-subj-phrase-of)))
+
+;;; ----------
+
+(Shaken-Slot-Group has 
+  (superclasses (KM-Slot-Group)))
+
+;;; ----------
+
+(Slot has 
+  (subclasses (KM-Slot-Group
+               Interface-Slot))
+  (superclasses (Thing))
+  (instances (text-active-phrase-of
+              text-active-sentence-of
+              text-active-verbseq-of
+              text-active-verbseq-pl-of
+              text-active-verbseq-sg-of
+              text-argslots-of
+              text-arguments-of
+              text-base-phrase-of
+              text-def-determiner-of
+              text-def-head-of
+              text-definition-sentence-of
+              text-description-of
+              text-dobj-of
+              text-dobj-phrase-of
+              text-existential-there-of
+              text-gen-of
+              text-gloss-of
+              text-head-of
+              text-indef-determiner-of
+              text-indef-head-of
+              text-indef-phrase-of
+              text-nominalization-of
+              text-nom-sentence-of
+              text-number-of
+              text-particle-of
+              text-passive-phrase-of
+              text-passive-sentence-of
+              text-passive-verbseq-of
+              text-passive-verbseq-pl-of
+              text-passive-verbseq-sg-of
+              text-phrase-of
+              text-postmods-of
+              text-postmodslots-of
+              text-premods-of
+              text-premodslots-of
+              text-sentence-of
+              text-slot-of
+              text-subj-of
+              text-subj-phrase-of))
+  (range-of (text-argslots
+             text-gloss-of
+             text-postmodslots
+             text-premodslots
+             text-slot))
+  (domain-of (text-argslots-of
+              text-gloss
+              text-postmodslots-of
+              text-premodslots-of
+              text-slot-of)))
+
+;;; ----------
+
+(abbrev has 
+  (superclasses (AbbreviationModifier)))
+
+;;; ----------
+
+(AbbreviationModifier has 
+  (superclasses (Modifier))
+  (subclasses (abbrev)))
+
+;;; ----------
+
+(acomp has 
+  (superclasses (AdjectivalComplement=)))
+
+;;; ----------
+
+(AdjectivalComplement= has 
+  (superclasses (Complement=))
+  (subclasses (acomp)))
+
+;;; ----------
+
+(AdjectivalModifier has 
+  (superclasses (Modifier))
+  (subclasses (amod)))
+
+;;; ----------
+
+(advcl has 
+  (superclasses (AdverbialClauseModifier)))
+
+;;; ----------
+
+(AdverbialClauseModifier has 
+  (superclasses (Modifier))
+  (subclasses (advcl)))
+
+;;; ----------
+
+(AdverbialModifier has 
+  (superclasses (Modifier))
+  (subclasses (advmod
+               NegationModifier)))
+
+;;; ----------
+
+(advmod has 
+  (superclasses (AdverbialModifier)))
+
+;;; ----------
+
+(agent has 
+  (superclasses (Agent)))
+
+;;; ----------
+
+(Agent has 
+  (superclasses (Argument))
+  (subclasses (agent)))
+
+;;; ----------
+
+(amod has 
+  (superclasses (AdjectivalModifier)))
+
+;;; ----------
+
+(appos has 
+  (superclasses (AppositionalModifier)))
+
+;;; ----------
+
+(AppositionalModifier has 
+  (superclasses (Modifier))
+  (subclasses (appos)))
+
+;;; ----------
+
+(arg has 
+  (superclasses (Argument)))
+
+;;; ----------
+
+(Argument has 
+  (subclasses (arg
+               Subject
+               Complement=
+               Agent))
+  (superclasses (Dependent)))
+
+;;; ----------
+
+(attr has 
+  (superclasses (Attributive)))
+
+;;; ----------
+
+(Attributive has 
+  (superclasses (Complement=))
+  (subclasses (attr)))
+
+;;; ----------
+
+(aux has 
+  (superclasses (Auxiliary)))
+
+;;; ----------
+
+(Auxiliary has 
+  (superclasses (Dependent))
+  (subclasses (aux
+               PassiveAuxiliary
+               Copula)))
+
+;;; ----------
+
+(auxpass has 
+  (superclasses (PassiveAuxiliary)))
+
+;;; ----------
+
+(cc has 
+  (superclasses (Coordination)))
+
+;;; ----------
+
+(ccomp has 
+  (superclasses (ClausalComplement=WithInternalSubject)))
+
+;;; ----------
+
+(ClausalComplement=WithExternalSubject has 
+  (superclasses (Complement=))
+  (subclasses (xcomp)))
+
+;;; ----------
+
+(ClausalComplement=WithInternalSubject has 
+  (superclasses (Complement=))
+  (subclasses (ccomp)))
+
+;;; ----------
+
+(ClausalSubject has 
+  (superclasses (Subject))
+  (subclasses (csubj
+               PassiveClausalSubject)))
+
+;;; ----------
+
+(comp has 
+  (superclasses (Complement=)))
+
+;;; ----------
+
+(compl has 
+  (superclasses (Complement=izer)))
+
+;;; ----------
+
+(Complement= has 
+  (subclasses (comp
+               Relative
+               PrepositionalComplement=
+               Object
+               Marker
+               Complement=izer
+               ClausalComplement=WithInternalSubject
+               ClausalComplement=WithExternalSubject
+               Attributive
+               AdjectivalComplement=))
+  (superclasses (Argument)))
+
+;;; ----------
+
+(Complement=izer has 
+  (superclasses (Complement=))
+  (subclasses (complm
+               compl)))
+
+;;; ----------
+
+(complm has 
+  (superclasses (Complement=izer)))
+
+;;; ----------
+
+(CompountNumberElement has 
+  (superclasses (Modifier))
+  (subclasses (number=)))
+
+;;; ----------
+
+(conj has 
+  (superclasses (Conjunct)))
+
+;;; ----------
+
+(conj_ has 
+  (superclasses (Conjunct)))
+
+;;; ----------
+
+(Conjunct has 
+  (superclasses (Dependent))
+  (subclasses (conj_
+               conj)))
+
+;;; ----------
+
+(ControllingSubject has 
+  (superclasses (SemanticDependent))
+  (subclasses (xsubj)))
+
+;;; ----------
+
+(Coordination has 
+  (superclasses (Dependent))
+  (subclasses (cc)))
+
+;;; ----------
+
+(cop has 
+  (superclasses (Copula)))
+
+;;; ----------
+
+(Copula has 
+  (superclasses (Auxiliary))
+  (subclasses (cop)))
+
+;;; ----------
+
+(csubj has 
+  (superclasses (ClausalSubject)))
+
+;;; ----------
+
+(csubjpass has 
+  (superclasses (PassiveClausalSubject)))
+
+;;; ----------
+
+(dep has 
+  (superclasses (Dependent)))
+
+;;; ----------
+
+(Dependent has 
+  (subclasses (dep
+               SemanticDependent
+               Referent
+               Punctuation
+               Parataxis
+               Modifier
+               Expletive
+               Coordination
+               Conjunct
+               Auxiliary
+               Argument)))
+
+;;; ----------
+
+(det has 
+  (superclasses (Determiner)))
+
+;;; ----------
+
+(Determiner has 
+  (superclasses (Modifier))
+  (subclasses (det)))
+
+;;; ----------
+
+(DirectObject has 
+  (superclasses (Object))
+  (subclasses (dobj)))
+
+;;; ----------
+
+(dobj has 
+  (superclasses (DirectObject)))
+
+;;; ----------
+
+(Entity has 
+  (range-of (text-dobj
+             text-subj))
+  (domain-of (text-dobj-of
+              text-subj-of)))
+
+;;; ----------
+
+(Event has 
+  (domain-of (text-active-phrase
+              text-active-sentence
+              text-active-verbseq
+              text-active-verbseq-pl
+              text-active-verbseq-sg
+              text-arguments
+              text-dobj
+              text-nominalization
+              text-nom-sentence
+              text-number
+              text-particle
+              text-passive-phrase
+              text-passive-sentence
+              text-passive-verbseq
+              text-passive-verbseq-pl
+              text-passive-verbseq-sg
+              text-subj))
+  (range-of (text-active-phrase-of
+             text-active-sentence-of
+             text-active-verbseq-of
+             text-active-verbseq-pl-of
+             text-active-verbseq-sg-of
+             text-arguments-of
+             text-dobj-of
+             text-nominalization-of
+             text-nom-sentence-of
+             text-number-of
+             text-particle-of
+             text-passive-phrase-of
+             text-passive-sentence-of
+             text-passive-verbseq-of
+             text-passive-verbseq-pl-of
+             text-passive-verbseq-sg-of
+             text-subj-of)))
+
+;;; ----------
+
+(expl has 
+  (superclasses (Expletive)))
+
+;;; ----------
+
+(Expletive has 
+  (superclasses (Dependent))
+  (subclasses (expl)))
+
+;;; ----------
+
+(IndirectObject has 
+  (superclasses (Object))
+  (subclasses (iobj)))
+
+;;; ----------
+
+(InfinitivalModifier has 
+  (superclasses (Modifier))
+  (subclasses (infmod)))
+
+;;; ----------
+
+(infmod has 
+  (superclasses (InfinitivalModifier)))
+
+;;; ----------
+
+(iobj has 
+  (superclasses (IndirectObject)))
+
+;;; ----------
+
+(mark has 
+  (superclasses (Marker)))
+
+;;; ----------
+
+(Marker has 
+  (superclasses (Complement=))
+  (subclasses (mark)))
+
+;;; ----------
+
+(measure has 
+  (superclasses (MeasurePhraseModifier)))
+
+;;; ----------
+
+(MeasurePhraseModifier has 
+  (superclasses (Modifier))
+  (subclasses (measure)))
+
+;;; ----------
+
+(mod= has 
+  (superclasses (Modifier)))
+
+;;; ----------
+
+(Modifier has 
+  (subclasses (mod=
+               RelativeClauseModifier
+               QuantifierModifier
+               PurposeClauseModifier
+               PrepositionalModifier
+               Predeterminer
+               Preconjunct
+               PossessiveModifier
+               PossessionModifier
+               PhrasalVerbParticle
+               ParticipalModifier
+               NumericModifier
+               NounPhraseAsAdverbialModifier
+               NounCompoundModifier
+               MultiWordExpression
+               MeasurePhraseModifier
+               InfinitivalModifier
+               Determiner
+               CompountNumberElement
+               AppositionalModifier
+               AdverbialModifier
+               AdverbialClauseModifier
+               AdjectivalModifier
+               AbbreviationModifier))
+  (superclasses (Dependent)))
+
+;;; ----------
+
+(MultiWordExpression has 
+  (superclasses (Modifier))
+  (subclasses (mwe)))
+
+;;; ----------
+
+(mwe has 
+  (superclasses (MultiWordExpression)))
+
+;;; ----------
+
+(neg has 
+  (superclasses (NegationModifier)))
+
+;;; ----------
+
+(NegationModifier has 
+  (superclasses (AdverbialModifier))
+  (subclasses (neg)))
+
+;;; ----------
+
+(nn has 
+  (superclasses (NounCompoundModifier)))
+
+;;; ----------
+
+(NominalSubject has 
+  (superclasses (Subject))
+  (subclasses (nsubj
+               PassiveNominalSubject)))
+
+;;; ----------
+
+(NounCompoundModifier has 
+  (superclasses (Modifier))
+  (subclasses (nn)))
+
+;;; ----------
+
+(NounPhraseAsAdverbialModifier has 
+  (superclasses (Modifier))
+  (subclasses (npadvmod
+               TemporalModifier)))
+
+;;; ----------
+
+(npadvmod has 
+  (superclasses (NounPhraseAsAdverbialModifier)))
+
+;;; ----------
+
+(nsubj has 
+  (superclasses (NominalSubject)))
+
+;;; ----------
+
+(nsubjpass has 
+  (superclasses (PassiveNominalSubject)))
+
+;;; ----------
+
+(num has 
+  (superclasses (NumericModifier)))
+
+;;; ----------
+
+(Number has 
+  (range-of (text-number))
+  (domain-of (text-number-of)))
+
+;;; ----------
+
+(number= has 
+  (superclasses (CompountNumberElement)))
+
+;;; ----------
+
+(NumericModifier has 
+  (superclasses (Modifier))
+  (subclasses (num)))
+
+;;; ----------
+
+(obj has 
+  (superclasses (Object)))
+
+;;; ----------
+
+(Object has 
+  (subclasses (obj
+               ObjectOfPreposition
+               IndirectObject
+               DirectObject))
+  (superclasses (Complement=)))
+
+;;; ----------
+
+(ObjectOfPreposition has 
+  (superclasses (Object))
+  (subclasses (pobj)))
+
+;;; ----------
+
+(parataxis has 
+  (superclasses (Parataxis)))
+
+;;; ----------
+
+(Parataxis has 
+  (superclasses (Dependent))
+  (subclasses (parataxis)))
+
+;;; ----------
+
+(ParticipalModifier has 
+  (superclasses (Modifier))
+  (subclasses (partmod)))
+
+;;; ----------
+
+(partmod has 
+  (superclasses (ParticipalModifier)))
+
+;;; ----------
+
+(PassiveAuxiliary has 
+  (superclasses (Auxiliary))
+  (subclasses (auxpass)))
+
+;;; ----------
+
+(PassiveClausalSubject has 
+  (superclasses (ClausalSubject))
+  (subclasses (csubjpass)))
+
+;;; ----------
+
+(PassiveNominalSubject has 
+  (superclasses (NominalSubject))
+  (subclasses (nsubjpass)))
+
+;;; ----------
+
+(pcomp has 
+  (superclasses (PrepositionalComplement=)))
+
+;;; ----------
+
+(PhrasalVerbParticle has 
+  (superclasses (Modifier))
+  (subclasses (prt)))
+
+;;; ----------
+
+(pobj has 
+  (superclasses (ObjectOfPreposition)))
+
+;;; ----------
+
+(poss has 
+  (superclasses (PossessionModifier)))
+
+;;; ----------
+
+(PossessionModifier has 
+  (superclasses (Modifier))
+  (subclasses (poss)))
+
+;;; ----------
+
+(possessive has 
+  (superclasses (PossessiveModifier)))
+
+;;; ----------
+
+(PossessiveModifier has 
+  (superclasses (Modifier))
+  (subclasses (possessive)))
+
+;;; ----------
+
+(preconj has 
+  (superclasses (Preconjunct)))
+
+;;; ----------
+
+(Preconjunct has 
+  (superclasses (Modifier))
+  (subclasses (preconj)))
+
+;;; ----------
+
+(predet has 
+  (superclasses (Predeterminer)))
+
+;;; ----------
+
+(Predeterminer has 
+  (superclasses (Modifier))
+  (subclasses (predet)))
+
+;;; ----------
+
+(prep has 
+  (superclasses (PrepositionalModifier)))
+
+;;; ----------
+
+(prep_ has 
+  (superclasses (PrepositionalModifier)))
+
+;;; ----------
+
+(prepc has 
+  (superclasses (PrepositionalClausalModifier)))
+
+;;; ----------
+
+(prepc_ has 
+  (superclasses (PrepositionalClausalModifier)))
+
+;;; ----------
+
+(PrepositionalClausalModifier has 
+  (superclasses (PrepositionalModifier))
+  (subclasses (prepc_
+               prepc)))
+
+;;; ----------
+
+(PrepositionalComplement= has 
+  (superclasses (Complement=))
+  (subclasses (pcomp)))
+
+;;; ----------
+
+(PrepositionalModifier has 
+  (subclasses (prep_
+               prep
+               PrepositionalClausalModifier))
+  (superclasses (Modifier)))
+
+;;; ----------
+
+(prt has 
+  (superclasses (PhrasalVerbParticle)))
+
+;;; ----------
+
+(punct has 
+  (superclasses (Punctuation)))
+
+;;; ----------
+
+(Punctuation has 
+  (superclasses (Dependent))
+  (subclasses (punct)))
+
+;;; ----------
+
+(purpcl has 
+  (superclasses (PurposeClauseModifier)))
+
+;;; ----------
+
+(PurposeClauseModifier has 
+  (superclasses (Modifier))
+  (subclasses (purpcl)))
+
+;;; ----------
+
+(QuantifierModifier has 
+  (superclasses (Modifier))
+  (subclasses (quantmod)))
+
+;;; ----------
+
+(quantmod has 
+  (superclasses (QuantifierModifier)))
+
+;;; ----------
+
+(rcmod has 
+  (superclasses (RelativeClauseModifier)))
+
+;;; ----------
+
+(ref has 
+  (superclasses (Referent)))
+
+;;; ----------
+
+(Referent has 
+  (superclasses (Dependent))
+  (subclasses (ref)))
+
+;;; ----------
+
+(rel has 
+  (superclasses (Relative)))
+
+;;; ----------
+
+(Relative has 
+  (superclasses (Complement=))
+  (subclasses (rel)))
+
+;;; ----------
+
+(RelativeClauseModifier has 
+  (superclasses (Modifier))
+  (subclasses (rcmod)))
+
+;;; ----------
+
+(Root has 
+  (subclasses (root)))
+
+;;; ----------
+
+(root has 
+  (superclasses (Root)))
+
+;;; ----------
+
+(sdep has 
+  (superclasses (SemanticDependent)))
+
+;;; ----------
+
+(SemanticDependent has 
+  (subclasses (sdep
+               ControllingSubject))
+  (superclasses (Dependent)))
+
+;;; ----------
+
+(Slot-Query-Viewpoint has 
+  (superclasses (Viewpoint)))
+
+(every Slot-Query-Viewpoint has 
+  (viewpoint-question ((make-phrase (:seq "What is the relationship between" (the text-def-head of (the2 of (the2 of (the1 of (the viewpoint-query of Self))))) "and" (the text-def-head of (the3 of (the2 of (the1 of (the viewpoint-query of Self))))) "nospace" "?"))))
+  (viewpoint-answer (((?concsl == (forall ?trip in (the elements of (the viewpoint-target of Self)) where (((the2 of ?trip) isa Relation) and (?valphrase == (make-phrase (the text-indef-phrase of (the3 of ?trip)))) and (?valphrase /= "") and (not ((:set "an entity" "an event" "a role" "an intangible-entity" "a tangible-entity" "a spatial-entity" "a place") includes ?valphrase))) (:pair (the1 of ?trip) (the2 of ?trip)))) and (:seq (the text-def-head of (the2 of (the2 of (the1 of (the viewpoint-query of Self))))) "and" (the text-def-head of (the3 of (the2 of (the1 of (the viewpoint-query of Self))))) "are related in the following ways:<ul>
+" (forall ?cs in ?concsl (:seq "<li>" "nospace" (make-sentence (:seq (the text-def-head of (the1 of ?cs)) (if (has-value (the text-gloss of (the2 of ?cs))) then (the text-gloss of (the2 of ?cs)) else (if (has-value (the text-slot of (the2 of ?cs))) then (:seq "is" (the (the text-slot of (the2 of ?cs)) of (the1 of ?cs))) else (:seq "--" (the2 of ?cs) "--"))) (andify (forall ?trip in (the elements of (the viewpoint-target of Self)) where (((the1 of ?trip) = (the1 of ?cs)) and ((the2 of ?trip) = (the2 of ?cs))) (the text-indef-phrase of (the3 of ?trip)))))) "</li>
+")) "</ul>
+")))))
+
+;;; ----------
+
+(Slot-Value-Viewpoint has 
+  (superclasses (Viewpoint)))
+
+(every Slot-Value-Viewpoint has 
+  (viewpoint-question (((?vq == (the1 of (the viewpoint-query of Self))) and (?fr == (the1 of (the2 of ?vq))) and (?sl == (the2 of (the2 of ?vq))) and (make-phrase (:seq "What is" (if ((?fr isa Entity) and (has-value (the text-slot of ?sl))) then (:seq (the text-def-head of ?fr) (the (the text-slot of ?sl) of ?fr)) else (:seq "the" ?sl "of" (the text-def-head of ?fr))) "nospace" "?")))))
+  (viewpoint-answer ((if (has-value (the1 of (the viewpoint-query of Self))) then (if ((the1 of (the1 of (the viewpoint-query of Self))) = *slot-value) then ((?vq == (the1 of (the viewpoint-query of Self))) and (?fr == (the1 of (the2 of ?vq))) and (?sl == (the2 of (the2 of ?vq))) and (?filtfill == (if (has-value (the viewpoint-filter of Self)) then (allof (the ?sl of ?fr) where (It isa (the viewpoint-filter of Self))) else (the ?sl of ?fr))) and (if (?sl = related-to) then (:seq (the text-description of ?fr) (the text-description of (the3 of (the2 of ?vq)))) else (:seq (if (?sl isa Property) then (the text-description of (the ?sl of ?fr)) else (if (?fr isa Event) then (if (not (oneof ?filler in ?filtfill where (not (?filler isa Entity)))) then (the text-description of ?filtfill) else (if (not (oneof ?filler in ?filtfill where (not (?filler isa Event)))) then (:seq (the text-gen of ?fr) "<br>
+" (the text-phrase of ?fr) (if (has-value (the text-gloss of ?sl)) then (the text-gloss of ?sl) else (if (has-value (the text-slot of ?sl)) then (:seq "is" (the (the text-slot of ?sl) of ?fr)) else (:seq "has" ?sl))) (if ((?sl = subevent) and (oneof ?se in ?filtfill where ((the first-subevent of ?fr) includes ?se))) then (:seq "<li>First," (the text-gen of (the first-subevent of ?fr)) "</li>
+" (forall-seq ?ne in (the seq of (the (next-event *) of (the first-subevent of ?fr))) (:seq "<li>Then," (the text-gen of ?ne) "</li>
+")) (forall ?extra in (the subevent of ?fr) where ((not ((the first-subevent of ?fr) includes ?extra)) and (not ((the (next-event *) of (the first-subevent of ?fr)) includes ?extra))) (:seq "<li>Additionally," (the text-gen of ?extra) "</li>
+"))) else (forall ?filler in ?filtfill (:seq "<li>" (the text-gen of ?filler) "</li>
+")))) else (:seq (the text-gen of ?fr) "<br>
+" (the text-description of ?filtfill)))) else (if ((the number of ?filtfill) > 2) then (:seq (the text-def-head of ?fr) (if (has-value (the text-gloss of ?sl)) then (the text-gloss of ?sl) else (if (has-value (the text-slot of ?sl)) then (:seq "is" (the (the text-slot of ?sl) of ?fr)) else (:seq "--" ?sl "--"))) (forall ?i in ?filtfill (:seq "<li>" (the text-gen of ?i) "</li>
+"))) else (the text-description of ?filtfill)))) "<br>
+" (if (oneof (constraints-for (the ?sl of ?fr)) where ((?constr == (#'(LAMBDA () (STRING (CAADR (KM-UNIQUE0 'It)))))) and ((?constr = "at-least") or (?constr = "exactly") or (?constr = "at-most")))) then (make-sentence (:seq (the text-indef-head of ?fr) (if (has-value (the text-gloss of ?sl)) then (the text-gloss of ?sl) else (if (has-value (the text-slot of ?sl)) then (:seq "is" (the (the text-slot of ?sl) of ?fr)) else (:seq "--" ?sl "--"))) (andify (forall ?c in (constraints-for (the ?sl of ?fr)) where ((?constr == (#'(LAMBDA () (STRING (CAADR (KM-UNIQUE0 '?c)))))) and ((?constr = "at-least") or (?constr = "exactly") or (?constr = "at-most"))) (:seq (#'(LAMBDA () (STRING (CAADR (KM-UNIQUE0 '?c))))) (#'(LAMBDA () (CADADR (KM-UNIQUE0 '?c)))) (#'(LAMBDA () (CDDADR (KM-UNIQUE0 '?c)))))))))))))))))
+  (viewpoint-detail ((if (has-value (the1 of (the viewpoint-query of Self))) then (if ((the1 of (the1 of (the viewpoint-query of Self))) = *slot-value) then ((?vq-frame == (the1 of (the2 of (the1 of (the viewpoint-query of Self))))) and (?vq-slot == (the2 of (the2 of (the1 of (the viewpoint-query of Self))))) and (make-phrase (:seq (get-justification (:triple ?vq-frame ?vq-slot *)) "<p>
+" "<b>" (the instance-of of ?vq-frame) "nospace" ":</b>" (make-sentence ((the user-description of (the instance-of of ?vq-frame)) or (the description of (the instance-of of ?vq-frame)))) (if (has-value (the user-assumption of (the instance-of of ?vq-frame))) then (:seq "<p><b>Assumptions:</b><br>
+" (forall ?as in (the user-assumption of (the instance-of of ?vq-frame)) (:seq "
+<li>" ?as "</li>")))) (get-justification (:triple ?vq-frame instance-of *)) "<br>
+" (forall ?vq-val in (the ?vq-slot of ?vq-frame) (:seq (get-justification (:triple ?vq-val instance-of *)) "<br>
+")) (if (?vq-slot isa Property) then ((?c-order == (oneof ?co in (the all-instances of Property-Class-Order) where (((the property-slot of ?co) = ?vq-slot) and (oneof ?c in (the classes of ?vq-frame) where ((the elements of (the element of ?co)) includes ?c))))) and (?vq-frameclass == (oneof ?c in (the elements of (the element of ?c-order)) where (?vq-frame isa ?c))) and (:seq (if (not ((the1 of (the element of ?c-order)) = ?vq-frameclass)) then (:seq "In general, the" ?vq-slot "of" (the text-indef-head of ?vq-frame) "is greater than the" ?vq-slot "of" (andify (forall ?c in (#'(LAMBDA () (MEMBER (KM-UNIQUE0 '?vq-frameclass) (KM-UNIQUE0 '(reverse (the element of ?c-order)))))) where (not (?c = ?vq-frameclass)) (the text-indef-head of (an instance of ?c)))) "nospace" ".
+")) (if (not ((the1 of (reverse (the element of ?c-order))) = ?vq-frameclass)) then (:seq "In general, the" ?vq-slot "of" (the text-indef-head of ?vq-frame) "is less than the" ?vq-slot "of" (andify (forall ?c in (#'(LAMBDA () (MEMBER (KM-UNIQUE0 '?vq-frameclass) (KM-UNIQUE0 '(the element of ?c-order))))) where (not (?c = ?vq-frameclass)) (the text-indef-head of (an instance of ?c)))) "nospace" ".
+"))))) (if (has-value (the used-in-equation of (the ?vq-slot of ?vq-frame))) then ((?vars == (forall ?PV in (the equation-uses of (the used-in-equation of (the ?vq-slot of ?vq-frame))) where (not ((the ?vq-slot of ?vq-frame) includes ?PV)) (:seq (if ((the number of (allof ?var-pair in (the equation-symbol of (the used-in-equation of ?PV)) where ((the2 of ?var-pair) = ?PV))) > 1) then (:seq "<li>" (andify (forall ?var-pair in (the equation-symbol of (the used-in-equation of ?PV)) where ((the2 of ?var-pair) = ?PV) (the1 of ?var-pair))) "are the same.
+")) (if (has-value (the1 of (the value of ?PV))) then (:seq "<li>" (the text-description of ?PV) "</li>
+"))))) and (?eqs == (forall ?eq in (the equation-expression of (the equation of (the component-of of (the elements of (the viewpoint-target of Self))))) (:seq "<li>" (#'(LAMBDA () (PRETTY-PRINT-EQ-HTML (FIRST (KM0 '?eq))))) "</li>
+"))) and (:seq (if ?vars then (:seq "Given the values<br>
+" ?vars "<br>
+")) (if ?eqs then (:seq "Given the equations<br>
+" ?eqs "<br>
+")) (#'(LAMBDA () (BPS-EXPLAINEQHIST))) "<br><li>" (the text-description of (the ?vq-slot of ?vq-frame)) "</li>
+")))))))))))
+
+;;; ----------
+
+(String has 
+  (range-of (text-active-phrase
+             text-active-verbseq
+             text-active-verbseq-pl
+             text-active-verbseq-sg
+             text-definition-sentence
+             text-description
+             text-existential-there
+             text-gen
+             text-gloss
+             text-passive-phrase
+             text-passive-verbseq
+             text-passive-verbseq-pl
+             text-passive-verbseq-sg))
+  (domain-of (text-active-phrase-of
+              text-active-verbseq-of
+              text-active-verbseq-pl-of
+              text-active-verbseq-sg-of
+              text-definition-sentence-of
+              text-description-of
+              text-existential-there-of
+              text-gen-of
+              text-gloss-of
+              text-passive-phrase-of
+              text-passive-verbseq-of
+              text-passive-verbseq-pl-of
+              text-passive-verbseq-sg-of)))
+
+;;; ----------
+
+(subj has 
+  (superclasses (Subject)))
+
+;;; ----------
+
+(Subject has 
+  (subclasses (subj
+               NominalSubject
+               ClausalSubject))
+  (superclasses (Argument)))
+
+;;; ----------
+
+(TemporalModifier has 
+  (superclasses (NounPhraseAsAdverbialModifier))
+  (subclasses (tmod)))
+
+;;; ----------
+
+(text-active-phrase has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-active-phrase-of has 
+  (range (Event))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-active-sentence has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-active-sentence-of has 
+  (range (Event))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-active-verbseq has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-active-verbseq-of has 
+  (range (Event))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-active-verbseq-pl has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-active-verbseq-pl-of has 
+  (range (Event))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-active-verbseq-sg has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-active-verbseq-sg-of has 
+  (range (Event))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-argslots has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (range (Slot))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-argslots-of has 
+  (range (Thing))
+  (domain (Slot))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-arguments has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-arguments-of has 
+  (range (Event))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-base-phrase has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-base-phrase-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-def-determiner has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-def-determiner-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-def-head has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-def-head-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-definition-sentence has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-definition-sentence-of has 
+  (range (Thing))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-description has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-description-of has 
+  (range (Thing))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-dobj has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (Entity))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-dobj-of has 
+  (range (Event))
+  (domain (Entity))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-dobj-phrase has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-dobj-phrase-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-existential-there has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-existential-there-of has 
+  (range (Thing))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-gen has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-gen-of has 
+  (range (Thing))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-gloss has 
+  (instance-of (NL-Slot-Group))
+  (domain (Slot))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-gloss-of has 
+  (range (Slot))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-head has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-head-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-indef-determiner has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-indef-determiner-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-indef-head has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-indef-head-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-indef-phrase has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-indef-phrase-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-nom-sentence has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-nom-sentence-of has 
+  (range (Event))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-nominalization has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-nominalization-of has 
+  (range (Event))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-number has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (Number))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-number-of has 
+  (range (Event))
+  (domain (Number))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-particle has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-particle-of has 
+  (range (Event))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-passive-phrase has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-passive-phrase-of has 
+  (range (Event))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-passive-sentence has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-passive-sentence-of has 
+  (range (Event))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-passive-verbseq has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-passive-verbseq-of has 
+  (range (Event))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-passive-verbseq-pl has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-passive-verbseq-pl-of has 
+  (range (Event))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-passive-verbseq-sg has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (String))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-passive-verbseq-sg-of has 
+  (range (Event))
+  (domain (String))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-phrase has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-phrase-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-postmods has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-postmods-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-postmodslots has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (range (Slot))
+  (fluent-status (*Non-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-postmodslots-of has 
+  (range (Thing))
+  (domain (Slot))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-premods has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-premods-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-premodslots has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (range (Slot))
+  (fluent-status (*Non-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-premodslots-of has 
+  (range (Thing))
+  (domain (Slot))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-sentence has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-sentence-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-slot has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (range (Slot))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-slot-of has 
+  (range (Thing))
+  (domain (Slot))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-subj has 
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (range (Entity))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-N))
+  (dont-cache-values (t))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-subj-of has 
+  (range (Event))
+  (domain (Entity))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-subj-phrase has 
+  (instance-of (NL-Slot-Group))
+  (domain (Thing))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (dont-cache-values (t)))
+
+;;; ----------
+
+(text-subj-phrase-of has 
+  (range (Thing))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(Thing has 
+  (subclasses (Slot))
+  (domain-of (text-argslots
+              text-base-phrase
+              text-def-determiner
+              text-def-head
+              text-definition-sentence
+              text-description
+              text-dobj-phrase
+              text-existential-there
+              text-gen
+              text-head
+              text-indef-determiner
+              text-indef-head
+              text-indef-phrase
+              text-phrase
+              text-postmods
+              text-postmodslots
+              text-premods
+              text-premodslots
+              text-sentence
+              text-slot
+              text-subj-phrase))
+  (range-of (text-argslots-of
+             text-base-phrase-of
+             text-def-determiner-of
+             text-def-head-of
+             text-definition-sentence-of
+             text-description-of
+             text-dobj-phrase-of
+             text-existential-there-of
+             text-gen-of
+             text-head-of
+             text-indef-determiner-of
+             text-indef-head-of
+             text-indef-phrase-of
+             text-phrase-of
+             text-postmods-of
+             text-postmodslots-of
+             text-premods-of
+             text-premodslots-of
+             text-sentence-of
+             text-slot-of
+             text-subj-phrase-of)))
+
+;;; ----------
+
+(tmod has 
+  (superclasses (TemporalModifier)))
+
+;;; ----------
+
+(Viewpoint has 
+  (subclasses (Slot-Value-Viewpoint
+               Slot-Query-Viewpoint)))
+
+;;; ----------
+
+(xcomp has 
+  (superclasses (ClausalComplement=WithExternalSubject)))
+
+;;; ----------
+
+(xsubj has 
+  (superclasses (ControllingSubject)))
+
+;;; ----------
+
+
+;;; ---------- EXPLANATIONS ----------
+
+
+;;; ----------------------------------------
+
+(enable-installing-inverses)  ; (Re-enable it after restoring KB state)
+
+;;; ----------------------------------------
+;;;	KM'S INTERNAL BEHAVIOR PARAMETER VALUES
+;;; ----------------------------------------
+
+(SETQ *RECURSIVE-CLASSIFICATION* 'T)
+(SETQ *INDIRECT-CLASSIFICATION* 'T)
+(SETQ *RECURSIVE-PROTOTYPES* 'NIL)
+(SETQ *EAGERLY-UNIFY-PROTOTYPES* 'T)
+(SETQ *SANITY-CHECKS* 'NIL)
+(SETQ *SLOT-CHECKING-ENABLED* 'NIL)
+(SETQ *LOGGING* 'NIL)
+(SETQ *MAX-PADDING-INSTANCES* '0)
+(SETQ *TOLERANCE* '1.e-4)
+(SETQ *OUTPUT-PRECISION* '3)
+(SETQ *INSTANCE-OF-IS-FLUENT* 'NIL)
+(SETQ *KM-DEPTH-LIMIT* 'NIL)
+(SETQ *LINEAR-PATHS* 'NIL)
+(SETQ *PROJECT-CACHED-VALUES-ONLY* 'NIL)
+(SETQ *RECORD-EXPLANATIONS-FOR-CLONES* 'T)
+(SETQ *COERCE-UNDECLARED-SLOTS* 'NIL)
+(SETQ *RECORD-EXPLANATIONS* 'T)
+(SETQ *RECORD-SOURCES* 'T)
+(SETQ *ADD-COMMENTS-TO-NAMES* 'T)
+(SETQ *CHECK-KB* 'NIL)
+(SETQ *CLASSIFY-SLOTLESS-INSTANCES* 'T)
+(SETQ *BUILT-IN-REMOVE-SUBSUMERS-SLOTS* '(|instance-of| |classes|
+                                          |superclasses| |member-type|))
+(SETQ *BUILT-IN-REMOVE-SUBSUMEES-SLOTS* '(|subclasses| |prototype-of| |domain|
+                                          |range|))
+(SETQ *DEFAULT-FLUENT-STATUS* '|*Fluent|)
+(SETQ *ACTIVE-OBJ-STACK* 'NIL)
+(SETQ *ON-ERROR* 'DEBUG)
+(SETQ *JUSTIFY-LEAVES* 'NIL)
+(SETQ *START-JUSTIFICATIONS-WITH-BECAUSE* 'T)
+(SETQ *CLASSIFICATION-ENABLED* 'T)
+(SETQ *PROTOTYPE-CLASSIFICATION-ENABLED* 'T)
+(SETQ *USE-INHERITANCE* 'T)
+(SETQ *USE-PROTOTYPES* 'T)
+(SETQ *DEVELOPER-MODE* 'NIL)
+(SETQ *UNCLONABLE-SLOTS* '(|prototype-participant-of| |prototype-participants|
+                           |prototype-of| |prototypes| |prototype-scope|
+                           |locked-instance-of| |has-clones| |has-built-clones|))
+(SETQ *CALLED-FORCES-UNIFICATION* 'T)
+
+
+;;; ----------------------------------------
+;;;	KM'S INTERNAL STATE PARAMETER VALUES
+;;; ----------------------------------------
+
+(SETQ *KM-GENSYM-COUNTER* '0)
+(SETQ *VISIBLE-THEORIES* 'NIL)
+(SETQ *CURR-PROTOTYPE* 'NIL)
+(SETQ *CURR-SITUATION* '|*Global|)
+(SETQ *CLASSES-USING-ASSERTIONS-SLOT* 'NIL)
+(SETQ *ARE-SOME-DEFINITIONS* 'NIL)
+(SETQ *ARE-SOME-PROTOTYPE-DEFINITIONS* 'NIL)
+(SETQ *ARE-SOME-PROTOTYPES* 'NIL)
+(SETQ *ARE-SOME-SUBSLOTS* 'T)
+(SETQ *ARE-SOME-CONSTRAINTS* 'NIL)
+(SETQ *ARE-SOME-TAGS* 'NIL)
+(SETQ *ARE-SOME-DEFAULTS* 'NIL)
+(SETQ *AM-IN-SITUATIONS-MODE* 'NIL)
+
+;;; --- end (216 frames written) ---
+
