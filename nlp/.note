@@ -61,8 +61,12 @@ sp_1 gives tree-parse of each sentence, &sp_2 adds the dependancy info for each(
 break out stanford(&berk)parser parts of nlp.lisp and put into sp.lisp
 https://site.nlp2rdf.org/ https://github.com/NLP2RDF/ ontologies/tree/master/vm/dep/stanford.{html|ttl} ;grep stanford: stanford.ttl &get into KM form
 http://www.cs.utexas.edu/users/mfkb/RKF/{tree/ | trunktree/rkf-clib.tar.gz} core/text-*.km integrate w/nlp2rdf sp ttl slot hier
+ grep stanford: stanford.ttl, then small sed to get: wc sd.km 247  492 6391 sd.km, can make ins of dep types, but keep seperate, maybe w/situations or..
+ can just gentemp from the type, top of sd.km will need slots for parts of sentence
 ln -s components/core cc ls1;cc/*Slot*|sed -f l.sed> ls.cl;ls1 cc/text-*|sed -f l.sed> lt.cl;l.sed: /^/s//(load-kb \"/ & /$/s//\")/
   taxonomy of ls then w/lt, wc: 156     289    4036 then 280     413    6791, as seen in tax.kb from save-kb
+   7   14  190 le.cl 8   16  268 ls.cl 39   78 1366 lt.cl -> lcc.lisp       https://github.com/vseloved/cl-nlp/blob/master/src/syntax
+http://nlp.stanford.edu/software/dependencies_manual.pdf pubs/dependencies-coling08.pdf map dep outputs to taxonomy/slots
 Have loaded KM slot-groups, and the core text-*.km files; also have stanford.ttl as a 1st cut hierarchy;not connected,nor the CoNLL(stanford)dependancy
  probably try for CoNLL to KM text-*.km part of it, &see how the stanford.ttl dependancy hierarchy fits in; start by hand &then try assited match
 Keep looking for ppl having done this(maybe the ppl doing the lemon work)but not found yet, also look at other re work, a few incl:

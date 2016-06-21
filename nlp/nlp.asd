@@ -15,7 +15,7 @@
 ;               (:file "util_mb")
 ;               (:file "diff-sexp")
 ;               ) :serial t)
-;    (:module c ;km 
+;    (:module c ;km  ;lkm
 ;      :components (
 ;               ;(:file "km_2-2-29") ; (:file "km_2-2-33") ; (:file "km_2-3-0") ;(:file "km_2-4-5") ;
 ;               (:file "km_2-5-1") ;
@@ -30,6 +30,7 @@
 ;	(:file "cache") ;to replace above w/much less code
 ;               ) :serial t)
     (:module nlp :components ((:file "sp") ;just stanford-parser(&berk) parts of nlp.lisp
+                             ;(:file "lcc")
                               (:file "dep2rdf")
               ;skip canned stuff for now ;(:file "nlp") ;live
               ;(:file "nlp3") ;canned

@@ -1,5 +1,5 @@
 
-;;; Current state of the KB (6/19/2016 23:55.47, KM 2.5.45)
+;;; Current state of the KB (6/20/2016 22:13.20, KM 2.5.45)
 
 (reset-kb)
 
@@ -31,6 +31,8 @@
 
 (Slot has 
   (superclasses (Thing)))
+
+;;; (Concept Situation is a built-in class)
 
 (abbrev has 
   (superclasses (AbbreviationModifier)))
@@ -170,6 +172,12 @@
 (dobj has 
   (superclasses (DirectObject)))
 
+(Entity has 
+  (superclasses (Thing)))
+
+(Event has 
+  (superclasses (Thing)))
+
 (expl has 
   (superclasses (Expletive)))
 
@@ -267,6 +275,8 @@
 
 (ParticipalModifier has 
   (superclasses (Modifier)))
+
+;;; (Concept Partition is a built-in class)
 
 (partmod has 
   (superclasses (ParticipalModifier)))
@@ -388,6 +398,9 @@
 (Slot-Value-Viewpoint has 
   (superclasses (Viewpoint)))
 
+(State has 
+  (superclasses (Event)))
+
 ;;; (Concept String is a built-in class)
 
 (subj has 
@@ -400,6 +413,9 @@
   (superclasses (NounPhraseAsAdverbialModifier)))
 
 ;;; (Concept Thing is a built-in class)
+
+(Time-Interval has 
+  (superclasses (Temporal-Entity)))
 
 (tmod has 
   (superclasses (TemporalModifier)))
@@ -433,7 +449,9 @@
 
 (NL-Slot-Group has 
   (superclasses (KM-Slot-Group))
-  (instances (text-active-phrase
+  (instances (text-object
+              text-object-of
+              text-active-phrase
               text-active-phrase-of
               text-active-sentence
               text-active-sentence-of
@@ -523,7 +541,14 @@
   (subclasses (KM-Slot-Group
                Interface-Slot))
   (superclasses (Thing))
-  (instances (text-active-phrase-of
+  (instances (object-of
+              object
+              text-object-of
+              experiencer-of
+              experiencer
+              time-contains
+              time-during
+              text-active-phrase-of
               text-active-sentence-of
               text-active-verbseq-of
               text-active-verbseq-pl-of
@@ -572,6 +597,19 @@
               text-postmodslots-of
               text-premodslots-of
               text-slot-of)))
+
+;;; ----------
+
+(Situation has 
+  (domain-of (time-during))
+  (range-of (time-contains)))
+
+;;; ----------
+
+(_Partition1 has 
+  (instance-of (Partition))
+  (members (Event
+            Entity)))
 
 ;;; ----------
 
@@ -861,15 +899,82 @@
 ;;; ----------
 
 (Entity has 
-  (range-of (text-dobj
+  (member-of (_Partition1))
+  (superclasses (Thing))
+  (range-of (object
+             experiencer
+             text-dobj
              text-subj))
-  (domain-of (text-dobj-of
+  (domain-of (object-of
+              experiencer-of
+              text-dobj-of
               text-subj-of)))
+
+(every Entity has 
+  (identifier ((((forall (the called of Self) (a Text-Field with (information-content (It))))) && ((forall (the uniquely-called of Self) (a Text-Field with (information-content (It))))))))
+  (name ((if (anonymous-instancep Self) then (oneof ?c1 in (the classes of Self) where (not (oneof ?c2 in (the classes of Self) where ((?c1 /= ?c2) and (?c1 subsumes ?c2))))))))
+  (text-gen ((make-phrase (the text-phrase of Self))))
+  (text-description ((the text-sentence of Self)))
+  (text-head ((if (anonymous-instancep Self) then (:seq (if ((:set Thing Entity Intangible-Entity Spatial-Entity Place Tangible-Entity) is-superset-of (the instance-of of Self)) then (if (has-value (the plays of Self)) then (oneof (the plays of Self) where t) else (if (has-value (the location-of of Self)) then (:seq "location of" (the text-gen of (oneof (the location-of of Self) where t))) else Self)) else Self) (if (has-value (the uniquely-called of Self)) then (:seq "(called" (the uniquely-called of Self) ")") else (if (has-value (the called of Self)) then (:seq "(called" (the called of Self) ")")))) else (the name of Self))))
+  (text-def-determiner ((if (anonymous-instancep Self) then (if (has-value (the is-possessed-by of Self)) then (:seq (the text-def-head of (the is-possessed-by of Self)) "'s") else (:seq "the")))))
+  (text-indef-determiner ((if (anonymous-instancep Self) then (if ((:set "A" "E" "I" "O" "U" "a" "e" "i" "o" "u") includes (#'(LAMBDA () (STRING (CHAR (KM-UNIQUE0 '(make-phrase (:seq (the text-premods of Self) (the text-head of Self)))) 0))))) then (:seq "an") else (:seq "a")))))
+  (text-def-head ((:seq (the text-def-determiner of Self) (the text-head of Self))))
+  (text-indef-head ((:seq (the text-indef-determiner of Self) (the text-head of Self))))
+  (text-is-above ("above"))
+  (text-is-along ("along"))
+  (text-is-between ("between"))
+  (text-is-behind ("behind"))
+  (text-is-opposite ("opposite"))
+  (text-is-outside ("outside"))
+  (text-is-over ("over"))
+  (text-is-beside ("beside"))
+  (text-is-near ("near"))
+  (text-is-at ("at"))
+  (text-is-on ("on"))
+  (text-site-of ("site of"))
+  (text-abuts ("abutting"))
+  (text-is-inside ("inside"))
+  (text-is-part-of ("part of"))
+  (text-has-part ("made up of"))
+  (text-material ("made of"))
+  (text-content ("containing"))
+  (text-result-of ("result of"))
+  (text-raw-material-of ("raw material of"))
+  (text-agent-of ("agent of"))
+  (text-is-north-of ("north of"))
+  (text-is-northeast-of ("northeast of"))
+  (text-is-east-of ("east of"))
+  (text-is-southeast-of ("southeast of"))
+  (text-is-south-of ("south of"))
+  (text-is-southwest-of ("southwest of"))
+  (text-is-west-of ("west of"))
+  (text-is-northwest-of ("northwest of"))
+  (text-premodslots ((:seq area length height thickness volume size capacity depth mass density temperature wetness brightness breakability consistency shape smell taste texture trait age color physical-state sex)))
+  (text-premods ((if (has-value (the text-premodslots of Self)) then (forall-seq (the text-premodslots of Self) where (has-value (the It of Self)) (if (It isa Property) then (if (has-value (the value of (the It of Self))) then (the text-phrase of (the It of Self))) else (the text-head of (the It of Self)))))))
+  (text-postmodslots ((:seq material content is-above is-along is-between is-behind is-opposite is-outside is-over is-beside is-at is-on site-of abuts is-inside is-north-of is-northeast-of is-east-of is-southeast-of is-south-of is-southwest-of is-west-of is-northwest-of)))
+  (text-postmods ((if (has-value (the text-postmodslots of Self)) then (forall-seq (the text-postmodslots of Self) where (has-value (the It of Self)) (:seq (the (the text-slot of It) of Self) (if (Event subsumes (the range of It)) then (andify (the text-indef-phrase of (the It of Self))) else (andify (the text-def-head of (the It of Self)))))))))
+  (text-base-phrase ((if (anonymous-instancep Self) then (:seq (the text-def-determiner of Self) (the text-premods of Self) (the text-head of Self)) else (:seq (the text-head of Self)))))
+  (text-indef-phrase ((:seq (the text-indef-determiner of Self) (the text-premods of Self) (the text-head of Self))))
+  (text-sentence ((make-sentence ((if (has-value (the elements of (the text-postmods of Self))) then (:seq (the text-base-phrase of Self) "is" (andify (the elements of (the text-postmods of Self)))) else (if (has-value (the elements of (the text-premods of Self))) then (:seq (the text-def-head of Self) "is" (andify (the elements of (the text-premods of Self)))) else (if (has-value (the is-possessed-by of Self)) then (:seq (the text-gen of (the is-possessed-by of Self)) "has" (the text-indef-head of Self)) else (the text-existential-there of Self))))))))
+  (text-existential-there ((make-sentence (:seq "there is" (if (anonymous-instancep Self) then (the text-indef-head of Self) else (:seq (the text-indef-head of (an instance of (oneof (the classes of Self) where t))) "called" (the text-head of Self)))))))
+  (text-definition-sentence ((make-sentence (:seq (the text-indef-head of Self) "is" ((the elements of (andify (forall (the superclasses of (the classes of Self)) (the text-indef-head of (an instance of It))))) or "something") (if ((has-value (the elements of (the text-postmods of Self))) and (oneof (the superclasses of (the classes of Self)) where ((the elements of (the text-postmods of (an instance of It))) /= (the elements of (the text-postmods of Self))))) then ((?sup == (oneof (the superclasses of (the classes of Self)) where ((the elements of (the text-postmods of (an instance of It))) /= (the elements of (the text-postmods of Self))))) and (:seq "that is" (andify (allof (the elements of (the text-postmods of Self)) where (not ((the elements of (the text-postmods of (an instance of ?sup))) includes It)))))))))))
+  (text-phrase ((if (anonymous-instancep Self) then (:seq (the text-base-phrase of Self) (the elements of (the text-postmods of Self))) else (the text-base-phrase of Self)))))
 
 ;;; ----------
 
 (Event has 
-  (domain-of (text-active-phrase
+  (superclasses (Thing))
+  (primary-slot (time-during))
+  (cmap-correspondence ((:seq time-during "when")))
+  (member-of (_Partition1))
+  (test-case ('((Knife has (superclasses (Physical-Object))) (every Knife has (purpose ((a Instrument-Role with (in-event ((a Cut))))))) (*K has (instance-of (Knife)) (object-of ((a Be-Ruined)))) (Cut has (superclasses (Event))) (every Cut has (instrument ((a Knife)))) (a Cut with (instrument (*K))) (not (try-do (thelast Cut))))))
+  (wn20-synset ((:set (:triple "event" 1 "n") (:triple "event" 3 "n"))))
+  (subclasses (State))
+  (domain-of (object
+              text-object
+              experiencer
+              time-during
+              text-active-phrase
               text-active-sentence
               text-active-verbseq
               text-active-verbseq-pl
@@ -886,7 +991,11 @@
               text-passive-verbseq-pl
               text-passive-verbseq-sg
               text-subj))
-  (range-of (text-active-phrase-of
+  (range-of (object-of
+             text-object-of
+             experiencer-of
+             time-contains
+             text-active-phrase-of
              text-active-sentence-of
              text-active-verbseq-of
              text-active-verbseq-pl-of
@@ -903,6 +1012,102 @@
              text-passive-verbseq-pl-of
              text-passive-verbseq-sg-of
              text-subj-of)))
+
+(every Event has 
+  (identifier ((((forall (the called of Self) (a Text-Field with (information-content (It))))) && ((forall (the uniquely-called of Self) (a Text-Field with (information-content (It))))))))
+  (subevent ((<> Self)
+             (must-be-a Event)
+             (the first-subevent of Self)))
+  (next-event ((must-be-a Event with (time-during ((a Time-Interval with (time-after ((the time-during of Self)))))))))
+  (all-subevents ((the subevent of Self)
+                  (the all-subevents of (the subevent of Self))))
+  (actions ((:set (forall (the subevent of Self) (the actions of It)) Self)))
+  (primitive-actions ((the primitive-actions of (the subevent of Self))
+                      (if (not (the subevent of Self)) then Self)))
+  (time-during ((a Time-Interval with (time-after ((forall (the subevent of (the subevent-of of Self)) where ((the next-event of It) = Self) (the time-during of It)))) (time-before ((the time-during of (the next-event of Self)))))))
+  (site ((must-be-a Spatial-Entity with (is-near ((if (has-value (the object of Self)) then (the location of (the object of Self))))))))
+  (agent ((must-be-a Entity with (abuts ((if (has-value (the instrument of Self)) then (the instrument of Self)))))))
+  (beneficiary ((must-be-a Living-Entity)))
+  (donor ((must-be-a Entity)))
+  (instrument ((must-be-a Entity with (abuts ((if (has-value (the agent of Self)) then (the agent of Self)))))))
+  (recipient ((must-be-a Entity)))
+  (result ((must-be-a Entity)))
+  (pcs-list ((if (has-value (the instrument of Self)) then (forall (the instrument of Self) ((:triple (It) instance-of (mustnt-be-a Entity with (plays ((a Instrument-Role))) (object-of ((a Be-Broken with (object (It))))))))))))
+  (text-gen ((make-sentence (the text-sentence of Self))))
+  (text-description ((the text-nom-sentence of Self)))
+  (text-dobj ((if (has-value (the object of Self)) then (the object of Self) else (the result of Self))))
+  (text-subj ((if (has-value (the agent of Self)) then (the agent of Self) else (the instrument of Self))))
+  (text-subj-phrase ((if (((:set Thing Entity Intangible-Entity Spatial-Entity Place Tangible-Entity) is-superset-of (the instance-of of (the text-subj of Self))) and ((the text-def-head of (the text-subj of Self)) = (:seq (:seq "the") (:seq (the text-subj of Self) ())))) then (:seq "the" (oneof (the all-instances of Relation) where ((the It of Self) = (the text-subj of Self)))) else (andify (the text-def-head of (the text-subj of Self))))))
+  (text-dobj-phrase ((if (((:set Thing Entity Intangible-Entity Spatial-Entity Place Tangible-Entity) is-superset-of (the instance-of of (the text-dobj of Self))) and ((the text-def-head of (the text-dobj of Self)) = (:seq (:seq "the") (:seq (the text-dobj of Self) ())))) then (:seq "the" (oneof (the all-instances of Relation) where ((the It of Self) = (the text-dobj of Self)))) else (andify (the text-def-head of (the text-dobj of Self))))))
+  (text-number ((if (has-value (the text-subj of Self)) then (the number of (the text-subj of Self)) else (the number of (the text-dobj of Self)))))
+  (text-active-verbseq ((if ((the text-number of Self) > 1) then (the text-active-verbseq-pl of Self) else (the text-active-verbseq-sg of Self))))
+  (text-passive-verbseq ((if ((the text-number of Self) > 1) then (the text-passive-verbseq-pl of Self) else (the text-passive-verbseq-sg of Self))))
+  (text-active-phrase ((if ((the number of (the text-active-verbseq of Self)) = 1) then (the text-active-verbseq of Self) else ((if ((the text-number of Self) = 1) then ((:seq "does" (andify (the instance-of of Self)))) else ((:seq "do" (andify (the instance-of of Self)))))))))
+  (text-passive-phrase ((if ((the number of (the text-passive-verbseq of Self)) = 1) then (the text-passive-verbseq of Self) else ((if ((the number of (the text-dobj of Self)) > 1) then ((:seq "have" (andify (the instance-of of Self)) "done to them")) else ((:seq "has" (andify (the instance-of of Self)) "done to it")))))))
+  (text-sentence ((:seq (if (oneof (the superclasses of (the classes of Self)) where ((the text-active-verbseq-sg of (an instance of It)) = (the text-active-verbseq-sg of Self))) then (:seq (the name of Self) "nospace" ":")) (if (has-value (the text-subj of Self)) then (the text-active-sentence of Self) else (the text-passive-sentence of Self)))))
+  (text-active-sentence ((:seq (the text-subj-phrase of Self) (the text-active-phrase of Self) (if ((the agent of Self) /= (the text-dobj of Self)) then (if (the text-dobj of Self) then (the text-dobj-phrase of Self))) (the text-arguments of Self))))
+  (text-passive-sentence ((if (has-value (the text-dobj of Self)) then (:seq (the text-dobj-phrase of Self) (the text-passive-phrase of Self) (the text-arguments of Self)) else (if ((not (has-value (the elements of (the text-arguments of Self)))) and (not (has-value (the text-passive-verbseq of Self)))) then (the text-nom-sentence of Self) else (:seq "something" (the text-passive-phrase of Self) (the text-arguments of Self))))))
+  (name ((if (anonymous-instancep Self) then (oneof ?c1 in (the classes of Self) where (not (oneof ?c2 in (the classes of Self) where ((?c1 /= ?c2) and (?c1 subsumes ?c2))))))))
+  (text-head ((if (anonymous-instancep Self) then (if (has-value (the text-nominalization of Self)) then (if ((:set "activity" "action") includes (the text-nominalization of Self)) then Self else (the text-nominalization of Self)) else Self) else (the name of Self))))
+  (text-def-determiner ((:seq "the")))
+  (text-indef-determiner ((if ((:set "A" "E" "I" "O" "U" "a" "e" "i" "o" "u") includes (#'(LAMBDA () (STRING (CHAR (KM-UNIQUE0 '(make-phrase (the text-head of Self))) 0))))) then (:seq "an") else (:seq "a"))))
+  (text-def-head ((:seq (the text-def-determiner of Self) (the text-head of Self))))
+  (text-indef-head ((:seq (the text-indef-determiner of Self) (the text-head of Self))))
+  (text-indef-phrase ((if (has-value (the text-dobj of Self)) then (:seq (the text-def-head of Self) (if ((the text-dobj of Self) = (the result of Self)) then (the text-result of Self) else (the text-object of Self)) (andify (the text-indef-head of (the text-dobj of Self)))) else (the text-indef-head of Self))))
+  (text-premodslots ((:seq manner duration acceleration velocity rotational-rate frequency distance direction rate)))
+  (text-premods ((if (has-value (the text-premodslots of Self)) then (forall-seq (the text-premodslots of Self) where ((has-value (the It of Self)) and (not ((:set Thing Entity Intangible-Entity Spatial-Entity Place Tangible-Entity) is-superset-of (the instance-of of (the It of Self))))) (if (It isa Property) then (the text-phrase of (the It of Self)) else (:seq (the text-premods of (the It of Self)) (the text-head of (the It of Self))))))))
+  (text-postmodslots ((:seq subevent-of raw-material agent donor recipient beneficiary instrument resulting-state-of caused-by origin destination toward away-from path)))
+  (text-postmods ((if (has-value (the text-postmodslots of Self)) then (forall-seq (the text-postmodslots of Self) where (has-value (the It of Self)) (:seq (if (has-value (the text-slot of It)) then (the (the text-slot of It) of Self)) (if (It isa Property) then (the text-phrase of (the It of Self)) else (andify (the text-def-head of (the It of Self)))))))))
+  (text-base-phrase ((if (anonymous-instancep Self) then (:seq (the text-def-determiner of Self) (the text-premods of Self) (the text-head of Self) (if ((the text-dobj of Self) = (the result of Self)) then (the (the text-slot of result) of Self) else (the (the text-slot of object) of Self)) (the text-dobj-phrase of Self)) else (:seq (the text-head of Self)))))
+  (text-nom-sentence ((make-sentence ((if (has-value (the elements of (the text-postmods of Self))) then (:seq (the text-base-phrase of Self) "is" (the text-postmods of Self)) else (if (has-value (the elements of (the text-premods of Self))) then (:seq (the text-def-head of Self) "is" (the text-premods of Self)) else (the text-existential-there of Self)))))))
+  (text-existential-there ((make-sentence (:seq "there is" (the text-indef-phrase of Self)))))
+  (text-definition-sentence ((make-sentence (:seq (the text-indef-phrase of Self) "is" (andify (forall (the superclasses of (the classes of Self)) (the text-indef-head of (an instance of It))))))))
+  (text-phrase ((if (anonymous-instancep Self) then (:seq (the text-base-phrase of Self) (the elements of (the text-postmods of Self))) else (the text-base-phrase of Self))))
+  (text-argslots ((:seq base instrument)))
+  (text-arguments ((forall-seq (the text-argslots of Self) where ((has-value (the It of Self)) and ((the It of Self) /= (the text-subj of Self)) and ((the It of Self) /= (the text-dobj of Self))) (:seq ((if (has-value (the text-slot of It)) then (the1 of (the (the text-slot of It) of Self)))) ((if (((:set Thing Entity Intangible-Entity Spatial-Entity Place Tangible-Entity) is-superset-of (the instance-of of (the It of Self))) and ((the text-def-head of (the It of Self)) = (:seq (:seq "the") (:seq (the It of Self) ())))) then (:seq "the" It) else ((if ((the number of (the It of Self)) = 1) then ((if ((the It of Self) isa String) then (the It of Self) else (the text-def-head of (the It of Self)))) else (the text-def-head of (the It of Self))))))))))
+  (text-subevent-of ((if (has-value (the subevent-of of Self)) then ("part of"))))
+  (text-object ((if (has-value (the object of Self)) then ("of"))))
+  (text-result ((if (has-value (the result of Self)) then ("of"))))
+  (text-raw-material ((if (has-value (the raw-material of Self)) then ("out of"))))
+  (text-agent ((if (has-value (the agent of Self)) then ("by"))))
+  (text-donor ((if (has-value (the donor of Self)) then ("from"))))
+  (text-recipient ((if (has-value (the recipient of Self)) then ("to"))))
+  (text-beneficiary ((if (has-value (the beneficiary of Self)) then ("for"))))
+  (text-instrument ((if (has-value (the instrument of Self)) then ("using"))))
+  (text-base ((if (has-value (the base of Self)) then ("to"))))
+  (text-resulting-state ((if (has-value (the resulting-state of Self)) then ("resulting in"))))
+  (text-resulting-state-of ((if (has-value (the resulting-state-of of Self)) then ("resulting from"))))
+  (text-causes ((if (has-value (the causes of Self)) then ("causing"))))
+  (text-caused-by ((if (has-value (the caused-by of Self)) then ("caused by"))))
+  (text-origin ((if (has-value (the origin of Self)) then ("from"))))
+  (text-destination ((if (has-value (the destination of Self)) then ("to"))))
+  (text-toward ((if (has-value (the toward of Self)) then ("toward"))))
+  (text-away-from ((if (has-value (the away-from of Self)) then ("away from"))))
+  (text-path ((if (has-value (the path of Self)) then ("along"))))
+  (text-site ((if (has-value (the site of Self)) then ("at")))))
+
+;;; ----------
+
+(experiencer has 
+  (primary-slot-of (State))
+  (instance-of (Slot
+                Participant-Relation))
+  (domain (Event))
+  (range (Entity))
+  (fluent-status (*Inertial-Fluent))
+  (inverse (experiencer-of))
+  (cardinality (N-to-N))
+  (text-gloss ("is experienced by")))
+
+;;; ----------
+
+(experiencer-of has 
+  (inverse (experiencer))
+  (range (Event))
+  (domain (Entity))
+  (instance-of (Slot
+                Participant-Relation))
+  (text-gloss ("experiences")))
 
 ;;; ----------
 
@@ -1093,6 +1298,32 @@
 
 ;;; ----------
 
+(object has 
+  (primary-slot-of (State))
+  (instance-of (Slot
+                Participant-Relation))
+  (domain (Event))
+  (range (Entity))
+  (inverse (object-of))
+  (fluent-status (*Inertial-Fluent))
+  (text-slot (text-object))
+  (cardinality (N-to-N))
+  (text-gloss ("is done to"))
+  (wn20-synset ((:set (:triple "affected_role" 1 "n") (:triple "patient_role" 1 "n") (:triple "patient" 2 "n")))))
+
+;;; ----------
+
+(object-of has 
+  (inverse (object))
+  (range (Event))
+  (domain (Entity))
+  (instance-of (Slot
+                Participant-Relation))
+  (combine-values-by-appending (t))
+  (text-gloss ("is the object of")))
+
+;;; ----------
+
 (ObjectOfPreposition has 
   (superclasses (Object))
   (subclasses (pobj)))
@@ -1113,6 +1344,19 @@
 (ParticipalModifier has 
   (superclasses (Modifier))
   (subclasses (partmod)))
+
+;;; ----------
+
+(Participant-Relation has 
+  (instances (object
+              object-of
+              experiencer
+              experiencer-of)))
+
+;;; ----------
+
+(Partition has 
+  (instances (_Partition1)))
 
 ;;; ----------
 
@@ -1378,6 +1622,27 @@
 
 ;;; ----------
 
+(State has 
+  (superclasses (Event))
+  (primary-slot (object
+                 experiencer))
+  (cmap-correspondence ((:seq experiencer "the thing experiencing the state")
+                        (:seq object "the thing that in the state")))
+  (wn16-synset ((:set (:triple "be" 1 "v"))))
+  (wn20-synset ((:set (:triple "be" 1 "v")))))
+
+(every State has 
+  (time-during ((must-be-a Time-Interval with (time-int-started-by ((the time-during of (the resulting-state-of of Self)))) (time-int-finished-by ((the time-during of (the defeated-by of Self)))))))
+  (experiencer ((must-be-a Living-Entity with (time-of-existence ((a Time-Interval with (time-int-overlaps ((the time-of-existence of (the object of Self)) (if (has-value (the beneficiary of Self)) then (the time-of-existence of (the beneficiary of Self))) (if (has-value (the agent of Self)) then (the time-of-existence of (the agent of Self))) (if (has-value (the instrument of Self)) then (the time-of-existence of (the instrument of Self))) (if (has-value (the recipient of Self)) then (the time-of-existence of (the recipient of Self)))))))))))
+  (text-active-verbseq-sg ("keeps"))
+  (text-active-verbseq-pl ("keep"))
+  (text-passive-verbseq-sg ("is"))
+  (text-passive-verbseq-pl ("are"))
+  (text-particle ((make-phrase (:seq "in a state of" (the instance-of of Self)))))
+  (text-argslots ((:seq text-particle base instrument))))
+
+;;; ----------
+
 (String has 
   (range-of (text-active-phrase
              text-active-verbseq
@@ -1418,6 +1683,17 @@
                NominalSubject
                ClausalSubject))
   (superclasses (Argument)))
+
+;;; ----------
+
+(Temporal-Entity has 
+  (subclasses (Time-Interval)))
+
+;;; ----------
+
+(Temporal-Relation has 
+  (instances (time-during
+              time-contains)))
 
 ;;; ----------
 
@@ -1835,6 +2111,22 @@
 
 ;;; ----------
 
+(text-object has 
+  (text-slot-of (object))
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-object-of has 
+  (range (Event))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
 (text-particle has 
   (instance-of (NL-Slot-Group))
   (domain (Event))
@@ -2092,7 +2384,9 @@
 ;;; ----------
 
 (Thing has 
-  (subclasses (Slot))
+  (subclasses (Entity
+               Event
+               Slot))
   (domain-of (text-argslots
               text-base-phrase
               text-def-determiner
@@ -2138,6 +2432,50 @@
 
 ;;; ----------
 
+(time-contains has 
+  (inverse (time-during))
+  (range (Situation
+          Event))
+  (domain (Time-Interval))
+  (instance-of (Slot
+                Temporal-Relation)))
+
+;;; ----------
+
+(time-during has 
+  (primary-slot-of (Event))
+  (instance-of (Slot
+                Temporal-Relation))
+  (domain (Event
+           Situation))
+  (range (Time-Interval))
+  (inverse (time-contains))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (text-gloss ("occurs during")))
+
+;;; ----------
+
+(Time-Interval has 
+  (range-of (time-during))
+  (domain-of (time-contains))
+  (superclasses (Temporal-Entity))
+  (wn20-synset ((:set (:triple "time_interval" 1 "n") (:triple "interval" 1 "n"))))
+  (test-case ('((*UT-Thanksgiving-Break-2004-Nov-25th-thru-27th has (instance-of (Time-Interval)) (time-begins ((a Time-Instant with (time-value ((:pair 2004 *year) (:pair 11 *month) (:pair 25 *day)))))) (time-ends ((a Time-Instant with (time-value ((:pair 2004 *year) (:pair 11 *month) (:pair 27 *day))))))) (*UT-Spring-Break-2005-March-14th-thru-19th has (instance-of (Time-Interval)) (time-begins ((a Time-Instant with (time-value ((:pair 2005 *year) (:pair 3 *month) (:pair 14 *day)))))) (time-ends ((a Time-Instant with (time-value ((:pair 2005 *year) (:pair 3 *month) (:pair 19 *day))))))) (*UT-Summer-Add-Drop-Period-2005-May-24-thru-26 has (instance-of (Time-Interval)) (time-begins ((a Time-Instant with (time-value ((:pair 2005 *year) (:pair 5 *month) (:pair 24 *day))))))) ((the time-before of *UT-Thanksgiving-Break-2004-Nov-25th-thru-27th) includes *UT-Spring-Break-2005-March-14th-thru-19th) ((the time-after of *UT-Summer-Add-Drop-Period-2005-May-24-thru-26) includes *UT-Spring-Break-2005-March-14th-thru-19th) (*2005-March-15-Noon has (instance-of (Time-Instant)) (time-value ((:pair 12 *hour) (:pair 0 *minute) (:pair 0 *second) (:pair 15 *day) (:pair 3 *month) (:pair 2005 *year)))) ((the time-inside of *UT-Spring-Break-2005-March-14th-thru-19th) includes *2005-March-15-Noon) (*UT-Spring-Semester-2005 has (instance-of (Time-Interval)) (time-begins ((a Time-Instant with (time-value ((:pair 2005 *year) (:pair 1 *month)))))) (time-ends ((a Time-Instant with (time-value ((:pair 2005 *year) (:pair 5 *month))))))) ((the time-int-during of *UT-Spring-Break-2005-March-14th-thru-19th) includes *UT-Spring-Semester-2005) (*UT-Fall-Semester-2004 has (instance-of (Time-Interval)) (time-begins ((a Time-Instant with (time-value ((:pair 2004 *year) (:pair 8 *month)))))) (time-ends ((a Time-Instant with (time-value ((:pair 2004 *year) (:pair 12 *month))))))) ((the time-int-contains of *UT-Fall-Semester-2004) includes *UT-Thanksgiving-Break-2004-Nov-25th-thru-27th) (*Time-Overlapping-Start-Of-UT-Spring-Break-2005 has (instance-of (Time-Interval)) (time-begins ((a Time-Instant with (time-value ((:pair 2005 *year) (:pair 3 *month) (:pair 12 *day)))))) (time-ends ((a Time-Instant with (time-value ((:pair 2005 *year) (:pair 3 *month) (:pair 15 *day))))))) (*Time-Overlapping-End-Of-UT-Spring-Break-2005 has (instance-of (Time-Interval)) (time-begins ((a Time-Instant with (time-value ((:pair 2005 *year) (:pair 3 *month) (:pair 17 *day)))))) (time-ends ((a Time-Instant with (time-value ((:pair 2005 *year) (:pair 3 *month) (:pair 21 *day))))))) ((the time-int-overlaps of *Time-Overlapping-Start-Of-UT-Spring-Break-2005) includes *UT-Spring-Break-2005-March-14th-thru-19th) ((the time-int-overlapped-by of *Time-Overlapping-End-Of-UT-Spring-Break-2005) includes *UT-Spring-Break-2005-March-14th-thru-19th) (not ((the time-int-overlaps of *UT-Thanksgiving-Break-2004-Nov-25th-thru-27th) includes *UT-Fall-Semester-2004))))))
+
+(every Time-Interval has 
+  (time-begins-or-in ((:set (the time-begins of Self) (the time-inside of Self))))
+  (time-between ((:set (the time-begins of Self) (the time-ends of Self))))
+  (time-before ((allof (the all-instances of Time-Interval) where ((the time-ends of Self) time-lt (the time-begins of It)))))
+  (time-after ((allof (the all-instances of Time-Interval) where ((the time-ends of It) time-lt (the time-begins of Self)))))
+  (time-inside ((allof (the all-instances of Time-Instant) where (((the time-begins of Self) time-lte It) and ((the time-ends of Self) time-gte It)))))
+  (time-int-during ((allof (the all-instances of Time-Interval) where (((the time-begins of It) time-lt (the time-begins of Self)) and ((the time-ends of It) time-gt (the time-ends of Self))))))
+  (time-int-contains ((allof (the all-instances of Time-Interval) where (((the time-begins of Self) time-lt (the time-begins of It)) and ((the time-ends of Self) time-gt (the time-ends of It))))))
+  (time-int-overlaps ((allof (the all-instances of Time-Interval) where (((the time-ends of Self) time-gt (the time-begins of It)) and ((the time-ends of It) time-gt (the time-ends of Self)) and ((the time-begins of It) time-gt (the time-begins of Self))))))
+  (time-int-overlapped-by ((allof (the all-instances of Time-Interval) where (((the time-ends of It) time-gt (the time-begins of Self)) and ((the time-ends of Self) time-gt (the time-ends of It)) and ((the time-begins of Self) time-gt (the time-begins of It)))))))
+
+;;; ----------
+
 (tmod has 
   (superclasses (TemporalModifier)))
 
@@ -2161,6 +2499,15 @@
 
 
 ;;; ---------- EXPLANATIONS ----------
+
+(explanation (:triple _Partition1 instance-of Partition)
+  ((a Partition with (members (Event Entity)))))
+
+;;; ---------- COMMENTS ----------
+
+(comment [Entity-instance-of] "" (the text-sentence of Self))
+
+;;; ----------
 
 
 ;;; ----------------------------------------
@@ -2216,7 +2563,7 @@
 ;;;	KM'S INTERNAL STATE PARAMETER VALUES
 ;;; ----------------------------------------
 
-(SETQ *KM-GENSYM-COUNTER* '0)
+(SETQ *KM-GENSYM-COUNTER* '1)
 (SETQ *VISIBLE-THEORIES* 'NIL)
 (SETQ *CURR-PROTOTYPE* 'NIL)
 (SETQ *CURR-SITUATION* '|*Global|)
@@ -2225,10 +2572,10 @@
 (SETQ *ARE-SOME-PROTOTYPE-DEFINITIONS* 'NIL)
 (SETQ *ARE-SOME-PROTOTYPES* 'NIL)
 (SETQ *ARE-SOME-SUBSLOTS* 'T)
-(SETQ *ARE-SOME-CONSTRAINTS* 'NIL)
+(SETQ *ARE-SOME-CONSTRAINTS* 'T)
 (SETQ *ARE-SOME-TAGS* 'NIL)
 (SETQ *ARE-SOME-DEFAULTS* 'NIL)
 (SETQ *AM-IN-SITUATIONS-MODE* 'NIL)
 
-;;; --- end (216 frames written) ---
+;;; --- end (233 frames written) ---
 

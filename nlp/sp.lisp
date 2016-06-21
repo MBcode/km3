@@ -25,7 +25,7 @@
 (defun sp_raw (s)
   (run-sp s) ;(break2lines (run-ext "nlp/sp_2" (clean4echo s)))
   )
-(trace echo-sp) (trace run-sp)
+;(trace echo-sp) (trace run-sp)
 (defun sp1 (s)
     (let* ((prs (sp_raw s))
 	   (p1 (position-if #'rootp prs))
@@ -73,7 +73,7 @@
   "get the tree only/all sentences"
   (let ((sl (sp_0 s)))
     (mapcar #'sp-1 sl)))
-(defun sp_2 (s)
+(defun sp_2 (s)  ;use this one,  can pull out tree,dep&parse &assert it all
   "prs tree+dependencies/all sentences"
   (let ((sl (sp_0 s)))
     (mapcar #'sp-2 sl)))
@@ -113,6 +113,7 @@
 (defun sp2_ (s)
   (eval-str2 (clean-se (sp s))))
 
+;-downloading new berkeley code, so will try some versions of this soon too
 (defun berk (s)
   "berkeley parser"
     (run-ext "nlp/brk1_" (clean4echo s)))
