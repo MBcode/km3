@@ -1,5 +1,6 @@
 ;dep2rdf.lisp bobak@gmail
 ;take stanford-parser/etc's dependency output from CoNLL-X format to a KM-like RDF/triples
+(defvar *trying* nil)
 (lkm2) ;2 loads u2.lisp ;km utils
 ;lcc.lisp
 (load "ls.cl" :print t)
@@ -13,7 +14,7 @@
 
 ;will use sp_2 parse&assert
 ;a few accessors
-(defvar *sl* '())
+(defvar *sl* '()) ;get an assoc mk-sentence
 (defun ssp (str) (setf *sl* (sp_2 str)))
 (defun sn (n &optional (sl *sl*)) "sent num" (nth n sl))
  ;from stanford-parser ret
@@ -25,12 +26,23 @@
     (when (numberp pn) (subseq str 0 pn))))
 (defun print-dep (d)
   (let* ((typ (pre-upto-paren d))
-         (n (gentemp typ)))
-    (print d)
+         (n (when typ (gentemp typ))))
+    ;will need more gentemp, but only once per(sentence),then reuse w/in
+     ;could prefix w/s# for sentence obj
+    ;(print d) ;next break apart w/in parens
+    (format t "~%~a,~a" d n)
     ;(sv-cls n typ) ;fix
+    ))
+(defun mk-sentence (spr)
+  (let ((sn (gentemp "s")))
+    (sv-cls sn "sentence")
+    ;(svs sn "spr" (g-sd spr)) ;was spr, revisit
     ))
 (defun ptd (spr) "print tree+dep" 
   (print "tree") (print (g-st spr)) 
-  (print "depend") (mapcar #'print-dep (g-sd spr)))
+  (print "depend") 
+  ;start w/mk-Communicate  incl who from/to,  cc/Communicate.km
+  (when *trying* (mk-sentence spr))
+  (mapcar #'print-dep (g-sd spr)))
 (defun pas (&optional (sl *sl*)) "print all sentences" (mapcar #'ptd sl))
 (defun s+p (str) "set&print" (ssp str) (pas))

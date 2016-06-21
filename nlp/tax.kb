@@ -1,5 +1,5 @@
 
-;;; Current state of the KB (6/20/2016 22:13.20, KM 2.5.45)
+;;; Current state of the KB (6/21/2016 16:39.17, KM 2.5.45)
 
 (reset-kb)
 
@@ -14,6 +14,12 @@
 
 ;;; ---------- TAXONOMY ----------
 
+(Agentive-Relation has 
+  (superclasses (Relation)))
+
+(Causal-Relation has 
+  (superclasses (Relation)))
+
 (CLIB-Slot-Group has 
   (superclasses (KM-Slot-Group)))
 
@@ -23,14 +29,29 @@
 (KM-Slot-Group has 
   (superclasses (Slot)))
 
+(Meronymic-Relation has 
+  (superclasses (Relation)))
+
 (NL-Slot-Group has 
   (superclasses (KM-Slot-Group)))
+
+(Participant-Relation has 
+  (superclasses (Relation)))
+
+(Relation has 
+  (superclasses (Slot)))
 
 (Shaken-Slot-Group has 
   (superclasses (KM-Slot-Group)))
 
 (Slot has 
   (superclasses (Thing)))
+
+(Spatial-Relation has 
+  (superclasses (Relation)))
+
+(Temporal-Relation has 
+  (superclasses (Relation)))
 
 ;;; (Concept Situation is a built-in class)
 
@@ -61,11 +82,14 @@
 (advmod has 
   (superclasses (AdverbialModifier)))
 
+(Agent has 
+  (superclasses (Argument)))
+
 (agent has 
   (superclasses (Agent)))
 
-(Agent has 
-  (superclasses (Argument)))
+(Agent-Role has 
+  (superclasses (Role)))
 
 (amod has 
   (superclasses (AdjectivalModifier)))
@@ -111,6 +135,9 @@
 
 (ClausalSubject has 
   (superclasses (Subject)))
+
+(Communicate has 
+  (superclasses (Action)))
 
 (comp has 
   (superclasses (Complement=)))
@@ -368,6 +395,9 @@
 (rcmod has 
   (superclasses (RelativeClauseModifier)))
 
+(Recipient-Role has 
+  (superclasses (Role)))
+
 (ref has 
   (superclasses (Referent)))
 
@@ -429,6 +459,18 @@
 
 ;;; ---------- CONTENTS ----------
 
+(Agentive-Relation has 
+  (instances (agent
+              agent-of))
+  (superclasses (Relation)))
+
+;;; ----------
+
+(Causal-Relation has 
+  (superclasses (Relation)))
+
+;;; ----------
+
 (CLIB-Slot-Group has 
   (superclasses (KM-Slot-Group)))
 
@@ -447,10 +489,20 @@
 
 ;;; ----------
 
+(Meronymic-Relation has 
+  (superclasses (Relation))
+  (wn20-synset ((:set (:triple "structure" 0 "n")))))
+
+;;; ----------
+
 (NL-Slot-Group has 
   (superclasses (KM-Slot-Group))
   (instances (text-object
               text-object-of
+              text-agent
+              text-agent-of
+              text-recipient
+              text-recipient-of
               text-active-phrase
               text-active-phrase-of
               text-active-sentence
@@ -532,13 +584,42 @@
 
 ;;; ----------
 
+(Participant-Relation has 
+  (instances (object
+              object-of
+              experiencer
+              experiencer-of
+              agent
+              agent-of
+              recipient
+              recipient-of))
+  (superclasses (Relation)))
+
+;;; ----------
+
+(Relation has 
+  (subclasses (Temporal-Relation
+               Spatial-Relation
+               Participant-Relation
+               Meronymic-Relation
+               Causal-Relation
+               Agentive-Relation))
+  (superclasses (Slot)))
+
+(every Relation has 
+  (shaken-ui-hidden-slot ((if (anonymous-instancep Self) then t)))
+  (name (#'(LAMBDA () (IF (STRING= (STRING (KM-UNIQUE0 'Self)) "has-" :END1 4) (SUBSEQ (STRING (KM-UNIQUE0 'Self)) 4) (STRING (KM-UNIQUE0 'Self)))))))
+
+;;; ----------
+
 (Shaken-Slot-Group has 
   (superclasses (KM-Slot-Group)))
 
 ;;; ----------
 
 (Slot has 
-  (subclasses (KM-Slot-Group
+  (subclasses (Relation
+               KM-Slot-Group
                Interface-Slot))
   (superclasses (Thing))
   (instances (object-of
@@ -548,6 +629,12 @@
               experiencer
               time-contains
               time-during
+              agent-of
+              agent
+              text-agent-of
+              recipient-of
+              text-recipient-of
+              recipient
               text-active-phrase-of
               text-active-sentence-of
               text-active-verbseq-of
@@ -600,6 +687,18 @@
 
 ;;; ----------
 
+(Spatial-Relation has 
+  (superclasses (Relation)))
+
+;;; ----------
+
+(Temporal-Relation has 
+  (instances (time-during
+              time-contains))
+  (superclasses (Relation)))
+
+;;; ----------
+
 (Situation has 
   (domain-of (time-during))
   (range-of (time-contains)))
@@ -626,6 +725,11 @@
 
 (acomp has 
   (superclasses (AdjectivalComplement=)))
+
+;;; ----------
+
+(Action has 
+  (subclasses (Communicate)))
 
 ;;; ----------
 
@@ -664,14 +768,50 @@
 
 ;;; ----------
 
+(Agent has 
+  (superclasses (Argument))
+  (subclasses (agent)))
+
+;;; ----------
+
 (agent has 
+  (primary-slot-of (Communicate))
+  (instance-of (Slot
+                Participant-Relation
+                Agentive-Relation))
+  (domain (Event))
+  (range (Entity))
+  (inverse (agent-of))
+  (fluent-status (*Inertial-Fluent))
+  (text-slot (text-agent))
+  (cardinality (N-to-N))
+  (text-gloss ("is done by"))
+  (wn20-synset ((:set (:triple "agentive_role" 1 "n") (:triple "agent" 6 "n") (:triple "actor" 2 "n") (:triple "doer" 1 "n") (:triple "worker" 4 "n"))))
   (superclasses (Agent)))
 
 ;;; ----------
 
-(Agent has 
-  (superclasses (Argument))
-  (subclasses (agent)))
+(agent-of has 
+  (inverse (agent))
+  (range (Event))
+  (domain (Entity))
+  (instance-of (Slot
+                Participant-Relation
+                Agentive-Relation))
+  (text-gloss ("does"))
+  (text-slot (text-agent-of))
+  (combine-values-by-appending (t)))
+
+;;; ----------
+
+(Agent-Role has 
+  (superclasses (Role))
+  (wn16-synset ((:set (:triple "agent" 1 "n") (:triple "agent" 3 "n") (:triple "causal_agency" 1 "n") (:triple "causal_agent" 1 "n") (:triple "cause" 4 "n"))))
+  (wn20-synset ((:set (:triple "agent" 1 "n") (:triple "agent" 2 "n") (:triple "causal_agency" 1 "n") (:triple "causal_agent" 1 "n") (:triple "cause" 4 "n")))))
+
+(every Agent-Role has 
+  (in-event ((must-be-a Event)))
+  (played-by ((a Entity with (agent-of ((the in-event of Self)))))))
 
 ;;; ----------
 
@@ -760,6 +900,38 @@
   (superclasses (Subject))
   (subclasses (csubj
                PassiveClausalSubject)))
+
+;;; ----------
+
+(Communicate has 
+  (superclasses (Action))
+  (required-slot (object))
+  (primary-slot (agent
+                 recipient))
+  (test-case ('((*John has (instance-of (Tangible-Entity))) (*Paul has (instance-of (Tangible-Entity))) (*Guitar has (instance-of (Tangible-Entity))) (*Story has (instance-of (Information)) (information-content ((a Break with (agent (*John)) (object (*Guitar)))))) ((a Be-Known with (experiencer (*John)) (object (*Story)))) (a Communicate with (donor (*John)) (recipient (*Paul)) (object (*Story))) (do-script (thelast Communicate)) ((the information-content of (the object of (oneof (the instances of Be-Known) where ((the experiencer of It) includes *Paul)))) isa Break))))
+  (wn16-synset ((:set (:triple "communicate" 1 "v") (:triple "communicate" 2 "v") (:triple "communicate" 3 "v") (:triple "pass_on" 7 "v") (:triple "pass" 12 "v") (:triple "put_across" 1 "v") (:triple "intercommunicate" 2 "v") (:triple "convey" 3 "v") (:triple "transmit" 1 "v"))))
+  (wn20-synset ((:set (:triple "communicate" 1 "v") (:triple "communicate" 2 "v") (:triple "communicate" 3 "v") (:triple "pass_on" 7 "v") (:triple "pass" 12 "v") (:triple "put_across" 1 "v") (:triple "intercommunicate" 2 "v") (:triple "convey" 3 "v") (:triple "transmit" 1 "v")))))
+
+(every Communicate has 
+  (object ((a Information)))
+  (base ((a Message)))
+  (donor ((the agent of Self)
+          (must-be-a Tangible-Entity)))
+  (agent ((the donor of Self)))
+  (recipient ((a Tangible-Entity)))
+  (resulting-state ((a Be-Known)))
+  (first-subevent ((the Express subevent of Self)))
+  (subevent ((a Express with (object ((the object of Self))) (agent ((the agent of Self))) (result ((the base of Self))) (next-event ((the Convey subevent of Self))))
+             (a Convey with (object ((the base of Self))) (agent ((the agent of Self))) (recipient ((the recipient of Self))) (next-event ((the Interpret subevent of Self))))
+             (a Interpret with (agent ((the recipient of Self))) (object ((the base of Self))) (result ((the object of Self))))))
+  (pcs-list ((:triple (the object of Self) object-of ((a Be-Known with (experiencer ((the agent of Self)))) [Communicate-pcs-1]))))
+  (text-active-verbseq-sg ("communicates"))
+  (text-active-verbseq-pl ("communicate"))
+  (text-passive-verbseq-sg ("gets communicated"))
+  (text-passive-verbseq-pl ("get communicated"))
+  (text-recipient ("to"))
+  (text-argslots ((:seq recipient)))
+  (text-nominalization ("communication")))
 
 ;;; ----------
 
@@ -903,10 +1075,16 @@
   (superclasses (Thing))
   (range-of (object
              experiencer
+             agent
+             text-agent
+             recipient
              text-dobj
              text-subj))
   (domain-of (object-of
               experiencer-of
+              agent-of
+              text-agent-of
+              recipient-of
               text-dobj-of
               text-subj-of)))
 
@@ -974,6 +1152,10 @@
               text-object
               experiencer
               time-during
+              agent
+              text-agent
+              recipient
+              text-recipient
               text-active-phrase
               text-active-sentence
               text-active-verbseq
@@ -995,6 +1177,10 @@
              text-object-of
              experiencer-of
              time-contains
+             agent-of
+             text-agent-of
+             recipient-of
+             text-recipient-of
              text-active-phrase-of
              text-active-sentence-of
              text-active-verbseq-of
@@ -1309,7 +1495,8 @@
   (text-slot (text-object))
   (cardinality (N-to-N))
   (text-gloss ("is done to"))
-  (wn20-synset ((:set (:triple "affected_role" 1 "n") (:triple "patient_role" 1 "n") (:triple "patient" 2 "n")))))
+  (wn20-synset ((:set (:triple "affected_role" 1 "n") (:triple "patient_role" 1 "n") (:triple "patient" 2 "n"))))
+  (required-slot-of (Communicate)))
 
 ;;; ----------
 
@@ -1344,14 +1531,6 @@
 (ParticipalModifier has 
   (superclasses (Modifier))
   (subclasses (partmod)))
-
-;;; ----------
-
-(Participant-Relation has 
-  (instances (object
-              object-of
-              experiencer
-              experiencer-of)))
 
 ;;; ----------
 
@@ -1527,6 +1706,42 @@
 
 ;;; ----------
 
+(recipient has 
+  (primary-slot-of (Communicate))
+  (instance-of (Slot
+                Participant-Relation))
+  (domain (Event))
+  (range (Entity))
+  (fluent-status (*Inertial-Fluent))
+  (inverse (recipient-of))
+  (text-slot (text-recipient))
+  (cardinality (N-to-N))
+  (text-gloss ("has recipient"))
+  (wn20-synset ((:set (:triple "recipient_role" 1 "n") (:triple "recipient" 2 "n")))))
+
+;;; ----------
+
+(recipient-of has 
+  (inverse (recipient))
+  (range (Event))
+  (domain (Entity))
+  (instance-of (Slot
+                Participant-Relation))
+  (text-gloss ("is recipient of")))
+
+;;; ----------
+
+(Recipient-Role has 
+  (superclasses (Role))
+  (wn16-synset ((:set (:triple "recipient" 1 "n") (:triple "receiver" 4 "n"))))
+  (wn20-synset ((:set (:triple "recipient" 1 "n") (:triple "receiver" 4 "n")))))
+
+(every Recipient-Role has 
+  (in-event ((must-be-a Event)))
+  (played-by ((a Entity with (recipient-of ((the in-event of Self)))))))
+
+;;; ----------
+
 (ref has 
   (superclasses (Referent)))
 
@@ -1552,6 +1767,12 @@
 (RelativeClauseModifier has 
   (superclasses (Modifier))
   (subclasses (rcmod)))
+
+;;; ----------
+
+(Role has 
+  (subclasses (Recipient-Role
+               Agent-Role)))
 
 ;;; ----------
 
@@ -1691,12 +1912,6 @@
 
 ;;; ----------
 
-(Temporal-Relation has 
-  (instances (time-during
-              time-contains)))
-
-;;; ----------
-
 (TemporalModifier has 
   (superclasses (NounPhraseAsAdverbialModifier))
   (subclasses (tmod)))
@@ -1788,6 +2003,28 @@
   (range (Event))
   (domain (String))
   (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
+(text-agent has 
+  (text-slot-of (agent))
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t))
+  (range (Entity)))
+
+;;; ----------
+
+(text-agent-of has 
+  (text-slot-of (agent-of))
+  (range (Event))
+  (instance-of (NL-Slot-Group))
+  (domain (Entity))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t)))
 
 ;;; ----------
 
@@ -2315,6 +2552,22 @@
 
 ;;; ----------
 
+(text-recipient has 
+  (text-slot-of (recipient))
+  (instance-of (NL-Slot-Group))
+  (domain (Event))
+  (fluent-status (*Inertial-Fluent))
+  (cardinality (N-to-1))
+  (inherit-with-overrides (t)))
+
+;;; ----------
+
+(text-recipient-of has 
+  (range (Event))
+  (instance-of (NL-Slot-Group)))
+
+;;; ----------
+
 (text-sentence has 
   (instance-of (NL-Slot-Group))
   (domain (Thing))
@@ -2505,6 +2758,26 @@
 
 ;;; ---------- COMMENTS ----------
 
+(comment [Communicate-add-1]
+ (:seq (the object of Self) " is the object of the state of "
+  (the resulting-state of Self))
+ "The Information become known.")
+
+;;; ----------
+
+(comment [Communicate-add-2]
+ (:seq (the recipient of Self) " experiences the state of "
+  (the resulting-state of Self))
+ "The Information becomes known to the recipient of the Communication.")
+
+;;; ----------
+
+(comment [Communicate-pcs-1]
+ (:seq (the object of Self) " must be known by " (the agent of Self))
+ "The agent must know Information before it can be Communicated.")
+
+;;; ----------
+
 (comment [Entity-instance-of] "" (the text-sentence of Self))
 
 ;;; ----------
@@ -2577,5 +2850,5 @@
 (SETQ *ARE-SOME-DEFAULTS* 'NIL)
 (SETQ *AM-IN-SITUATIONS-MODE* 'NIL)
 
-;;; --- end (233 frames written) ---
+;;; --- end (253 frames written) ---
 
