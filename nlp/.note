@@ -71,3 +71,5 @@ Have loaded KM slot-groups, and the core text-*.km files; also have stanford.ttl
  probably try for CoNLL to KM text-*.km part of it, &see how the stanford.ttl dependancy hierarchy fits in; start by hand &then try assited match
 Keep looking for ppl having done this(maybe the ppl doing the lemon work)but not found yet, also look at other re work, a few incl:
 also look@ https://github.com/yoavz/EDAN20-lab4  ;other than stanford, installed malt&mst parsers which also have CoNLL output,so can go from any of them
+look@km+plm&re:nlp, http://research.microsoft.com/en-us/people/cyl/krqa07.pdf https://github.com/BLLIP/bllip-parser /not yet
+-noticed km pkg problem w/u2.lisp fncs, fixing now, might get bigger cleanup,yes: lkmq using km pkg looking better again but still quirks2iron out
