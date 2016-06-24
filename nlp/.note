@@ -73,3 +73,4 @@ Keep looking for ppl having done this(maybe the ppl doing the lemon work)but not
 also look@ https://github.com/yoavz/EDAN20-lab4  ;other than stanford, installed malt&mst parsers which also have CoNLL output,so can go from any of them
 look@km+plm&re:nlp, http://research.microsoft.com/en-us/people/cyl/krqa07.pdf https://github.com/BLLIP/bllip-parser /not yet
 -noticed km pkg problem w/u2.lisp fncs, fixing now, might get bigger cleanup,yes: lkmq using km pkg looking better again but still quirks2iron out
+ want to avoid km:: on everything,  export&/or wrap; incl symbol refs, so can avoid on all of them
