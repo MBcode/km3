@@ -1,0 +1,247 @@
+(AbbreviationModifier has
+    (superclasses (Modifier)))
+(AdjectivalComplement= has
+    (superclasses (Complement=)))
+(AdjectivalModifier has
+    (superclasses (Modifier)))
+(AdverbialClauseModifier has
+    (superclasses (Modifier)))
+(AdverbialModifier has
+    (superclasses (Modifier)))
+(Agent has
+    (superclasses (Argument)))
+(AppositionalModifier has
+    (superclasses (Modifier)))
+(Argument has
+    (superclasses (Dependent)))
+(Attributive has
+    (superclasses (Complement=)))
+(Auxiliary has
+    (superclasses (Dependent)))
+(ClausalComplement=WithExternalSubject has
+    (superclasses (Complement=)))
+(ClausalComplement=WithInternalSubject has
+    (superclasses (Complement=)))
+(ClausalSubject has
+    (superclasses (Subject)))
+(Complement= has
+    (superclasses (Argument)))
+(Complement=izer has
+    (superclasses (Complement=)))
+(CompountNumberElement has
+    (superclasses (Modifier)))
+(Conjunct has
+    (superclasses (Dependent)))
+(ControllingSubject has
+    (superclasses (SemanticDependent)))
+(Coordination has
+    (superclasses (Dependent)))
+(Copula has
+    (superclasses (Auxiliary)))
+;Dependent has
+(Determiner has
+    (superclasses (Modifier)))
+(DirectObject has
+    (superclasses (Object)))
+(Expletive has
+    (superclasses (Dependent)))
+(IndirectObject has
+    (superclasses (Object)))
+(InfinitivalModifier has
+    (superclasses (Modifier)))
+(Marker has
+    (superclasses (Complement=)))
+(MeasurePhraseModifier has
+    (superclasses (Modifier)))
+(Modifier has
+    (superclasses (Dependent)))
+(MultiWordExpression has
+    (superclasses (Modifier)))
+(NegationModifier has
+    (superclasses (AdverbialModifier)))
+(NominalSubject has
+    (superclasses (Subject)))
+(NounCompoundModifier has
+    (superclasses (Modifier)))
+(NounPhraseAsAdverbialModifier has
+    (superclasses (Modifier)))
+(NumericModifier has
+    (superclasses (Modifier)))
+(Object has
+    (superclasses (Complement=)))
+(ObjectOfPreposition has
+    (superclasses (Object)))
+(Parataxis has
+    (superclasses (Dependent)))
+(ParticipalModifier has
+    (superclasses (Modifier)))
+(PassiveAuxiliary has
+    (superclasses (Auxiliary)))
+(PassiveClausalSubject has
+    (superclasses (ClausalSubject)))
+(PassiveNominalSubject has
+    (superclasses (NominalSubject)))
+(PhrasalVerbParticle has
+    (superclasses (Modifier)))
+(PossessionModifier has
+    (superclasses (Modifier)))
+(PossessiveModifier has
+    (superclasses (Modifier)))
+(Preconjunct has
+    (superclasses (Modifier)))
+(Predeterminer has
+    (superclasses (Modifier)))
+(PrepositionalClausalModifier has
+    (superclasses (PrepositionalModifier)));
+(PrepositionalComplement= has
+    (superclasses (Complement=)));
+(PrepositionalModifier has
+    (superclasses (Modifier)))
+(Punctuation has
+    (superclasses (Dependent)))
+(PurposeClauseModifier has
+    (superclasses (Modifier)))
+(QuantifierModifier has
+    (superclasses (Modifier)))
+(Referent has
+    (superclasses (Dependent)))
+(Relative has
+    (superclasses (Complement=)))
+(RelativeClauseModifier has
+    (superclasses (Modifier)))
+;Root has
+(SemanticDependent has
+    (superclasses (Dependent)))
+(Subject has
+    (superclasses (Argument)))
+(TemporalModifier has
+    (superclasses (NounPhraseAsAdverbialModifier)))
+(abbrev has
+    (superclasses (AbbreviationModifier)))
+(acomp has
+    (superclasses (AdjectivalComplement=)))
+(advcl has
+    (superclasses (AdverbialClauseModifier)))
+(advmod has
+    (superclasses (AdverbialModifier)))
+(agent has
+    (superclasses (Agent)))
+(amod has
+    (superclasses (AdjectivalModifier)))
+(appos has
+    (superclasses (AppositionalModifier)))
+(arg has
+    (superclasses (Argument)))
+(attr has
+    (superclasses (Attributive)))
+(aux has
+    (superclasses (Auxiliary)))
+(auxpass has
+    (superclasses (PassiveAuxiliary)))
+(cc has
+    (superclasses (Coordination)))
+(ccomp has
+    (superclasses (ClausalComplement=WithInternalSubject)))
+(comp has
+    (superclasses (Complement=)))
+(compl has
+    (superclasses (Complement=izer)))
+(complm has
+    (superclasses (Complement=izer)))
+(conj has
+    (superclasses (Conjunct)))
+(conj_ has
+    (superclasses (Conjunct)))
+(cop has
+    (superclasses (Copula)))
+(csubj has
+    (superclasses (ClausalSubject)))
+(csubjpass has
+    (superclasses (PassiveClausalSubject)))
+(dep has
+    (superclasses (Dependent)))
+(det has
+    (superclasses (Determiner)))
+(dobj has
+    (superclasses (DirectObject)))
+(expl has
+    (superclasses (Expletive)))
+(infmod has
+    (superclasses (InfinitivalModifier)))
+(iobj has
+    (superclasses (IndirectObject)))
+(mark has
+    (superclasses (Marker)))
+(measure has
+    (superclasses (MeasurePhraseModifier)))
+(mod= has
+    (superclasses (Modifier)))
+(mwe has
+    (superclasses (MultiWordExpression)))
+(neg has
+    (superclasses (NegationModifier)))
+(nn has
+    (superclasses (NounCompoundModifier)))
+(npadvmod has
+    (superclasses (NounPhraseAsAdverbialModifier)))
+(nsubj has
+    (superclasses (NominalSubject)))
+(nsubjpass has
+    (superclasses (PassiveNominalSubject)))
+(num has
+    (superclasses (NumericModifier)))
+(number= has
+    (superclasses (CompountNumberElement)))
+(obj has
+    (superclasses (Object)))
+(parataxis has
+    (superclasses (Parataxis)))
+(partmod has
+    (superclasses (ParticipalModifier)))
+(pcomp has
+    (superclasses (PrepositionalComplement=)))
+(pobj has
+    (superclasses (ObjectOfPreposition)))
+(poss has
+    (superclasses (PossessionModifier)))
+(possessive has
+    (superclasses (PossessiveModifier)))
+(preconj has
+    (superclasses (Preconjunct)))
+(predet has
+    (superclasses (Predeterminer)))
+(prep has
+    (superclasses (PrepositionalModifier)))
+(prep_ has
+    (superclasses (PrepositionalModifier)))
+(prepc has
+    (superclasses (PrepositionalClausalModifier)))
+(prepc_ has
+    (superclasses (PrepositionalClausalModifier)))
+(prt has
+    (superclasses (PhrasalVerbParticle)))
+(punct has
+    (superclasses (Punctuation)))
+(purpcl has
+    (superclasses (PurposeClauseModifier)))
+(quantmod has
+    (superclasses (QuantifierModifier)))
+(rcmod has
+    (superclasses (RelativeClauseModifier)))
+(ref has
+    (superclasses (Referent)))
+(rel has
+    (superclasses (Relative)))
+(root has
+    (superclasses (Root)))
+(sdep has
+    (superclasses (SemanticDependent)))
+(subj has
+    (superclasses (Subject)))
+(tmod has
+    (superclasses (TemporalModifier)))
+(xcomp has
+    (superclasses (ClausalComplement=WithExternalSubject)))
+(xsubj has
+    (superclasses (ControllingSubject)))
+ 
