@@ -1,9 +1,9 @@
 ;dep2rdf.lisp bobak@gmail
 ;take stanford-parser/etc's dependency output from CoNLL-X format to a KM-like RDF/triples
-(defvar *trying* nil)
-(defun try () (setf *trying* 't))
-(try)
+;(defvar *trying* nil)
+;(defun try () (setf *trying* 't)) (try)
 (lkmq) ;(lkm2) ;2 loads u2.lisp ;km utils
+;(defun km (a) (km::km a))
 ;(ql 'km) ;lkmq does this
 (use-package :km)
 ;lcc.lisp
@@ -41,13 +41,14 @@
 (defun mk-sentence (spr)
   (let ((sn (gentemp "s")))
     (sv-cls sn "sentence")
-   ;(svs sn "spr" (clean_se (g-sd spr))) ;was spr, revisit
+    (svs sn "spr" (clean_se (g-sd spr))) ;was spr, revisit
     ))
 (defun ptd (spr) "print tree+dep" 
   (print "tree") (print (g-st spr)) 
   (print "depend") 
   ;start w/mk-Communicate  incl who from/to,  cc/Communicate.km
-  (when *trying* (mk-sentence spr))
+  ;when *trying* 
+    (mk-sentence spr)
   (mapcar #'print-dep (g-sd spr)))
 (defun pas (&optional (sl *sl*)) "print all sentences" (mapcar #'ptd sl))
 (defun s+p (str) "set&print" (ssp str) (pas))

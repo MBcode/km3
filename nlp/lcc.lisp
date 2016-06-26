@@ -1,5 +1,6 @@
 ;load cc -> components/core
 (defun load-kb (f) (km::load-kb f))
+(defun tax (&optional (c 'km::|Thing|)) (km::taxonomy c))
 ;==> ls.cl <==
 (load-kb "cc/CLIB-Slot-Group.km")
 (load-kb "cc/Interface-Slot.km")
@@ -19,6 +20,18 @@
 (load-kb "cc/time-during.km")
 (load-kb "cc/Time-Interval.km")
 (load-kb "cc/Communicate.km")
+(load-kb "cc/agent.km")
+(load-kb "cc/Agent-Role.km")
+(load-kb "cc/Agentive-Relation.km")
+(load-kb "cc/recipient.km")
+(load-kb "cc/Recipient-Role.km")
+(load-kb "cc/Relation.km")
+(load-kb "cc/Agentive-Relation.km")
+(load-kb "cc/Causal-Relation.km")
+(load-kb "cc/Meronymic-Relation.km")
+(load-kb "cc/Participant-Relation.km")
+(load-kb "cc/Spatial-Relation.km")
+(load-kb "cc/Temporal-Relation.km")
 
 (load-kb "sd.km")
 
