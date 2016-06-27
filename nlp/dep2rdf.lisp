@@ -40,7 +40,7 @@
     ))
 (defun mk-sentence (spr)
   (let ((sn (gentemp "s")))
-    (sv-cls sn "sentence")
+    (sv-cls sn "Sentence")
     (svs sn "spr" (clean_se (g-sd spr))) ;was spr, revisit
     ))
 (defun ptd (spr) "print tree+dep" 

@@ -1,7 +1,7 @@
 (AbbreviationModifier has
     (superclasses (Modifier)))
-(AdjectivalComplement= has
-    (superclasses (Complement=)))
+(AdjectivalComplement has
+    (superclasses (Complement)))
 (AdjectivalModifier has
     (superclasses (Modifier)))
 (AdverbialClauseModifier has
@@ -15,19 +15,19 @@
 (Argument has
     (superclasses (Dependent)))
 (Attributive has
-    (superclasses (Complement=)))
+    (superclasses (Complement)))
 (Auxiliary has
     (superclasses (Dependent)))
-(ClausalComplement=WithExternalSubject has
-    (superclasses (Complement=)))
-(ClausalComplement=WithInternalSubject has
-    (superclasses (Complement=)))
+(ClausalComplementWithExternalSubject has
+    (superclasses (Complement)))
+(ClausalComplementWithInternalSubject has
+    (superclasses (Complement)))
 (ClausalSubject has
     (superclasses (Subject)))
-(Complement= has
+(Complement has
     (superclasses (Argument)))
-(Complement=izer has
-    (superclasses (Complement=)))
+(Complementizer has
+    (superclasses (Complement)))
 (CompountNumberElement has
     (superclasses (Modifier)))
 (Conjunct has
@@ -39,6 +39,9 @@
 (Copula has
     (superclasses (Auxiliary)))
 ;Dependent has
+(nmodof has (superclasses (Modifier))) ;mb
+(nmodto has (superclasses (Modifier))) ;mb
+(compoundprt has (superclasses (Modifier))) ;mb
 (Determiner has
     (superclasses (Modifier)))
 (DirectObject has
@@ -50,7 +53,7 @@
 (InfinitivalModifier has
     (superclasses (Modifier)))
 (Marker has
-    (superclasses (Complement=)))
+    (superclasses (Complement)))
 (MeasurePhraseModifier has
     (superclasses (Modifier)))
 (Modifier has
@@ -68,7 +71,7 @@
 (NumericModifier has
     (superclasses (Modifier)))
 (Object has
-    (superclasses (Complement=)))
+    (superclasses (Complement)))
 (ObjectOfPreposition has
     (superclasses (Object)))
 (Parataxis has
@@ -93,8 +96,8 @@
     (superclasses (Modifier)))
 (PrepositionalClausalModifier has
     (superclasses (PrepositionalModifier)));
-(PrepositionalComplement= has
-    (superclasses (Complement=)));
+(PrepositionalComplement has
+    (superclasses (Complement)));
 (PrepositionalModifier has
     (superclasses (Modifier)))
 (Punctuation has
@@ -106,7 +109,7 @@
 (Referent has
     (superclasses (Dependent)))
 (Relative has
-    (superclasses (Complement=)))
+    (superclasses (Complement)))
 (RelativeClauseModifier has
     (superclasses (Modifier)))
 ;Root has
@@ -119,7 +122,7 @@
 (abbrev has
     (superclasses (AbbreviationModifier)))
 (acomp has
-    (superclasses (AdjectivalComplement=)))
+    (superclasses (AdjectivalComplement)))
 (advcl has
     (superclasses (AdverbialClauseModifier)))
 (advmod has
@@ -140,14 +143,15 @@
     (superclasses (PassiveAuxiliary)))
 (cc has
     (superclasses (Coordination)))
+(conjand has (superclasses (cc))) ;mb
 (ccomp has
-    (superclasses (ClausalComplement=WithInternalSubject)))
+    (superclasses (ClausalComplementWithInternalSubject)))
 (comp has
-    (superclasses (Complement=)))
+    (superclasses (Complement)))
 (compl has
-    (superclasses (Complement=izer)))
+    (superclasses (Complementizer)))
 (complm has
-    (superclasses (Complement=izer)))
+    (superclasses (Complementizer)))
 (conj has
     (superclasses (Conjunct)))
 (conj_ has
@@ -199,7 +203,7 @@
 (partmod has
     (superclasses (ParticipalModifier)))
 (pcomp has
-    (superclasses (PrepositionalComplement=)))
+    (superclasses (PrepositionalComplement)))
 (pobj has
     (superclasses (ObjectOfPreposition)))
 (poss has
@@ -241,7 +245,25 @@
 (tmod has
     (superclasses (TemporalModifier)))
 (xcomp has
-    (superclasses (ClausalComplement=WithExternalSubject)))
+    (superclasses (ClausalComplementWithExternalSubject)))
 (xsubj has
     (superclasses (ControllingSubject)))
  
+(TempFix has (superclasses (Thing)))
+(case has (superclasses (TempFix))) ;mb fix
+;http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core/nif-core.html
+(Nif has
+    (superclasses (Thing)))
+(String has (superclasses (Nif)))
+(Structure has (superclasses (String)))
+(Title has (superclasses (Structure)))
+(Paragraph has (superclasses (Structure)))
+(Phrase has (superclasses (Structure)))
+(Sentence has (superclasses (Structure)))
+(Word has (superclasses (Structure)))
+(OccuringWord has (superclasses (String)))
+(URIScheme has (superclasses (String))) 
+(ContextHashBasedString has (superclasses (URIScheme))) 
+(OffsetBasedString has (superclasses (URIScheme))) 
+(RFC5147String has (superclasses (URIScheme))) 
+(ArbitraryString has (superclasses (URIScheme))) 
