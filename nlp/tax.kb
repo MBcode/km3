@@ -1,5 +1,5 @@
 
-;;; Current state of the KB (6/21/2016 16:39.17, KM 2.5.45)
+;;; Current state of the KB (6/27/2016 23:18.35, KM 2.5.33)
 
 (reset-kb)
 
@@ -53,7 +53,8 @@
 (Temporal-Relation has 
   (superclasses (Relation)))
 
-;;; (Concept Situation is a built-in class)
+(Situation has 
+  (superclasses (Thing)))
 
 (abbrev has 
   (superclasses (AbbreviationModifier)))
@@ -62,10 +63,13 @@
   (superclasses (Modifier)))
 
 (acomp has 
-  (superclasses (AdjectivalComplement=)))
+  (superclasses (AdjectivalComplement)))
 
-(AdjectivalComplement= has 
-  (superclasses (Complement=)))
+(Action has 
+  (superclasses (Thing)))
+
+(AdjectivalComplement has 
+  (superclasses (Complement)))
 
 (AdjectivalModifier has 
   (superclasses (Modifier)))
@@ -100,6 +104,9 @@
 (AppositionalModifier has 
   (superclasses (Modifier)))
 
+(ArbitraryString has 
+  (superclasses (URIScheme)))
+
 (arg has 
   (superclasses (Argument)))
 
@@ -110,7 +117,7 @@
   (superclasses (Attributive)))
 
 (Attributive has 
-  (superclasses (Complement=)))
+  (superclasses (Complement)))
 
 (aux has 
   (superclasses (Auxiliary)))
@@ -121,17 +128,20 @@
 (auxpass has 
   (superclasses (PassiveAuxiliary)))
 
+(case has 
+  (superclasses (TempFix)))
+
 (cc has 
   (superclasses (Coordination)))
 
 (ccomp has 
-  (superclasses (ClausalComplement=WithInternalSubject)))
+  (superclasses (ClausalComplementWithInternalSubject)))
 
-(ClausalComplement=WithExternalSubject has 
-  (superclasses (Complement=)))
+(ClausalComplementWithExternalSubject has 
+  (superclasses (Complement)))
 
-(ClausalComplement=WithInternalSubject has 
-  (superclasses (Complement=)))
+(ClausalComplementWithInternalSubject has 
+  (superclasses (Complement)))
 
 (ClausalSubject has 
   (superclasses (Subject)))
@@ -140,19 +150,22 @@
   (superclasses (Action)))
 
 (comp has 
-  (superclasses (Complement=)))
+  (superclasses (Complement)))
 
 (compl has 
-  (superclasses (Complement=izer)))
+  (superclasses (Complementizer)))
 
-(Complement= has 
+(Complement has 
   (superclasses (Argument)))
 
-(Complement=izer has 
-  (superclasses (Complement=)))
+(Complementizer has 
+  (superclasses (Complement)))
 
 (complm has 
-  (superclasses (Complement=izer)))
+  (superclasses (Complementizer)))
+
+(compoundprt has 
+  (superclasses (Modifier)))
 
 (CompountNumberElement has 
   (superclasses (Modifier)))
@@ -163,8 +176,14 @@
 (conj_ has 
   (superclasses (Conjunct)))
 
+(conjand has 
+  (superclasses (cc)))
+
 (Conjunct has 
   (superclasses (Dependent)))
+
+(ContextHashBasedString has 
+  (superclasses (URIScheme)))
 
 (ControllingSubject has 
   (superclasses (SemanticDependent)))
@@ -186,6 +205,9 @@
 
 (dep has 
   (superclasses (Dependent)))
+
+(Dependent has 
+  (superclasses (Thing)))
 
 (det has 
   (superclasses (Determiner)))
@@ -227,7 +249,7 @@
   (superclasses (Marker)))
 
 (Marker has 
-  (superclasses (Complement=)))
+  (superclasses (Complement)))
 
 (measure has 
   (superclasses (MeasurePhraseModifier)))
@@ -253,6 +275,15 @@
 (NegationModifier has 
   (superclasses (AdverbialModifier)))
 
+(Nif has 
+  (superclasses (Thing)))
+
+(nmodof has 
+  (superclasses (Modifier)))
+
+(nmodto has 
+  (superclasses (Modifier)))
+
 (nn has 
   (superclasses (NounCompoundModifier)))
 
@@ -277,7 +308,8 @@
 (num has 
   (superclasses (NumericModifier)))
 
-;;; (Concept Number is a built-in class)
+(Number has 
+  (superclasses (Thing)))
 
 (number= has 
   (superclasses (CompountNumberElement)))
@@ -289,10 +321,19 @@
   (superclasses (Object)))
 
 (Object has 
-  (superclasses (Complement=)))
+  (superclasses (Complement)))
 
 (ObjectOfPreposition has 
   (superclasses (Object)))
+
+(OccuringWord has 
+  (superclasses (String)))
+
+(OffsetBasedString has 
+  (superclasses (URIScheme)))
+
+(Paragraph has 
+  (superclasses (Structure)))
 
 (parataxis has 
   (superclasses (Parataxis)))
@@ -303,7 +344,8 @@
 (ParticipalModifier has 
   (superclasses (Modifier)))
 
-;;; (Concept Partition is a built-in class)
+(Partition has 
+  (superclasses (Thing)))
 
 (partmod has 
   (superclasses (ParticipalModifier)))
@@ -318,10 +360,13 @@
   (superclasses (NominalSubject)))
 
 (pcomp has 
-  (superclasses (PrepositionalComplement=)))
+  (superclasses (PrepositionalComplement)))
 
 (PhrasalVerbParticle has 
   (superclasses (Modifier)))
+
+(Phrase has 
+  (superclasses (Structure)))
 
 (pobj has 
   (superclasses (ObjectOfPreposition)))
@@ -365,8 +410,8 @@
 (PrepositionalClausalModifier has 
   (superclasses (PrepositionalModifier)))
 
-(PrepositionalComplement= has 
-  (superclasses (Complement=)))
+(PrepositionalComplement has 
+  (superclasses (Complement)))
 
 (PrepositionalModifier has 
   (superclasses (Modifier)))
@@ -408,10 +453,19 @@
   (superclasses (Relative)))
 
 (Relative has 
-  (superclasses (Complement=)))
+  (superclasses (Complement)))
 
 (RelativeClauseModifier has 
   (superclasses (Modifier)))
+
+(RFC5147String has 
+  (superclasses (URIScheme)))
+
+(Role has 
+  (superclasses (Thing)))
+
+(Root has 
+  (superclasses (Thing)))
 
 (root has 
   (superclasses (Root)))
@@ -422,6 +476,9 @@
 (SemanticDependent has 
   (superclasses (Dependent)))
 
+(Sentence has 
+  (superclasses (Structure)))
+
 (Slot-Query-Viewpoint has 
   (superclasses (Viewpoint)))
 
@@ -431,13 +488,23 @@
 (State has 
   (superclasses (Event)))
 
-;;; (Concept String is a built-in class)
+(String has 
+  (superclasses (Nif)))
+
+(Structure has 
+  (superclasses (String)))
 
 (subj has 
   (superclasses (Subject)))
 
 (Subject has 
   (superclasses (Argument)))
+
+(TempFix has 
+  (superclasses (Thing)))
+
+(Temporal-Entity has 
+  (superclasses (Thing)))
 
 (TemporalModifier has 
   (superclasses (NounPhraseAsAdverbialModifier)))
@@ -447,11 +514,23 @@
 (Time-Interval has 
   (superclasses (Temporal-Entity)))
 
+(Title has 
+  (superclasses (Structure)))
+
 (tmod has 
   (superclasses (TemporalModifier)))
 
+(URIScheme has 
+  (superclasses (String)))
+
+(Viewpoint has 
+  (superclasses (Thing)))
+
+(Word has 
+  (superclasses (Structure)))
+
 (xcomp has 
-  (superclasses (ClausalComplement=WithExternalSubject)))
+  (superclasses (ClausalComplementWithExternalSubject)))
 
 (xsubj has 
   (superclasses (ControllingSubject)))
@@ -701,7 +780,145 @@
 
 (Situation has 
   (domain-of (time-during))
-  (range-of (time-contains)))
+  (range-of (time-contains))
+  (superclasses (Thing)))
+
+;;; ----------
+
+(*amodhelp-6_great-5 has 
+  (instance-of (amod)))
+
+;;; ----------
+
+(*amodothers-19_many-18 has 
+  (instance-of (amod)))
+
+;;; ----------
+
+(*auxgo-14_will-13 has 
+  (instance-of (aux)))
+
+;;; ----------
+
+(*auxhelp-6_have-2 has 
+  (instance-of (aux)))
+
+;;; ----------
+
+(*caseluck-3_of-2 has 
+  (instance-of (case)))
+
+;;; ----------
+
+(*caseme-8_to-7 has 
+  (instance-of (case)))
+
+;;; ----------
+
+(*caseyou-5_to-4 has 
+  (instance-of (case)))
+
+;;; ----------
+
+(*cchelp-6_and-9 has 
+  (instance-of (cc)))
+
+;;; ----------
+
+(*ccompknow-11_go-14 has 
+  (instance-of (ccomp)))
+
+;;; ----------
+
+(*compoundprtgo-14_on-15 has 
+  (instance-of (compoundprt)))
+
+;;; ----------
+
+(*conjandhelp-6_know-11 has 
+  (instance-of (conjand)))
+
+;;; ----------
+
+(*cophelp-6_been-3 has 
+  (instance-of (cop)))
+
+;;; ----------
+
+(*dethelp-6_a-4 has 
+  (instance-of (det)))
+
+;;; ----------
+
+(*dobjhelp-17_others-19 has 
+  (instance-of (dobj)))
+
+;;; ----------
+
+(*markhelp-17_to-16 has 
+  (instance-of (mark)))
+
+;;; ----------
+
+(*nmodofbest-1_luck-3 has 
+  (instance-of (nmodof)))
+
+;;; ----------
+
+(*nmodtobest-1_you-5 has 
+  (instance-of (nmodto)))
+
+;;; ----------
+
+(*nmodtohelp-6_me-8 has 
+  (instance-of (nmodto)))
+
+;;; ----------
+
+(*nsubjgo-14_you-12 has 
+  (instance-of (nsubj)))
+
+;;; ----------
+
+(*nsubjhelp-17_you-12 has 
+  (instance-of (nsubj)))
+
+;;; ----------
+
+(*nsubjhelp-6_you-1 has 
+  (instance-of (nsubj)))
+
+;;; ----------
+
+(*nsubjknow-11_i-10 has 
+  (instance-of (nsubj)))
+
+;;; ----------
+
+(*rootroot-0_best-1 has 
+  (instance-of (root)))
+
+;;; ----------
+
+(*rootroot-0_help-6 has 
+  (instance-of (root)))
+
+;;; ----------
+
+(*s1 has 
+  (dep ((:seq *nsubjhelp_6_you_1 *auxhelp_6_have_2 *cophelp_6_been_3 *dethelp_6_a_4 *amodhelp_6_great_5 *rootroot_0_help_6 *caseme_8_to_7 *nmodtohelp_6_me_8 *cchelp_6_and_9 *nsubjknow_11_i_10 *conjandhelp_6_know_11 *nsubjgo_14_you_12 *nsubjhelp_17_you_12 *auxgo_14_will_13 *ccompknow_11_go_14 *compoundprtgo_14_on_15 *markhelp_17_to_16 *xcompgo_14_help_17 *amodothers_19_many_18 *dobjhelp_17_others_19)))
+  (instance-of (Sentence)))
+
+;;; ----------
+
+(*s2 has 
+  (dep ((:seq *rootroot_0_best_1 *caseluck_3_of_2 *nmodofbest_1_luck_3 *caseyou_5_to_4 *nmodtobest_1_you_5)))
+  (instance-of (Sentence)))
+
+;;; ----------
+
+(*xcompgo-14_help-17 has 
+  (instance-of (xcomp)))
 
 ;;; ----------
 
@@ -724,17 +941,18 @@
 ;;; ----------
 
 (acomp has 
-  (superclasses (AdjectivalComplement=)))
+  (superclasses (AdjectivalComplement)))
 
 ;;; ----------
 
 (Action has 
-  (subclasses (Communicate)))
+  (subclasses (Communicate))
+  (superclasses (Thing)))
 
 ;;; ----------
 
-(AdjectivalComplement= has 
-  (superclasses (Complement=))
+(AdjectivalComplement has 
+  (superclasses (Complement))
   (subclasses (acomp)))
 
 ;;; ----------
@@ -816,7 +1034,9 @@
 ;;; ----------
 
 (amod has 
-  (superclasses (AdjectivalModifier)))
+  (superclasses (AdjectivalModifier))
+  (instances (*amodhelp-6_great-5
+              *amodothers-19_many-18)))
 
 ;;; ----------
 
@@ -831,6 +1051,11 @@
 
 ;;; ----------
 
+(ArbitraryString has 
+  (superclasses (URIScheme)))
+
+;;; ----------
+
 (arg has 
   (superclasses (Argument)))
 
@@ -839,7 +1064,7 @@
 (Argument has 
   (subclasses (arg
                Subject
-               Complement=
+               Complement
                Agent))
   (superclasses (Dependent)))
 
@@ -851,13 +1076,15 @@
 ;;; ----------
 
 (Attributive has 
-  (superclasses (Complement=))
+  (superclasses (Complement))
   (subclasses (attr)))
 
 ;;; ----------
 
 (aux has 
-  (superclasses (Auxiliary)))
+  (superclasses (Auxiliary))
+  (instances (*auxhelp-6_have-2
+              *auxgo-14_will-13)))
 
 ;;; ----------
 
@@ -874,24 +1101,35 @@
 
 ;;; ----------
 
+(case has 
+  (superclasses (TempFix))
+  (instances (*caseme-8_to-7
+              *caseluck-3_of-2
+              *caseyou-5_to-4)))
+
+;;; ----------
+
 (cc has 
-  (superclasses (Coordination)))
+  (superclasses (Coordination))
+  (subclasses (conjand))
+  (instances (*cchelp-6_and-9)))
 
 ;;; ----------
 
 (ccomp has 
-  (superclasses (ClausalComplement=WithInternalSubject)))
+  (superclasses (ClausalComplementWithInternalSubject))
+  (instances (*ccompknow-11_go-14)))
 
 ;;; ----------
 
-(ClausalComplement=WithExternalSubject has 
-  (superclasses (Complement=))
+(ClausalComplementWithExternalSubject has 
+  (superclasses (Complement))
   (subclasses (xcomp)))
 
 ;;; ----------
 
-(ClausalComplement=WithInternalSubject has 
-  (superclasses (Complement=))
+(ClausalComplementWithInternalSubject has 
+  (superclasses (Complement))
   (subclasses (ccomp)))
 
 ;;; ----------
@@ -936,39 +1174,45 @@
 ;;; ----------
 
 (comp has 
-  (superclasses (Complement=)))
+  (superclasses (Complement)))
 
 ;;; ----------
 
 (compl has 
-  (superclasses (Complement=izer)))
+  (superclasses (Complementizer)))
 
 ;;; ----------
 
-(Complement= has 
+(Complement has 
   (subclasses (comp
                Relative
-               PrepositionalComplement=
+               PrepositionalComplement
                Object
                Marker
-               Complement=izer
-               ClausalComplement=WithInternalSubject
-               ClausalComplement=WithExternalSubject
+               Complementizer
+               ClausalComplementWithInternalSubject
+               ClausalComplementWithExternalSubject
                Attributive
-               AdjectivalComplement=))
+               AdjectivalComplement))
   (superclasses (Argument)))
 
 ;;; ----------
 
-(Complement=izer has 
-  (superclasses (Complement=))
+(Complementizer has 
+  (superclasses (Complement))
   (subclasses (complm
                compl)))
 
 ;;; ----------
 
 (complm has 
-  (superclasses (Complement=izer)))
+  (superclasses (Complementizer)))
+
+;;; ----------
+
+(compoundprt has 
+  (superclasses (Modifier))
+  (instances (*compoundprtgo-14_on-15)))
 
 ;;; ----------
 
@@ -988,10 +1232,21 @@
 
 ;;; ----------
 
+(conjand has 
+  (superclasses (cc))
+  (instances (*conjandhelp-6_know-11)))
+
+;;; ----------
+
 (Conjunct has 
   (superclasses (Dependent))
   (subclasses (conj_
                conj)))
+
+;;; ----------
+
+(ContextHashBasedString has 
+  (superclasses (URIScheme)))
 
 ;;; ----------
 
@@ -1008,7 +1263,8 @@
 ;;; ----------
 
 (cop has 
-  (superclasses (Copula)))
+  (superclasses (Copula))
+  (instances (*cophelp-6_been-3)))
 
 ;;; ----------
 
@@ -1044,12 +1300,14 @@
                Coordination
                Conjunct
                Auxiliary
-               Argument)))
+               Argument))
+  (superclasses (Thing)))
 
 ;;; ----------
 
 (det has 
-  (superclasses (Determiner)))
+  (superclasses (Determiner))
+  (instances (*dethelp-6_a-4)))
 
 ;;; ----------
 
@@ -1066,7 +1324,8 @@
 ;;; ----------
 
 (dobj has 
-  (superclasses (DirectObject)))
+  (superclasses (DirectObject))
+  (instances (*dobjhelp-17_others-19)))
 
 ;;; ----------
 
@@ -1331,12 +1590,13 @@
 ;;; ----------
 
 (mark has 
-  (superclasses (Marker)))
+  (superclasses (Marker))
+  (instances (*markhelp-17_to-16)))
 
 ;;; ----------
 
 (Marker has 
-  (superclasses (Complement=))
+  (superclasses (Complement))
   (subclasses (mark)))
 
 ;;; ----------
@@ -1376,6 +1636,9 @@
                MeasurePhraseModifier
                InfinitivalModifier
                Determiner
+               compoundprt
+               nmodto
+               nmodof
                CompountNumberElement
                AppositionalModifier
                AdverbialModifier
@@ -1405,6 +1668,25 @@
 (NegationModifier has 
   (superclasses (AdverbialModifier))
   (subclasses (neg)))
+
+;;; ----------
+
+(Nif has 
+  (superclasses (Thing))
+  (subclasses (String)))
+
+;;; ----------
+
+(nmodof has 
+  (superclasses (Modifier))
+  (instances (*nmodofbest-1_luck-3)))
+
+;;; ----------
+
+(nmodto has 
+  (superclasses (Modifier))
+  (instances (*nmodtohelp-6_me-8
+              *nmodtobest-1_you-5)))
 
 ;;; ----------
 
@@ -1439,7 +1721,11 @@
 ;;; ----------
 
 (nsubj has 
-  (superclasses (NominalSubject)))
+  (superclasses (NominalSubject))
+  (instances (*nsubjhelp-6_you-1
+              *nsubjknow-11_i-10
+              *nsubjgo-14_you-12
+              *nsubjhelp-17_you-12)))
 
 ;;; ----------
 
@@ -1455,7 +1741,8 @@
 
 (Number has 
   (range-of (text-number))
-  (domain-of (text-number-of)))
+  (domain-of (text-number-of))
+  (superclasses (Thing)))
 
 ;;; ----------
 
@@ -1480,7 +1767,7 @@
                ObjectOfPreposition
                IndirectObject
                DirectObject))
-  (superclasses (Complement=)))
+  (superclasses (Complement)))
 
 ;;; ----------
 
@@ -1517,6 +1804,21 @@
 
 ;;; ----------
 
+(OccuringWord has 
+  (superclasses (String)))
+
+;;; ----------
+
+(OffsetBasedString has 
+  (superclasses (URIScheme)))
+
+;;; ----------
+
+(Paragraph has 
+  (superclasses (Structure)))
+
+;;; ----------
+
 (parataxis has 
   (superclasses (Parataxis)))
 
@@ -1535,7 +1837,8 @@
 ;;; ----------
 
 (Partition has 
-  (instances (_Partition1)))
+  (instances (_Partition1))
+  (superclasses (Thing)))
 
 ;;; ----------
 
@@ -1563,13 +1866,18 @@
 ;;; ----------
 
 (pcomp has 
-  (superclasses (PrepositionalComplement=)))
+  (superclasses (PrepositionalComplement)))
 
 ;;; ----------
 
 (PhrasalVerbParticle has 
   (superclasses (Modifier))
   (subclasses (prt)))
+
+;;; ----------
+
+(Phrase has 
+  (superclasses (Structure)))
 
 ;;; ----------
 
@@ -1649,8 +1957,8 @@
 
 ;;; ----------
 
-(PrepositionalComplement= has 
-  (superclasses (Complement=))
+(PrepositionalComplement has 
+  (superclasses (Complement))
   (subclasses (pcomp)))
 
 ;;; ----------
@@ -1759,7 +2067,7 @@
 ;;; ----------
 
 (Relative has 
-  (superclasses (Complement=))
+  (superclasses (Complement))
   (subclasses (rel)))
 
 ;;; ----------
@@ -1770,19 +2078,28 @@
 
 ;;; ----------
 
+(RFC5147String has 
+  (superclasses (URIScheme)))
+
+;;; ----------
+
 (Role has 
   (subclasses (Recipient-Role
-               Agent-Role)))
+               Agent-Role))
+  (superclasses (Thing)))
 
 ;;; ----------
 
 (Root has 
-  (subclasses (root)))
+  (subclasses (root))
+  (superclasses (Thing)))
 
 ;;; ----------
 
 (root has 
-  (superclasses (Root)))
+  (superclasses (Root))
+  (instances (*rootroot-0_help-6
+              *rootroot-0_best-1)))
 
 ;;; ----------
 
@@ -1795,6 +2112,13 @@
   (subclasses (sdep
                ControllingSubject))
   (superclasses (Dependent)))
+
+;;; ----------
+
+(Sentence has 
+  (superclasses (Structure))
+  (instances (*s1
+              *s2)))
 
 ;;; ----------
 
@@ -1865,6 +2189,10 @@
 ;;; ----------
 
 (String has 
+  (superclasses (Nif))
+  (subclasses (URIScheme
+               OccuringWord
+               Structure))
   (range-of (text-active-phrase
              text-active-verbseq
              text-active-verbseq-pl
@@ -1894,6 +2222,16 @@
 
 ;;; ----------
 
+(Structure has 
+  (superclasses (String))
+  (subclasses (Word
+               Sentence
+               Phrase
+               Paragraph
+               Title)))
+
+;;; ----------
+
 (subj has 
   (superclasses (Subject)))
 
@@ -1907,8 +2245,15 @@
 
 ;;; ----------
 
+(TempFix has 
+  (superclasses (Thing))
+  (subclasses (case)))
+
+;;; ----------
+
 (Temporal-Entity has 
-  (subclasses (Time-Interval)))
+  (subclasses (Time-Interval))
+  (superclasses (Thing)))
 
 ;;; ----------
 
@@ -2637,7 +2982,18 @@
 ;;; ----------
 
 (Thing has 
-  (subclasses (Entity
+  (subclasses (Viewpoint
+               Partition
+               Situation
+               Temporal-Entity
+               Action
+               Role
+               Dependent
+               Root
+               Number
+               Nif
+               TempFix
+               Entity
                Event
                Slot))
   (domain-of (text-argslots
@@ -2729,19 +3085,40 @@
 
 ;;; ----------
 
+(Title has 
+  (superclasses (Structure)))
+
+;;; ----------
+
 (tmod has 
   (superclasses (TemporalModifier)))
 
 ;;; ----------
 
+(URIScheme has 
+  (superclasses (String))
+  (subclasses (ArbitraryString
+               RFC5147String
+               OffsetBasedString
+               ContextHashBasedString)))
+
+;;; ----------
+
 (Viewpoint has 
   (subclasses (Slot-Value-Viewpoint
-               Slot-Query-Viewpoint)))
+               Slot-Query-Viewpoint))
+  (superclasses (Thing)))
+
+;;; ----------
+
+(Word has 
+  (superclasses (Structure)))
 
 ;;; ----------
 
 (xcomp has 
-  (superclasses (ClausalComplement=WithExternalSubject)))
+  (superclasses (ClausalComplementWithExternalSubject))
+  (instances (*xcompgo-14_help-17)))
 
 ;;; ----------
 
@@ -2828,7 +3205,7 @@
 (SETQ *DEVELOPER-MODE* 'NIL)
 (SETQ *UNCLONABLE-SLOTS* '(|prototype-participant-of| |prototype-participants|
                            |prototype-of| |prototypes| |prototype-scope|
-                           |locked-instance-of| |has-clones| |has-built-clones|))
+                           |has-clones| |has-built-clones|))
 (SETQ *CALLED-FORCES-UNIFICATION* 'T)
 
 
@@ -2850,5 +3227,5 @@
 (SETQ *ARE-SOME-DEFAULTS* 'NIL)
 (SETQ *AM-IN-SITUATIONS-MODE* 'NIL)
 
-;;; --- end (253 frames written) ---
+;;; --- end (299 frames written) ---
 
