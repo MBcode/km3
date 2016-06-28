@@ -26,11 +26,17 @@
 (defun pre-upto-paren (str)  
   (let ((pn (search "(" str)))
     (when (numberp pn) (subseq str 0 pn))))
+(defun butfirst (s &optional (n 1)) (butfirst-n s n))
+(defun butfirstlast (s &optional (n 1)) (butlast-n (butfirst s n) n))
+(defun mk-word (w)
+  (sv-cls w "Word"))
 (defun print-dep (d)
   "mk dep ins" ;fin filling slots:d1,d2 /rename
   (let* ((typ (clean_se (pre-upto-paren d)))
-        ;(d1 ) ;(d1, )
-        ;(d1 ) ;(,d2 )
+         (snl (positionsl '(#\( #\, #\)) d))
+         (pr (subseq-s d snl))
+         (d1 (string-trim " " (butfirstlast (first-lv pr)))) ;(d1, )
+         (d2 (string-trim " " (butfirstlast (second-lv pr)))) ;(,d2 )
          (cd (clean_se d))
          (n ;(when typ (gentemp typ))
             (under_ cd) ;(gentemp cd) ;want gentemp that doesn't add anything if not there/find/mk1         
@@ -39,8 +45,10 @@
      ;could prefix w/s# for sentence obj
     ;(print d) ;next break apart w/in parens
     (format t "~%~a,~a" d n)
-   ;(sv n "d1" d1)
-   ;(sv n "d2" d2)
+    (mk-word d1)
+    (mk-word d2)
+    (sv n "d1" d1)
+    (sv n "d2" d2)
     (sv-cls n typ) ;fix
     ))
 (defun mk-sentence (spr)

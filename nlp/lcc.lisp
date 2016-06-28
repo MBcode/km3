@@ -4,7 +4,7 @@
 (defun gvl (i sv) ;(rest (gv i sv))
   "getval ret usable list"
   (remove :|seq| (gv i sv))) 
-;(defun savekb (&optional (fn "tax.kb")) (km::save-kb fn))
+(defun savekb (&optional (fn "tax.kb")) (km::save-kb fn))
 ;==> ls.cl <==
 (load-kb "cc/CLIB-Slot-Group.km")
 (load-kb "cc/Interface-Slot.km")

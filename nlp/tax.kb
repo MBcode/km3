@@ -1,5 +1,5 @@
 
-;;; Current state of the KB (6/27/2016 23:18.35, KM 2.5.33)
+;;; Current state of the KB (6/27/2016 23:52.6, KM 2.5.33)
 
 (reset-kb)
 
@@ -785,122 +785,260 @@
 
 ;;; ----------
 
+(*a-4 has 
+  (instance-of (Word)))
+
+;;; ----------
+
 (*amodhelp-6_great-5 has 
+  (d1 ("help-6"))
+  (d2 ("great-5"))
   (instance-of (amod)))
 
 ;;; ----------
 
 (*amodothers-19_many-18 has 
+  (d1 ("others-19"))
+  (d2 ("many-18"))
   (instance-of (amod)))
 
 ;;; ----------
 
+(*and-9 has 
+  (instance-of (Word)))
+
+;;; ----------
+
 (*auxgo-14_will-13 has 
+  (d1 ("go-14"))
+  (d2 ("will-13"))
   (instance-of (aux)))
 
 ;;; ----------
 
 (*auxhelp-6_have-2 has 
+  (d1 ("help-6"))
+  (d2 ("have-2"))
   (instance-of (aux)))
 
 ;;; ----------
 
+(*been-3 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*Best-1 has 
+  (instance-of (Word)))
+
+;;; ----------
+
 (*caseluck-3_of-2 has 
+  (d1 ("luck-3"))
+  (d2 ("of-2"))
   (instance-of (case)))
 
 ;;; ----------
 
 (*caseme-8_to-7 has 
+  (d1 ("me-8"))
+  (d2 ("to-7"))
   (instance-of (case)))
 
 ;;; ----------
 
 (*caseyou-5_to-4 has 
+  (d1 ("you-5"))
+  (d2 ("to-4"))
   (instance-of (case)))
 
 ;;; ----------
 
 (*cchelp-6_and-9 has 
+  (d1 ("help-6"))
+  (d2 ("and-9"))
   (instance-of (cc)))
 
 ;;; ----------
 
 (*ccompknow-11_go-14 has 
+  (d1 ("know-11"))
+  (d2 ("go-14"))
   (instance-of (ccomp)))
 
 ;;; ----------
 
 (*compoundprtgo-14_on-15 has 
+  (d1 ("go-14"))
+  (d2 ("on-15"))
   (instance-of (compoundprt)))
 
 ;;; ----------
 
 (*conjandhelp-6_know-11 has 
+  (d1 ("help-6"))
+  (d2 ("know-11"))
   (instance-of (conjand)))
 
 ;;; ----------
 
 (*cophelp-6_been-3 has 
+  (d1 ("help-6"))
+  (d2 ("been-3"))
   (instance-of (cop)))
 
 ;;; ----------
 
 (*dethelp-6_a-4 has 
+  (d1 ("help-6"))
+  (d2 ("a-4"))
   (instance-of (det)))
 
 ;;; ----------
 
 (*dobjhelp-17_others-19 has 
+  (d1 ("help-17"))
+  (d2 ("others-19"))
   (instance-of (dobj)))
 
 ;;; ----------
 
+(*go-14 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*great-5 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*have-2 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*help-17 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*help-6 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*i-10 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*know-11 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*luck-3 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*many-18 has 
+  (instance-of (Word)))
+
+;;; ----------
+
 (*markhelp-17_to-16 has 
+  (d1 ("help-17"))
+  (d2 ("to-16"))
   (instance-of (mark)))
 
 ;;; ----------
 
+(*me-8 has 
+  (instance-of (Word)))
+
+;;; ----------
+
 (*nmodofbest-1_luck-3 has 
+  (d1 ("Best-1"))
+  (d2 ("luck-3"))
   (instance-of (nmodof)))
 
 ;;; ----------
 
 (*nmodtobest-1_you-5 has 
+  (d1 ("Best-1"))
+  (d2 ("you-5"))
   (instance-of (nmodto)))
 
 ;;; ----------
 
 (*nmodtohelp-6_me-8 has 
+  (d1 ("help-6"))
+  (d2 ("me-8"))
   (instance-of (nmodto)))
 
 ;;; ----------
 
 (*nsubjgo-14_you-12 has 
+  (d1 ("go-14"))
+  (d2 ("you-12"))
   (instance-of (nsubj)))
 
 ;;; ----------
 
 (*nsubjhelp-17_you-12 has 
+  (d1 ("help-17"))
+  (d2 ("you-12"))
   (instance-of (nsubj)))
 
 ;;; ----------
 
 (*nsubjhelp-6_you-1 has 
+  (d1 ("help-6"))
+  (d2 ("You-1"))
   (instance-of (nsubj)))
 
 ;;; ----------
 
 (*nsubjknow-11_i-10 has 
+  (d1 ("know-11"))
+  (d2 ("i-10"))
   (instance-of (nsubj)))
 
 ;;; ----------
 
+(*of-2 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*on-15 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*others-19 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*ROOT-0 has 
+  (instance-of (Word)))
+
+;;; ----------
+
 (*rootroot-0_best-1 has 
+  (d1 ("ROOT-0"))
+  (d2 ("Best-1"))
   (instance-of (root)))
 
 ;;; ----------
 
 (*rootroot-0_help-6 has 
+  (d1 ("ROOT-0"))
+  (d2 ("help-6"))
   (instance-of (root)))
 
 ;;; ----------
@@ -917,8 +1055,45 @@
 
 ;;; ----------
 
+(*to-16 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*to-4 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*to-7 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*will-13 has 
+  (instance-of (Word)))
+
+;;; ----------
+
 (*xcompgo-14_help-17 has 
+  (d1 ("go-14"))
+  (d2 ("help-17"))
   (instance-of (xcomp)))
+
+;;; ----------
+
+(*You-1 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*you-12 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*you-5 has 
+  (instance-of (Word)))
 
 ;;; ----------
 
@@ -3112,7 +3287,32 @@
 ;;; ----------
 
 (Word has 
-  (superclasses (Structure)))
+  (superclasses (Structure))
+  (instances (*help-6
+              *You-1
+              *have-2
+              *been-3
+              *a-4
+              *great-5
+              *ROOT-0
+              *me-8
+              *to-7
+              *and-9
+              *know-11
+              *i-10
+              *go-14
+              *you-12
+              *help-17
+              *will-13
+              *on-15
+              *to-16
+              *others-19
+              *many-18
+              *Best-1
+              *luck-3
+              *of-2
+              *you-5
+              *to-4)))
 
 ;;; ----------
 
@@ -3227,5 +3427,5 @@
 (SETQ *ARE-SOME-DEFAULTS* 'NIL)
 (SETQ *AM-IN-SITUATIONS-MODE* 'NIL)
 
-;;; --- end (299 frames written) ---
+;;; --- end (324 frames written) ---
 
