@@ -1,5 +1,5 @@
 
-;;; Current state of the KB (6/27/2016 23:52.6, KM 2.5.33)
+;;; Current state of the KB (6/28/2016 0:5.5, KM 2.5.33)
 
 (reset-kb)
 
@@ -785,241 +785,275 @@
 
 ;;; ----------
 
-(*a-4 has 
+(*advclforupdates-4_awhile-8 has 
+  (d1 ("updates-4"))
+  (d2 ("awhile-8"))
+  (instance-of (advclfor)))
+
+;;; ----------
+
+(*advmodlike-5_before-8 has 
+  (d1 ("like-5"))
+  (d2 ("before-8"))
+  (instance-of (advmod)))
+
+;;; ----------
+
+(*advmodremember-2_also-1 has 
+  (d1 ("remember-2"))
+  (d2 ("Also-1"))
+  (instance-of (advmod)))
+
+;;; ----------
+
+(*after-5 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*amodhelp-6_great-5 has 
-  (d1 ("help-6"))
-  (d2 ("great-5"))
+(*Also-1 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*amodtax-3_more-2 has 
+  (d1 ("tax-3"))
+  (d2 ("more-2"))
   (instance-of (amod)))
 
 ;;; ----------
 
-(*amodothers-19_many-18 has 
-  (d1 ("others-19"))
-  (d2 ("many-18"))
-  (instance-of (amod)))
-
-;;; ----------
-
-(*and-9 has 
-  (instance-of (Word)))
-
-;;; ----------
-
-(*auxgo-14_will-13 has 
-  (d1 ("go-14"))
-  (d2 ("will-13"))
+(*auxlike-5_did-3 has 
+  (d1 ("like-5"))
+  (d2 ("did-3"))
   (instance-of (aux)))
 
 ;;; ----------
 
-(*auxhelp-6_have-2 has 
-  (d1 ("help-6"))
-  (d2 ("have-2"))
-  (instance-of (aux)))
-
-;;; ----------
-
-(*been-3 has 
+(*awhile-8 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*Best-1 has 
+(*Because-1 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*caseluck-3_of-2 has 
-  (d1 ("luck-3"))
-  (d2 ("of-2"))
+(*before-8 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*caseawhile-8_for-7 has 
+  (d1 ("awhile-8"))
+  (d2 ("for-7"))
   (instance-of (case)))
 
 ;;; ----------
 
-(*caseme-8_to-7 has 
-  (d1 ("me-8"))
-  (d2 ("to-7"))
+(*caseetc-9_like-7 has 
+  (d1 ("etc-9"))
+  (d2 ("like-7"))
   (instance-of (case)))
 
 ;;; ----------
 
-(*caseyou-5_to-4 has 
-  (d1 ("you-5"))
-  (d2 ("to-4"))
+(*casethis-6_after-5 has 
+  (d1 ("this-6"))
+  (d2 ("after-5"))
   (instance-of (case)))
 
 ;;; ----------
 
-(*cchelp-6_and-9 has 
-  (d1 ("help-6"))
-  (d2 ("and-9"))
-  (instance-of (cc)))
+(*clean-5 has 
+  (instance-of (Word)))
 
 ;;; ----------
 
-(*ccompknow-11_go-14 has 
-  (d1 ("know-11"))
-  (d2 ("go-14"))
-  (instance-of (ccomp)))
+(*compoundetc-9_contractions-8 has 
+  (d1 ("etc-9"))
+  (d2 ("contractions-8"))
+  (instance-of (compound)))
 
 ;;; ----------
 
-(*compoundprtgo-14_on-15 has 
-  (d1 ("go-14"))
-  (d2 ("on-15"))
+(*compoundprtclean-5_up-6 has 
+  (d1 ("clean-5"))
+  (d2 ("up-6"))
   (instance-of (compoundprt)))
 
 ;;; ----------
 
-(*conjandhelp-6_know-11 has 
-  (d1 ("help-6"))
-  (d2 ("know-11"))
-  (instance-of (conjand)))
+(*compoundsentece-5_test-4 has 
+  (d1 ("sentece-5"))
+  (d2 ("test-4"))
+  (instance-of (compound)))
 
 ;;; ----------
 
-(*cophelp-6_been-3 has 
-  (d1 ("help-6"))
-  (d2 ("been-3"))
+(*contractions-8 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*copsentece-5_is-2 has 
+  (d1 ("sentece-5"))
+  (d2 ("is-2"))
   (instance-of (cop)))
 
 ;;; ----------
 
-(*dethelp-6_a-4 has 
-  (d1 ("help-6"))
-  (d2 ("a-4"))
+(*detones-7_the-6 has 
+  (d1 ("ones-7"))
+  (d2 ("the-6"))
   (instance-of (det)))
 
 ;;; ----------
 
-(*dobjhelp-17_others-19 has 
-  (d1 ("help-17"))
-  (d2 ("others-19"))
+(*did-3 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*dobjlike-5_ones-7 has 
+  (d1 ("like-5"))
+  (d2 ("ones-7"))
   (instance-of (dobj)))
 
 ;;; ----------
 
-(*go-14 has 
+(*etc-9 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*great-5 has 
+(*for-7 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*have-2 has 
+(*I-2 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*help-17 has 
+(*is-2 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*help-6 has 
+(*like-5 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*i-10 has 
+(*like-7 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*know-11 has 
-  (instance-of (Word)))
-
-;;; ----------
-
-(*luck-3 has 
-  (instance-of (Word)))
-
-;;; ----------
-
-(*many-18 has 
-  (instance-of (Word)))
-
-;;; ----------
-
-(*markhelp-17_to-16 has 
-  (d1 ("help-17"))
-  (d2 ("to-16"))
+(*markclean-5_to-4 has 
+  (d1 ("clean-5"))
+  (d2 ("to-4"))
   (instance-of (mark)))
 
 ;;; ----------
 
-(*me-8 has 
+(*marklike-5_because-1 has 
+  (d1 ("like-5"))
+  (d2 ("Because-1"))
+  (instance-of (mark)))
+
+;;; ----------
+
+(*more-2 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*nmodofbest-1_luck-3 has 
-  (d1 ("Best-1"))
-  (d2 ("luck-3"))
-  (instance-of (nmodof)))
-
-;;; ----------
-
-(*nmodtobest-1_you-5 has 
-  (d1 ("Best-1"))
-  (d2 ("you-5"))
-  (instance-of (nmodto)))
-
-;;; ----------
-
-(*nmodtohelp-6_me-8 has 
-  (d1 ("help-6"))
-  (d2 ("me-8"))
-  (instance-of (nmodto)))
-
-;;; ----------
-
-(*nsubjgo-14_you-12 has 
-  (d1 ("go-14"))
-  (d2 ("you-12"))
-  (instance-of (nsubj)))
-
-;;; ----------
-
-(*nsubjhelp-17_you-12 has 
-  (d1 ("help-17"))
-  (d2 ("you-12"))
-  (instance-of (nsubj)))
-
-;;; ----------
-
-(*nsubjhelp-6_you-1 has 
-  (d1 ("help-6"))
-  (d2 ("You-1"))
-  (instance-of (nsubj)))
-
-;;; ----------
-
-(*nsubjknow-11_i-10 has 
-  (d1 ("know-11"))
-  (d2 ("i-10"))
-  (instance-of (nsubj)))
-
-;;; ----------
-
-(*of-2 has 
+(*much-3 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*on-15 has 
+(*neglike-5_not-4 has 
+  (d1 ("like-5"))
+  (d2 ("not-4"))
+  (instance-of (neg)))
+
+;;; ----------
+
+(*negtax-3_no-1 has 
+  (d1 ("tax-3"))
+  (d2 ("No-1"))
+  (instance-of (neg)))
+
+;;; ----------
+
+(*nmodafterupdates-4_this-6 has 
+  (d1 ("updates-4"))
+  (d2 ("this-6"))
+  (instance-of (nmodafter)))
+
+;;; ----------
+
+(*nmodlikeclean-5_etc-9 has 
+  (d1 ("clean-5"))
+  (d2 ("etc-9"))
+  (instance-of (nmodlike)))
+
+;;; ----------
+
+(*No-1 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*others-19 has 
+(*not-4 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*nsubjlike-5_i-2 has 
+  (d1 ("like-5"))
+  (d2 ("I-2"))
+  (instance-of (nsubj)))
+
+;;; ----------
+
+(*nsubjsentece-5_this-1 has 
+  (d1 ("sentece-5"))
+  (d2 ("This-1"))
+  (instance-of (nsubj)))
+
+;;; ----------
+
+(*nsubjupdates-4_tax-3 has 
+  (d1 ("updates-4"))
+  (d2 ("tax-3"))
+  (instance-of (nsubj)))
+
+;;; ----------
+
+(*nummodsentece-5_one-3 has 
+  (d1 ("sentece-5"))
+  (d2 ("one-3"))
+  (instance-of (nummod)))
+
+;;; ----------
+
+(*one-3 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*ones-7 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*remember-2 has 
   (instance-of (Word)))
 
 ;;; ----------
@@ -1029,33 +1063,84 @@
 
 ;;; ----------
 
-(*rootroot-0_best-1 has 
+(*rootroot-0_like-5 has 
   (d1 ("ROOT-0"))
-  (d2 ("Best-1"))
+  (d2 ("like-5"))
   (instance-of (root)))
 
 ;;; ----------
 
-(*rootroot-0_help-6 has 
+(*rootroot-0_remember-2 has 
   (d1 ("ROOT-0"))
-  (d2 ("help-6"))
+  (d2 ("remember-2"))
+  (instance-of (root)))
+
+;;; ----------
+
+(*rootroot-0_sentece-5 has 
+  (d1 ("ROOT-0"))
+  (d2 ("sentece-5"))
+  (instance-of (root)))
+
+;;; ----------
+
+(*rootroot-0_updates-4 has 
+  (d1 ("ROOT-0"))
+  (d2 ("updates-4"))
   (instance-of (root)))
 
 ;;; ----------
 
 (*s1 has 
-  (dep ((:seq *nsubjhelp_6_you_1 *auxhelp_6_have_2 *cophelp_6_been_3 *dethelp_6_a_4 *amodhelp_6_great_5 *rootroot_0_help_6 *caseme_8_to_7 *nmodtohelp_6_me_8 *cchelp_6_and_9 *nsubjknow_11_i_10 *conjandhelp_6_know_11 *nsubjgo_14_you_12 *nsubjhelp_17_you_12 *auxgo_14_will_13 *ccompknow_11_go_14 *compoundprtgo_14_on_15 *markhelp_17_to_16 *xcompgo_14_help_17 *amodothers_19_many_18 *dobjhelp_17_others_19)))
+  (dep ((:seq *nsubjsentece_5_this_1 *copsentece_5_is_2 *nummodsentece_5_one_3 *compoundsentece_5_test_4 *rootroot_0_sentece_5)))
   (instance-of (Sentence)))
 
 ;;; ----------
 
 (*s2 has 
-  (dep ((:seq *rootroot_0_best_1 *caseluck_3_of_2 *nmodofbest_1_luck_3 *caseyou_5_to_4 *nmodtobest_1_you_5)))
+  (dep ((:seq *marklike_5_because_1 *nsubjlike_5_i_2 *auxlike_5_did_3 *neglike_5_not_4 *rootroot_0_like_5 *detones_7_the_6 *dobjlike_5_ones_7 *advmodlike_5_before_8)))
   (instance-of (Sentence)))
 
 ;;; ----------
 
-(*to-16 has 
+(*s3 has 
+  (dep ((:seq *negtax_3_no_1 *amodtax_3_more_2 *nsubjupdates_4_tax_3 *rootroot_0_updates_4 *casethis_6_after_5 *nmodafterupdates_4_this_6 *caseawhile_8_for_7 *advclforupdates_4_awhile_8)))
+  (instance-of (Sentence)))
+
+;;; ----------
+
+(*s4 has 
+  (dep ((:seq *advmodremember_2_also_1 *rootroot_0_remember_2 *xcompremember_2_much_3 *markclean_5_to_4 *xcompmuch_3_clean_5 *compoundprtclean_5_up_6 *caseetc_9_like_7 *compoundetc_9_contractions_8 *nmodlikeclean_5_etc_9)))
+  (instance-of (Sentence)))
+
+;;; ----------
+
+(*sentece-5 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*tax-3 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*test-4 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*the-6 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*This-1 has 
+  (instance-of (Word)))
+
+;;; ----------
+
+(*this-6 has 
   (instance-of (Word)))
 
 ;;; ----------
@@ -1065,35 +1150,27 @@
 
 ;;; ----------
 
-(*to-7 has 
+(*up-6 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*will-13 has 
+(*updates-4 has 
   (instance-of (Word)))
 
 ;;; ----------
 
-(*xcompgo-14_help-17 has 
-  (d1 ("go-14"))
-  (d2 ("help-17"))
+(*xcompmuch-3_clean-5 has 
+  (d1 ("much-3"))
+  (d2 ("clean-5"))
   (instance-of (xcomp)))
 
 ;;; ----------
 
-(*You-1 has 
-  (instance-of (Word)))
-
-;;; ----------
-
-(*you-12 has 
-  (instance-of (Word)))
-
-;;; ----------
-
-(*you-5 has 
-  (instance-of (Word)))
+(*xcompremember-2_much-3 has 
+  (d1 ("remember-2"))
+  (d2 ("much-3"))
+  (instance-of (xcomp)))
 
 ;;; ----------
 
@@ -1143,6 +1220,11 @@
 
 ;;; ----------
 
+(advclfor has 
+  (instances (*advclforupdates-4_awhile-8)))
+
+;;; ----------
+
 (AdverbialClauseModifier has 
   (superclasses (Modifier))
   (subclasses (advcl)))
@@ -1157,7 +1239,9 @@
 ;;; ----------
 
 (advmod has 
-  (superclasses (AdverbialModifier)))
+  (superclasses (AdverbialModifier))
+  (instances (*advmodlike-5_before-8
+              *advmodremember-2_also-1)))
 
 ;;; ----------
 
@@ -1210,8 +1294,7 @@
 
 (amod has 
   (superclasses (AdjectivalModifier))
-  (instances (*amodhelp-6_great-5
-              *amodothers-19_many-18)))
+  (instances (*amodtax-3_more-2)))
 
 ;;; ----------
 
@@ -1258,8 +1341,7 @@
 
 (aux has 
   (superclasses (Auxiliary))
-  (instances (*auxhelp-6_have-2
-              *auxgo-14_will-13)))
+  (instances (*auxlike-5_did-3)))
 
 ;;; ----------
 
@@ -1278,22 +1360,20 @@
 
 (case has 
   (superclasses (TempFix))
-  (instances (*caseme-8_to-7
-              *caseluck-3_of-2
-              *caseyou-5_to-4)))
+  (instances (*casethis-6_after-5
+              *caseawhile-8_for-7
+              *caseetc-9_like-7)))
 
 ;;; ----------
 
 (cc has 
   (superclasses (Coordination))
-  (subclasses (conjand))
-  (instances (*cchelp-6_and-9)))
+  (subclasses (conjand)))
 
 ;;; ----------
 
 (ccomp has 
-  (superclasses (ClausalComplementWithInternalSubject))
-  (instances (*ccompknow-11_go-14)))
+  (superclasses (ClausalComplementWithInternalSubject)))
 
 ;;; ----------
 
@@ -1385,9 +1465,15 @@
 
 ;;; ----------
 
+(compound has 
+  (instances (*compoundsentece-5_test-4
+              *compoundetc-9_contractions-8)))
+
+;;; ----------
+
 (compoundprt has 
   (superclasses (Modifier))
-  (instances (*compoundprtgo-14_on-15)))
+  (instances (*compoundprtclean-5_up-6)))
 
 ;;; ----------
 
@@ -1408,8 +1494,7 @@
 ;;; ----------
 
 (conjand has 
-  (superclasses (cc))
-  (instances (*conjandhelp-6_know-11)))
+  (superclasses (cc)))
 
 ;;; ----------
 
@@ -1439,7 +1524,7 @@
 
 (cop has 
   (superclasses (Copula))
-  (instances (*cophelp-6_been-3)))
+  (instances (*copsentece-5_is-2)))
 
 ;;; ----------
 
@@ -1482,7 +1567,7 @@
 
 (det has 
   (superclasses (Determiner))
-  (instances (*dethelp-6_a-4)))
+  (instances (*detones-7_the-6)))
 
 ;;; ----------
 
@@ -1500,7 +1585,7 @@
 
 (dobj has 
   (superclasses (DirectObject))
-  (instances (*dobjhelp-17_others-19)))
+  (instances (*dobjlike-5_ones-7)))
 
 ;;; ----------
 
@@ -1766,7 +1851,8 @@
 
 (mark has 
   (superclasses (Marker))
-  (instances (*markhelp-17_to-16)))
+  (instances (*marklike-5_because-1
+              *markclean-5_to-4)))
 
 ;;; ----------
 
@@ -1836,7 +1922,9 @@
 ;;; ----------
 
 (neg has 
-  (superclasses (NegationModifier)))
+  (superclasses (NegationModifier))
+  (instances (*neglike-5_not-4
+              *negtax-3_no-1)))
 
 ;;; ----------
 
@@ -1852,16 +1940,23 @@
 
 ;;; ----------
 
+(nmodafter has 
+  (instances (*nmodafterupdates-4_this-6)))
+
+;;; ----------
+
+(nmodlike has 
+  (instances (*nmodlikeclean-5_etc-9)))
+
+;;; ----------
+
 (nmodof has 
-  (superclasses (Modifier))
-  (instances (*nmodofbest-1_luck-3)))
+  (superclasses (Modifier)))
 
 ;;; ----------
 
 (nmodto has 
-  (superclasses (Modifier))
-  (instances (*nmodtohelp-6_me-8
-              *nmodtobest-1_you-5)))
+  (superclasses (Modifier)))
 
 ;;; ----------
 
@@ -1897,10 +1992,9 @@
 
 (nsubj has 
   (superclasses (NominalSubject))
-  (instances (*nsubjhelp-6_you-1
-              *nsubjknow-11_i-10
-              *nsubjgo-14_you-12
-              *nsubjhelp-17_you-12)))
+  (instances (*nsubjsentece-5_this-1
+              *nsubjlike-5_i-2
+              *nsubjupdates-4_tax-3)))
 
 ;;; ----------
 
@@ -1929,6 +2023,11 @@
 (NumericModifier has 
   (superclasses (Modifier))
   (subclasses (num)))
+
+;;; ----------
+
+(nummod has 
+  (instances (*nummodsentece-5_one-3)))
 
 ;;; ----------
 
@@ -2273,8 +2372,10 @@
 
 (root has 
   (superclasses (Root))
-  (instances (*rootroot-0_help-6
-              *rootroot-0_best-1)))
+  (instances (*rootroot-0_sentece-5
+              *rootroot-0_like-5
+              *rootroot-0_updates-4
+              *rootroot-0_remember-2)))
 
 ;;; ----------
 
@@ -2293,7 +2394,9 @@
 (Sentence has 
   (superclasses (Structure))
   (instances (*s1
-              *s2)))
+              *s2
+              *s3
+              *s4)))
 
 ;;; ----------
 
@@ -3288,37 +3391,44 @@
 
 (Word has 
   (superclasses (Structure))
-  (instances (*help-6
-              *You-1
-              *have-2
-              *been-3
-              *a-4
-              *great-5
+  (instances (*sentece-5
+              *This-1
+              *is-2
+              *one-3
+              *test-4
               *ROOT-0
-              *me-8
-              *to-7
-              *and-9
-              *know-11
-              *i-10
-              *go-14
-              *you-12
-              *help-17
-              *will-13
-              *on-15
-              *to-16
-              *others-19
-              *many-18
-              *Best-1
-              *luck-3
-              *of-2
-              *you-5
-              *to-4)))
+              *like-5
+              *Because-1
+              *I-2
+              *did-3
+              *not-4
+              *ones-7
+              *the-6
+              *before-8
+              *tax-3
+              *No-1
+              *more-2
+              *updates-4
+              *this-6
+              *after-5
+              *awhile-8
+              *for-7
+              *remember-2
+              *Also-1
+              *much-3
+              *clean-5
+              *to-4
+              *up-6
+              *etc-9
+              *like-7
+              *contractions-8)))
 
 ;;; ----------
 
 (xcomp has 
   (superclasses (ClausalComplementWithExternalSubject))
-  (instances (*xcompgo-14_help-17)))
+  (instances (*xcompremember-2_much-3
+              *xcompmuch-3_clean-5)))
 
 ;;; ----------
 
@@ -3427,5 +3537,5 @@
 (SETQ *ARE-SOME-DEFAULTS* 'NIL)
 (SETQ *AM-IN-SITUATIONS-MODE* 'NIL)
 
-;;; --- end (324 frames written) ---
+;;; --- end (342 frames written) ---
 

@@ -30,7 +30,7 @@
 (defun butfirstlast (s &optional (n 1)) (butlast-n (butfirst s n) n))
 (defun mk-word (w)
   (sv-cls w "Word"))
-(defun print-dep (d)
+(defun print-dep (d) ;unused/get rid of
   "mk dep ins" ;fin filling slots:d1,d2 /rename
   (let* ((typ (clean_se (pre-upto-paren d)))
          (snl (positionsl '(#\( #\, #\)) d))
@@ -51,6 +51,27 @@
     (sv n "d2" d2)
     (sv-cls n typ) ;fix
     ))
+(defun prs-dep (d)
+  (let* ((snl (positionsl '(#\( #\, #\)) d))
+         (pr (subseq-s d snl))
+         (d1 (string-trim " " (butfirstlast (first-lv pr)))) ;(d1, )
+         (d2 (string-trim " " (butfirstlast (second-lv pr)))) ;(,d2 )
+         )
+    (list d1 d2)))
+(defun mk-dep (d)
+  (let* ((typ (clean_se (pre-upto-paren d)))
+         (cd (clean_se d))
+         (n (under_ cd))
+         (pr (prs-dep d))
+         (d1 (first pr))
+         (d2 (second pr)))
+    (format t "~%~a,~a" d n)
+    (mk-word d1)
+    (mk-word d2)
+    (sv n "d1" d1)
+    (sv n "d2" d2)
+    (sv-cls n typ) ;fix
+    ))
 (defun mk-sentence (spr)
   (let ((sn (gentemp "s")))
     (sv-cls sn "Sentence")
@@ -64,7 +85,7 @@
   (print "tree") (print (g-st spr)) 
   (print "depend") 
   ;start w/mk-Communicate  incl who from/to,  cc/Communicate.km
-  (let ((di (mapcar #'print-dep (g-sd spr))))
+  (let ((di (mapcar #'mk-dep (g-sd spr)))) ;was print-dep
     ;might test di (mk-sentence spr) 
     (mk-sentence-dep di) 
   ))
