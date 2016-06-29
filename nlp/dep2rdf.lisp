@@ -26,6 +26,7 @@
 (defun pre-upto-paren (str)  
   (let ((pn (search "(" str)))
     (when (numberp pn) (subseq str 0 pn))))
+;add next2 to utils
 (defun butfirst (s &optional (n 1)) (butfirst-n s n))
 (defun butfirstlast (s &optional (n 1)) (butlast-n (butfirst s n) n))
 (defun mk-word (w)

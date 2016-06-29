@@ -42,6 +42,7 @@
 (nmodof has (superclasses (Modifier))) ;mb
 (nmodto has (superclasses (Modifier))) ;mb
 (compoundprt has (superclasses (Modifier))) ;mb
+(compound has (superclasses (Modifier))) ;mb~
 (Determiner has
     (superclasses (Modifier)))
 (DirectObject has
@@ -125,6 +126,7 @@
     (superclasses (AdjectivalComplement)))
 (advcl has
     (superclasses (AdverbialClauseModifier)))
+(advclfor has (superclasses (advcl))) ;mb:
 (advmod has
     (superclasses (AdverbialModifier)))
 (agent has
@@ -143,7 +145,7 @@
     (superclasses (PassiveAuxiliary)))
 (cc has
     (superclasses (Coordination)))
-(conjand has (superclasses (cc))) ;mb
+(conjand has (superclasses (cc))) ;mb:
 (ccomp has
     (superclasses (ClausalComplementWithInternalSubject)))
 (comp has
@@ -186,6 +188,11 @@
     (superclasses (NegationModifier)))
 (nn has
     (superclasses (NounCompoundModifier)))
+(nmod has (superclasses (Modifier))) ;mb
+(nmodfrom has (superclasses (nmod))) ;mb:
+(nmodto has (superclasses (nmod))) ;mb:
+(nmodafter has (superclasses (nmod))) ;mb:
+(nmodlike has (superclasses (nmod))) ;mb:
 (npadvmod has
     (superclasses (NounPhraseAsAdverbialModifier)))
 (nsubj has
@@ -194,6 +201,7 @@
     (superclasses (PassiveNominalSubject)))
 (num has
     (superclasses (NumericModifier)))
+(nummod has (superclasses (Modifier))) ;mb
 (number= has
     (superclasses (CompountNumberElement)))
 (obj has

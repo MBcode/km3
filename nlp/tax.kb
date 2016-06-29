@@ -1,5 +1,5 @@
 
-;;; Current state of the KB (6/28/2016 0:5.5, KM 2.5.33)
+;;; Current state of the KB (6/28/2016 23:46.36, KM 2.5.33)
 
 (reset-kb)
 
@@ -76,6 +76,9 @@
 
 (advcl has 
   (superclasses (AdverbialClauseModifier)))
+
+(advclfor has 
+  (superclasses (advcl)))
 
 (AdverbialClauseModifier has 
   (superclasses (Modifier)))
@@ -163,6 +166,9 @@
 
 (complm has 
   (superclasses (Complementizer)))
+
+(compound has 
+  (superclasses (Modifier)))
 
 (compoundprt has 
   (superclasses (Modifier)))
@@ -278,11 +284,23 @@
 (Nif has 
   (superclasses (Thing)))
 
+(nmod has 
+  (superclasses (Modifier)))
+
+(nmodafter has 
+  (superclasses (nmod)))
+
+(nmodfrom has 
+  (superclasses (nmod)))
+
+(nmodlike has 
+  (superclasses (nmod)))
+
 (nmodof has 
   (superclasses (Modifier)))
 
 (nmodto has 
-  (superclasses (Modifier)))
+  (superclasses (nmod)))
 
 (nn has 
   (superclasses (NounCompoundModifier)))
@@ -315,6 +333,9 @@
   (superclasses (CompountNumberElement)))
 
 (NumericModifier has 
+  (superclasses (Modifier)))
+
+(nummod has 
   (superclasses (Modifier)))
 
 (obj has 
@@ -1216,11 +1237,13 @@
 ;;; ----------
 
 (advcl has 
-  (superclasses (AdverbialClauseModifier)))
+  (superclasses (AdverbialClauseModifier))
+  (subclasses (advclfor)))
 
 ;;; ----------
 
 (advclfor has 
+  (superclasses (advcl))
   (instances (*advclforupdates-4_awhile-8)))
 
 ;;; ----------
@@ -1466,6 +1489,7 @@
 ;;; ----------
 
 (compound has 
+  (superclasses (Modifier))
   (instances (*compoundsentece-5_test-4
               *compoundetc-9_contractions-8)))
 
@@ -1879,7 +1903,9 @@
 ;;; ----------
 
 (Modifier has 
-  (subclasses (mod=
+  (subclasses (nummod
+               nmod
+               mod=
                RelativeClauseModifier
                QuantifierModifier
                PurposeClauseModifier
@@ -1897,8 +1923,8 @@
                MeasurePhraseModifier
                InfinitivalModifier
                Determiner
+               compound
                compoundprt
-               nmodto
                nmodof
                CompountNumberElement
                AppositionalModifier
@@ -1940,12 +1966,28 @@
 
 ;;; ----------
 
+(nmod has 
+  (superclasses (Modifier))
+  (subclasses (nmodlike
+               nmodafter
+               nmodto
+               nmodfrom)))
+
+;;; ----------
+
 (nmodafter has 
+  (superclasses (nmod))
   (instances (*nmodafterupdates-4_this-6)))
 
 ;;; ----------
 
+(nmodfrom has 
+  (superclasses (nmod)))
+
+;;; ----------
+
 (nmodlike has 
+  (superclasses (nmod))
   (instances (*nmodlikeclean-5_etc-9)))
 
 ;;; ----------
@@ -1956,7 +1998,7 @@
 ;;; ----------
 
 (nmodto has 
-  (superclasses (Modifier)))
+  (superclasses (nmod)))
 
 ;;; ----------
 
@@ -2027,6 +2069,7 @@
 ;;; ----------
 
 (nummod has 
+  (superclasses (Modifier))
   (instances (*nummodsentece-5_one-3)))
 
 ;;; ----------
@@ -3537,5 +3580,5 @@
 (SETQ *ARE-SOME-DEFAULTS* 'NIL)
 (SETQ *AM-IN-SITUATIONS-MODE* 'NIL)
 
-;;; --- end (342 frames written) ---
+;;; --- end (344 frames written) ---
 
