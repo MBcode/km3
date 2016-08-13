@@ -74,3 +74,5 @@ also look@ https://github.com/yoavz/EDAN20-lab4  ;other than stanford, installed
 look@km+plm&re:nlp, http://research.microsoft.com/en-us/people/cyl/krqa07.pdf https://github.com/BLLIP/bllip-parser /not yet
 -noticed km pkg problem w/u2.lisp fncs, fixing now, might get bigger cleanup,yes: lkmq using km pkg looking better again but still quirks2iron out
  want to avoid km:: on everything,  export&/or wrap; incl symbol refs, so can avoid on all of them
+
+want to try edg.sf.net HPSG w/KM, but first load done w/ACL, &I want to use SBCL ; could use both to start
