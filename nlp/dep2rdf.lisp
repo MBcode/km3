@@ -27,10 +27,11 @@
   (let ((pn (search "(" str)))
     (when (numberp pn) (subseq str 0 pn))))
 ;add next2 to utils
-(defun butfirst (s &optional (n 1)) (butfirst-n s n))
-(defun butfirstlast (s &optional (n 1)) (butlast-n (butfirst s n) n))
+;(defun butfirst (s &optional (n 1)) (butfirst-n s n))
+;(defun butfirstlast (s &optional (n 1)) (butlast-n (butfirst s n) n))
 (defun mk-word (w)
   (sv-cls w "Word"))
+#+ignore
 (defun print-dep (d) ;unused/get rid of
   "mk dep ins" ;fin filling slots:d1,d2 /rename
   (let* ((typ (clean_se (pre-upto-paren d)))
@@ -67,10 +68,8 @@
          (d1 (first pr))
          (d2 (second pr)))
     (format t "~%~a,~a" d n)
-    (mk-word d1)
-    (mk-word d2)
-    (sv n "d1" d1)
-    (sv n "d2" d2)
+    (sv n "d1" (mk-word d1))
+    (sv n "d2" (mk-word d2))
     (sv-cls n typ) ;fix
     ))
 (defun mk-sentence (spr)
